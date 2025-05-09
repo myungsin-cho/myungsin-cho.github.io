@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.8)  9 MAY 2025 11:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.8)  9 MAY 2025 11:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"MyungsinCho CV.tex"
-(./MyungsinCho CV.tex
+**MyungsinCho_CV.tex
+(./MyungsinCho_CV.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22>
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
@@ -260,8 +260,8 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count283
 \l__pdf_internal_box=\box96
 )
-(./MyungsinCho CV.aux)
-\openout1 = `"MyungsinCho CV.aux"'.
+(./MyungsinCho_CV.aux)
+\openout1 = `MyungsinCho_CV.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
@@ -317,9 +317,9 @@ LaTeX Font Info:    ... okay on input line 7.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 7.
-(./MyungsinCho CV.out) (./MyungsinCho CV.out)
+(./MyungsinCho_CV.out) (./MyungsinCho_CV.out)
 \@outlinefile=\write3
-\openout3 = `"MyungsinCho CV.out"'.
+\openout3 = `MyungsinCho_CV.out'.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 16.
@@ -487,18 +487,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 149--169
 
  []
 
-[3] (./MyungsinCho CV.aux)
-Package rerunfilecheck Info: File `"MyungsinCho CV".out' has not changed.
+[3] (./MyungsinCho_CV.aux)
+Package rerunfilecheck Info: File `MyungsinCho_CV.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 7904 strings out of 476025
- 126871 string characters out of 5790018
+ 7902 strings out of 476025
+ 126805 string characters out of 5790018
  1865388 words of memory out of 5000000
- 28306 multiletter control sequences out of 15000+600000
+ 28304 multiletter control sequences out of 15000+600000
  514320 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,5n,76p,263b,426s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,5n,76p,261b,426s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -507,7 +507,7 @@ sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr
 /local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
 local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/l
 ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on "MyungsinCho CV.pdf" (3 pages, 122118 bytes).
+Output written on MyungsinCho_CV.pdf (3 pages, 122118 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  41 compressed objects within 1 object stream
