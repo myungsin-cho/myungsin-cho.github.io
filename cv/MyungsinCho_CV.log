@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.8)  9 MAY 2025 11:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.8)  9 MAY 2025 11:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -346,144 +346,144 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--22
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--97
+Underfull \hbox (badness 10000) in paragraph at lines 23--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--97
+Underfull \hbox (badness 10000) in paragraph at lines 23--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--97
+Underfull \hbox (badness 10000) in paragraph at lines 23--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--97
+Underfull \hbox (badness 10000) in paragraph at lines 23--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--97
+Underfull \hbox (badness 10000) in paragraph at lines 23--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--97
+Underfull \hbox (badness 10000) in paragraph at lines 23--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--97
+Underfull \hbox (badness 10000) in paragraph at lines 23--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--97
+Underfull \hbox (badness 10000) in paragraph at lines 23--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--97
+Underfull \hbox (badness 10000) in paragraph at lines 23--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--97
+Underfull \hbox (badness 10000) in paragraph at lines 23--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--97
+Underfull \hbox (badness 10000) in paragraph at lines 23--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--97
+Underfull \hbox (badness 10000) in paragraph at lines 23--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--97
+Underfull \hbox (badness 10000) in paragraph at lines 23--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--97
+Underfull \hbox (badness 10000) in paragraph at lines 23--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--97
+Underfull \hbox (badness 10000) in paragraph at lines 23--93
 
  []
 
 [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 98--132
+Underfull \hbox (badness 10000) in paragraph at lines 94--128
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--132
+Underfull \hbox (badness 10000) in paragraph at lines 94--128
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--132
+Underfull \hbox (badness 10000) in paragraph at lines 94--128
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--132
+Underfull \hbox (badness 10000) in paragraph at lines 94--128
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--132
+Underfull \hbox (badness 10000) in paragraph at lines 94--128
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 133--148
+Underfull \hbox (badness 10000) in paragraph at lines 129--144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--148
+Underfull \hbox (badness 10000) in paragraph at lines 129--144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--148
+Underfull \hbox (badness 10000) in paragraph at lines 129--144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--148
+Underfull \hbox (badness 10000) in paragraph at lines 129--144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--169
+Underfull \hbox (badness 10000) in paragraph at lines 145--165
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--169
+Underfull \hbox (badness 10000) in paragraph at lines 145--165
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--169
+Underfull \hbox (badness 10000) in paragraph at lines 145--165
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--169
+Underfull \hbox (badness 10000) in paragraph at lines 145--165
 
  []
 
@@ -494,7 +494,7 @@ Package rerunfilecheck Info: File `MyungsinCho_CV.out' has not changed.
 Here is how much of TeX's memory you used:
  7902 strings out of 476025
  126805 string characters out of 5790018
- 1865388 words of memory out of 5000000
+ 1864388 words of memory out of 5000000
  28304 multiletter control sequences out of 15000+600000
  514320 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -507,7 +507,7 @@ sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr
 /local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
 local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/l
 ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on MyungsinCho_CV.pdf (3 pages, 122118 bytes).
+Output written on MyungsinCho_CV.pdf (3 pages, 122126 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  41 compressed objects within 1 object stream
