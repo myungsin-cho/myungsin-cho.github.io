@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.8)  9 MAY 2025 11:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.8)  10 MAY 2025 00:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -255,32 +255,101 @@ Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 \colbreak@box=\box95
 \mc@col@check@num=\count282
 )
+(/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/newtxtext.sty
+Package: newtxtext 2022/02/28 v1.71(Michael Sharpe) latex and unicode latex sup
+port for TeXGyreTermesX
+
+`newtxtext' v1.71, 2022/02/28 Text macros taking advantage of TeXGyre Termes an
+d its extensions (msharpe)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(/usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks18
+\XKV@tempa@toks=\toks19
+)
+\XKV@depth=\count283
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count284
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2023/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count285
+\decimalpart=\count286
+)
+Package: xstring 2023/01/14 v1.85 String manipulations (CT)
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+LaTeX Font Info:    Setting ntxLF sub-encoding to TS1/0 on input line 21.
+LaTeX Font Info:    Setting ntxTLF sub-encoding to TS1/0 on input line 21.
+LaTeX Font Info:    Setting ntxOsF sub-encoding to TS1/0 on input line 21.
+LaTeX Font Info:    Setting ntxTOsF sub-encoding to TS1/0 on input line 21.
+
+(/usr/local/texlive/2023/texmf-dist/tex/generic/kastrup/binhex.tex)
+\ntx@tmpcnta=\count287
+\ntx@cnt=\count288
+
+ntx@otftextfalse
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fontaxes/fontaxes.sty
+Package: fontaxes 2020/07/21 v1.0e Font selection axes
+LaTeX Info: Redefining \upshape on input line 29.
+LaTeX Info: Redefining \itshape on input line 31.
+LaTeX Info: Redefining \slshape on input line 33.
+LaTeX Info: Redefining \swshape on input line 35.
+LaTeX Info: Redefining \scshape on input line 37.
+LaTeX Info: Redefining \sscshape on input line 39.
+LaTeX Info: Redefining \ulcshape on input line 41.
+LaTeX Info: Redefining \textsw on input line 47.
+LaTeX Info: Redefining \textssc on input line 48.
+LaTeX Info: Redefining \textulc on input line 49.
+)
+LaTeX Info: Redefining \oldstylenums on input line 657.
+)
+LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input lin
+e 8.
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
+File: ot1ntxtlf.fd 2021/05/24 v1.0 font definition file for OT1/ntx/tlf
+)
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.0pt on input line 8.
+
 (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count283
+\l__color_backend_stack_int=\count289
 \l__pdf_internal_box=\box96
 )
 (./MyungsinCho_CV.aux)
 \openout1 = `MyungsinCho_CV.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -316,174 +385,187 @@ LaTeX Font Info:    ... okay on input line 7.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 7.
+Package hyperref Info: Link coloring OFF on input line 8.
 (./MyungsinCho_CV.out) (./MyungsinCho_CV.out)
 \@outlinefile=\write3
 \openout3 = `MyungsinCho_CV.out'.
 
+\c@mv@tabular=\count290
+\c@mv@boldtabular=\count291
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 17.28pt on input line 10.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 16.
+(Font)              <7> on input line 17.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 16.
+(Font)              <5> on input line 17.
+LaTeX Font Info:    Trying to load font information for OT1+ntxtt on input line
+ 20.
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--21
+(/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
+File: ot1ntxtt.fd 2012/04/20 v3.1
+)
+LaTeX Font Info:    Font shape `OT1/ntxtt/m/n' will be
+(Font)              scaled to size 10.0pt on input line 20.
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--22
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--21
+Underfull \hbox (badness 10000) in paragraph at lines 19--22
 
  []
 
 
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 11--22
+Overfull \hbox (1.49992pt too wide) in paragraph at lines 12--23
 $[]$ $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--22
+Underfull \hbox (badness 10000) in paragraph at lines 12--23
+
+ []
+
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 14.4pt on input line 24.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 14.4pt on input line 24.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 10.0pt on input line 27.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
+(Font)              scaled to size 10.0pt on input line 28.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 12.0pt on input line 68.
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--93
+Underfull \hbox (badness 10000) in paragraph at lines 24--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--93
+Underfull \hbox (badness 10000) in paragraph at lines 24--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--93
+Underfull \hbox (badness 10000) in paragraph at lines 24--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--93
+Underfull \hbox (badness 10000) in paragraph at lines 24--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--93
+Underfull \hbox (badness 10000) in paragraph at lines 24--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--93
+Underfull \hbox (badness 10000) in paragraph at lines 24--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--93
+Underfull \hbox (badness 10000) in paragraph at lines 24--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--93
+Underfull \hbox (badness 10000) in paragraph at lines 24--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--93
+Underfull \hbox (badness 10000) in paragraph at lines 24--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--93
+Underfull \hbox (badness 10000) in paragraph at lines 24--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--93
+Underfull \hbox (badness 10000) in paragraph at lines 24--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--93
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 23--93
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 23--93
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 23--93
+Underfull \hbox (badness 10000) in paragraph at lines 24--90
 
  []
 
 [1
 
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 94--128
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
+al/texlive/2023/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 91--125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--128
+Underfull \hbox (badness 10000) in paragraph at lines 91--125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--128
+Underfull \hbox (badness 10000) in paragraph at lines 91--125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--128
+Underfull \hbox (badness 10000) in paragraph at lines 91--125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--128
+Underfull \hbox (badness 10000) in paragraph at lines 91--125
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 129--144
+Underfull \hbox (badness 10000) in paragraph at lines 126--141
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--144
+Underfull \hbox (badness 10000) in paragraph at lines 126--141
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--144
+Underfull \hbox (badness 10000) in paragraph at lines 126--141
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--144
+Underfull \hbox (badness 10000) in paragraph at lines 126--141
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--165
+Underfull \hbox (badness 10000) in paragraph at lines 142--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--165
+Underfull \hbox (badness 10000) in paragraph at lines 142--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--165
+Underfull \hbox (badness 10000) in paragraph at lines 142--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--165
+Underfull \hbox (badness 10000) in paragraph at lines 142--162
 
  []
 
@@ -492,25 +574,24 @@ Package rerunfilecheck Info: File `MyungsinCho_CV.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 7902 strings out of 476025
- 126805 string characters out of 5790018
- 1864388 words of memory out of 5000000
- 28304 multiletter control sequences out of 15000+600000
- 514320 words of font info for 39 fonts, out of 8000000 for 9000
+ 9392 strings out of 476025
+ 151622 string characters out of 5790018
+ 1866388 words of memory out of 5000000
+ 29735 multiletter control sequences out of 15000+600000
+ 524371 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,5n,76p,261b,426s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr
-/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
-local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/l
-ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on MyungsinCho_CV.pdf (3 pages, 122126 bytes).
+ 75i,5n,76p,290b,452s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/loc
+al/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texliv
+e/2023/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2023/te
+xmf-dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on MyungsinCho_CV.pdf (3 pages, 141835 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
- 41 compressed objects within 1 object stream
+ 59 PDF objects out of 1000 (max. 8388607)
+ 39 compressed objects within 1 object stream
  4 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
