@@ -1,0 +1,300 @@
+% LACROMAY.STY - Extra Math Definitions and Symbols
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{lacromay}[1998/07/22 v1.0
+ Extra Math Definitions and Symbols]
+%\RequirePackage{amssymb}[1995/01/01]
+%%   Change \lhd, \rhd to use the amssymb symbols
+\renewcommand{\lhd}{\vartriangleleft}
+\renewcommand{\rhd}{\vartriangleright}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\catcode`\ =9
+\endlinechar=-1 % Make things readable.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Setup to use Ralph Smith Formal Script font:
+\DeclareFontFamily{OMS}{rsfs}{\skewchar\font'60}
+\DeclareFontShape{OMS}{rsfs}{m}{n}{<-5>rsfs5 <5-7>rsfs7 <7->rsfs10 }{}
+\DeclareSymbolFont{rsfs}{OMS}{rsfs}{m}{n}
+\DeclareSymbolFontAlphabet{\scr}{rsfs}
+
+\let\overto\xrightarrow
+\def\circle{\mathaccent"7017}
+
+
+%\usepackage{showkeys}
+
+\newcommand{\eq}[3]{\displaystyle{\times_{#1}}({#2}\to {#3})}
+\newcommand{\htpypb}[2]{N({#1},{#2})}
+\newcommand{\htpympb}[2]{N_{#1}({#2})}
+\newcommand{\heq}[2]{Heq({#1},{#2})}
+
+%\gdef\overto#1{{\buildrel{#1}\over\longrightarrow}}
+\newcommand{\overfrom}[1]{\xleftarrow{#1}}
+
+\newcommand{\tand}{\text{\ \ and \ \ }}   %``and'' between formulas in display
+
+\newcommand{\ip}[1]{\text{$\left\langle#1\right\rangle$}} % inner product
+\newcommand{\rtarr}{\longrightarrow}
+\newcommand{\ltarr}{\longleftarrow}
+\newcommand{\from}{\longleftarrow}
+\newcommand{\monoto}{\lhook\joinrel\relbar\joinrel\rightarrow}
+\newcommand{\epito}{\relbar\joinrel\twoheadrightarrow}
+
+% operators
+\def\quickop#1{\expandafter\newcommand\csname #1\endcsname{\operatorname{#1}}}
+\quickop{map} \quickop{Map} \quickop{Hom} \quickop{End} \quickop{Aut} \quickop{Tel} \quickop{Mic}
+\quickop{Ext} \quickop{Tor} \quickop{Id} \quickop{Coker} \quickop{Ker}
+\quickop{Lim} \quickop{Colim} \quickop{Holim} \quickop{Hocolim}
+\quickop{id} \quickop{tel} \quickop{mic} \quickop{coker}
+\quickop{holim} \quickop{hocolim} \quickop{im}
+\quickop{Ho} 
+\quickop{Fib} \quickop{Cof}
+
+
+% \limit --- lim sub right arrow
+%\let\limit=\varinjlim
+% \colimit --- lim sub left arrow
+%\let\colimit=\varprojlim
+
+\newcommand{\bp}{\ast}
+\newcommand{\colim}{\operatorname*{colim}}
+%\newcommand{\tel}{\operatorname{tel}}
+%\newcommand{\mic}{\operatorname{mic}}
+\newcommand{\limone}{\operatorname{lim\!^1}}
+\newcommand{\Free}{\mathrm{Free}}
+\newcommand{\Kernel}{\operatorname{Ker}}
+\newcommand{\degree}{\operatorname{deg}}
+\newcommand{\image}{\operatorname{Im}}
+\newcommand{\Cokernel}{\operatorname{Coker}}
+
+\newcommand{\chara}{\operatorname{char}}
+\newcommand{\adj}{\dashv}
+
+% script letters  small s then capital letter
+\newcommand{\sA}{\scr{A}}
+\newcommand{\sB}{\scr{B}}
+\newcommand{\sC}{\scr{C}}
+\newcommand{\sD}{\scr{D}}
+\newcommand{\sE}{\scr{E}}
+\newcommand{\sF}{\scr{F}}
+\newcommand{\sG}{\scr{G}}
+\newcommand{\sH}{\scr{H}}
+\newcommand{\sI}{\scr{I}}
+\newcommand{\sJ}{\scr{J}}
+\newcommand{\sK}{\scr{K}}
+\newcommand{\sL}{\scr{L}}
+\newcommand{\sM}{\scr{M}}
+\newcommand{\sN}{\scr{N}}
+\newcommand{\sO}{\scr{O}}
+\newcommand{\sP}{\scr{P}}
+\newcommand{\sQ}{\scr{Q}}
+\newcommand{\sR}{\scr{R}}
+\newcommand{\sS}{\scr{S}}
+\newcommand{\sT}{\scr{T}}
+\newcommand{\sU}{\scr{U}}
+\newcommand{\sV}{\scr{V}}
+\newcommand{\sW}{\scr{W}}
+\newcommand{\sX}{\scr{X}}
+\newcommand{\sY}{\scr{Y}}
+\newcommand{\sZ}{\scr{Z}}
+
+% Font used for operads  small o then capital letter
+% in case I change my mind, give the font its own name
+\let\opsymbfont\mathcal
+
+\newcommand{\calA}{{\opsymbfont{A}}}
+\newcommand{\calB}{{\opsymbfont{B}}}
+\newcommand{\calC}{{\opsymbfont{C}}}
+\newcommand{\calD}{{\opsymbfont{D}}}
+\newcommand{\calE}{{\opsymbfont{E}}}
+\newcommand{\calF}{{\opsymbfont{F}}}
+\newcommand{\calG}{{\opsymbfont{G}}}
+\newcommand{\calH}{{\opsymbfont{H}}}
+\newcommand{\calI}{{\opsymbfont{I}}}
+\newcommand{\calJ}{{\opsymbfont{J}}}
+\newcommand{\calK}{{\opsymbfont{K}}}
+\newcommand{\calL}{{\opsymbfont{L}}}
+\newcommand{\calM}{{\opsymbfont{M}}}
+\newcommand{\calN}{{\opsymbfont{N}}}
+\newcommand{\calO}{{\opsymbfont{O}}}
+\newcommand{\calP}{{\opsymbfont{P}}}
+\newcommand{\calQ}{{\opsymbfont{Q}}}
+\newcommand{\calR}{{\opsymbfont{R}}}
+\newcommand{\calS}{{\opsymbfont{S}}}
+\newcommand{\calT}{{\opsymbfont{T}}}
+\newcommand{\calU}{{\opsymbfont{U}}}
+\newcommand{\calV}{{\opsymbfont{V}}}
+\newcommand{\calW}{{\opsymbfont{W}}}
+\newcommand{\calX}{{\opsymbfont{X}}}
+\newcommand{\calY}{{\opsymbfont{Y}}}
+\newcommand{\calZ}{{\opsymbfont{Z}}}
+
+\DeclareMathAlphabet{\eus}{U}{eus}{m}{n}
+%\SetMathAlphabet{\eus}{bold}{U}{eus}{b}{n}
+
+% Font used for categories  small a then capital letter
+% would use small c but too many conflicts with xypic
+% in case I change my mind, give the font its own name
+\let\catsymbfont\eus
+
+\newcommand{\aA}{{\catsymbfont{A}}}
+\newcommand{\aB}{{\catsymbfont{B}}}
+\newcommand{\aC}{{\catsymbfont{C}}}
+\newcommand{\aD}{{\catsymbfont{D}}}
+\newcommand{\aE}{{\catsymbfont{E}}}
+\newcommand{\aF}{{\catsymbfont{F}}}
+\newcommand{\aG}{{\catsymbfont{G}}}
+\newcommand{\aH}{{\catsymbfont{H}}}
+\newcommand{\aI}{{\catsymbfont{I}}}
+\newcommand{\aJ}{{\catsymbfont{J}}}
+\newcommand{\aK}{{\catsymbfont{K}}}
+\newcommand{\aL}{{\catsymbfont{L}}}
+\newcommand{\aM}{{\catsymbfont{M}}}
+\newcommand{\aN}{{\catsymbfont{N}}}
+\newcommand{\aO}{{\catsymbfont{O}}}
+\newcommand{\aP}{{\catsymbfont{P}}}
+\newcommand{\aQ}{{\catsymbfont{Q}}}
+\newcommand{\aR}{{\catsymbfont{R}}}
+\newcommand{\aS}{{\catsymbfont{S}}}
+\newcommand{\aT}{{\catsymbfont{T}}}
+\newcommand{\aU}{{\catsymbfont{U}}}
+\newcommand{\aV}{{\catsymbfont{V}}}
+\newcommand{\aW}{{\catsymbfont{W}}}
+\newcommand{\aX}{{\catsymbfont{X}}}
+\newcommand{\aY}{{\catsymbfont{Y}}}
+\newcommand{\aZ}{{\catsymbfont{Z}}}
+
+% Frequently used categories
+\newcommand{\Ab}{\ensuremath{ \aA b }}
+\newcommand{\Alg}{\ensuremath{ \aA lg }}
+\newcommand{\Ch}{\ensuremath{{\rm Ch}}}
+\newcommand{\Gp}{\ensuremath{ \aG p }}
+\newcommand{\Mon}{\ensuremath{ \aM on}}
+\newcommand{\Mod}{\ensuremath{ \aM {\rm od}}}
+%\newcommand{\S}{\ensuremath{ \aS }}
+\newcommand{\Sp}{\ensuremath{ \aS {\rm p} }}
+\newcommand{\Top}{\ensuremath{ \aT {\rm op} }}
+\newcommand{\SW}{\ensuremath{ \aS \aW }}
+\newcommand{\Set}{\ensuremath{ \aS {\rm et} }}
+\newcommand{\sSet}{\ensuremath{ \aS {\rm et} }_\DE}
+\newcommand{\Fin}{\ensuremath{ \aF in }}
+\newcommand{\Fun}{\ensuremath{ \rm{Fun} }}
+
+
+% blackboard bold letters  b then capital letter
+%%   Change \Bbb to \mathbb (for consistency with other LaTeX2e math font
+%%   names):
+%\def\mathbb#1{\protect\text{$\protect\mathbb{#1}$}}
+
+% blackboard bold letters  b then capital letter
+%\def\mathbb#1{\protect\text{$\protect\Bbb{#1}$}}
+\newcommand{\bA}{\mathbb{A}}
+\newcommand{\bB}{\mathbb{B}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bD}{\mathbb{D}}
+\newcommand{\bE}{\mathbb{E}}
+\newcommand{\bF}{\mathbb{F}}
+\newcommand{\bG}{\mathbb{G}}
+\newcommand{\bH}{\mathbb{H}}
+\newcommand{\bI}{\mathbb{I}}
+\newcommand{\bJ}{\mathbb{J}}
+\newcommand{\bK}{\mathbb{K}}
+\newcommand{\bL}{\mathbb{L}}
+\newcommand{\bM}{\mathbb{M}}
+\newcommand{\bN}{\mathbb{N}}
+\newcommand{\bO}{\mathbb{O}}
+\newcommand{\bP}{\mathbb{P}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bS}{\mathbb{S}}
+\newcommand{\bT}{\mathbb{T}}
+\newcommand{\bU}{\mathbb{U}}
+\newcommand{\bV}{\mathbb{V}}
+\newcommand{\bW}{\mathbb{W}}
+\newcommand{\bX}{\mathbb{X}}
+\newcommand{\bY}{\mathbb{Y}}
+\newcommand{\bZ}{\mathbb{Z}}
+
+% Greek letters (first two letters, in small or cap; add z for variants)
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+\newcommand{\de}{\delta}
+\newcommand{\pa}{\partial}   %pretend its Greek
+%\newcommand{\ep}{\epsilon}
+\newcommand{\epz}{\varepsilon}
+\newcommand{\ph}{\phi}
+\newcommand{\phz}{\varphi}
+%\newcommand{\et}{\eta}
+%\newcommand{\xi}{\xi}
+\newcommand{\io}{\iota}
+\newcommand{\ka}{\kappa}
+\newcommand{\la}{\lambda}
+%\newcommand{\mu}{\mu}
+%\newcommand{\nu}{\nu}
+\newcommand{\tha}{\theta}
+\newcommand{\thz}{\vartheta}
+%\newcommand{\pi}{\pi}
+\newcommand{\rh}{\rho}
+\newcommand{\si}{\sigma}
+\newcommand{\ta}{\tau}
+\newcommand{\ch}{\chi}
+\newcommand{\ps}{\psi}
+\newcommand{\ze}{\zeta}
+\newcommand{\om}{\omega}
+\newcommand{\GA}{\Gamma}
+\newcommand{\LA}{\Lambda}
+\newcommand{\DE}{\Delta}
+\newcommand{\SI}{\Sigma}
+\newcommand{\THA}{\Theta}
+\newcommand{\OM}{\Omega}
+\newcommand{\XI}{\Xi}
+\newcommand{\UP}{\Upsilon}
+\newcommand{\PI}{\Pi}
+\newcommand{\PS}{\Psi}
+\newcommand{\PH}{\Phi}
+
+% preserve old meaning of \ep when outside of math mode
+%\let\old@ep=\ep
+%\def\ep{\ifmmode\epsilon\else\old@ep\fi}
+% symbols --- three letter commands
+\newcommand{\com}{\circ}     % composition of functions
+\newcommand{\iso}{\cong}     % preferred isomorphism symbol
+\newcommand{\htp}{\simeq}    % homotopy symbol
+\newcommand{\lhtp}{\overset{l}{\sim}}    % homotopy symbol
+\newcommand{\rhtp}{\overset{r}{\sim}}    % homotopy symbol
+\newcommand{\ox}{\otimes}   % tensor product
+\newcommand{\x}{\times}   % cartesian product
+\newcommand{\op}{\oplus}    % direct sum
+\newcommand{\thp}{\ltimes}   % twisted half-smash product
+\newcommand{\w}{\wedge}    % smash product
+\newcommand{\wed}{\vee}      % wedge sum
+
+\newcommand{\ef}{E_\infty}
+\newcommand{\af}{A_\infty}
+
+\newcommand{\ul}{\underline}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SETS - the macro \set and \sset
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \sset, or ``singleton set'' denotes a set of the form \{ x \}.
+% An optional argument is the subscript.  This might typically used
+% for giving an indexing set.
+\newtoks\sset@tok
+\newcommand{\sset}[1]{\sset@tok={#1}\futurelet\sset@temp\sset@action}
+\def\sset@witharg[#1]{\text{$\left\{\the\sset@tok\right\}_{#1}$}}
+\def\sset@withoutarg{\text{$\left\{\the\sset@tok\right\}$}}
+\def\sset@action{\ifx\sset@temp[%]
+\let\sset@next=\sset@witharg\else\let\sset@next=\sset@withoutarg\fi\sset@next}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End readability.
+\catcode`\ =10 \endlinechar=`\^^M
+\endinput % of macromay.sty
+
+
+
+
+

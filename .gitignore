@@ -5,3 +5,5 @@
 *.gz
 *.log
 *.gz
+*.bbl
+*.blg
