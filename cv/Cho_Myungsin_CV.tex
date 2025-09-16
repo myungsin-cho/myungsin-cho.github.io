@@ -1,157 +1,151 @@
-%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Change the font size of your document - 10pt, 12.1pt, etc.
-\documentclass[letterpaper,11pt,oneside]{article}
-\usepackage[utf8]{inputenc}
-\usepackage{setspace}
-\usepackage{hyperref}
+%% start of file `new.tex'.
+%% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
 
-\usepackage{graphicx}
-\graphicspath{ {images/}} %upload your signature to this file
-%Change the margins to fit your CV/resume content
-\usepackage[left=1in, right=1in, bottom=1.25in, top=1.25in]{geometry}
 
-%Skype information - include your Skype name for a link to add you on Skype
-\newcommand*{\Skype}{\href{skype:john.smith?add}{john.smith}} 
-\newcommand{\Absender}[1][\normalsize]{\Skype} 
+\documentclass[11pt,a4paper,roman]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
-%Changes the page numbers - {arabic}=arabic numerals, {gobble}=no page numbers, {roman}=Roman numerals
-\pagenumbering{gobble}
+% moderncv themes
+\moderncvstyle{classic}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                          % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\rmdefault}    % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
 
-%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%%%%%%
+% character encoding
+%\usepackage[utf8]{inputenc}                  % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                         % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
 
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}           % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}      % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\firstname{Myungsin}
+\familyname{Cho}
+\title{\hbox{}}               % optional, remove the line if not wanted
+\address{Department of Mathematics, Columbia University\\2990 Broadway, New York, NY 10027\\}{} % city in same block
+    % optional, remove the line if not wanted
+%\mobile{+98~(000)~000~0000}                     % optional, remove the line if not wanted
+%\phone{+2~(345)~678~901}                      % optional, remove the line if not wanted
+%\fax{+3~(456)~789~012}                        % optional, remove the line if not wanted
+\email{mc5942@columbia.edu}                          % optional, remove the line if not wanted
+\homepage{https://sites.google.com/view/myungsin-cho}                    % optional, remove the line if not wanted
+%\extrainfo{additional information}            % optional, remove the line if not wanted
+%\photo[110pt][0.01pt]{picture.jpg}                  % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%\quote{Some quote (optional)}                 % optional, remove the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
 \begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                     % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
 
-%%%%%%%%%%%%%%%%% NAME OF APPLICANT %%%%%%%%%%%%%%%%%%%
+\section{Appointment}
+\cventry{Aug 2025--}{Ritt Assistant Professor}{}{Columbia University}{}{}{}
 
-\noindent  \LARGE{\textbf{John Smith}} \\
-\vspace{-2ex} 
-\hrule 
-\normalsize
+\section{Education}
+\cventry{July 2025}{Ph.D. in Mathematics}{}{Indiana University Bloomington}{}{}{}
+\cvlistitem {Advisor: \textbf{Prof. Michael Mandell} }
+\cventry{Aug 2018}{M.Sc. in Mathematics}{}{Seoul National University}{}{}{}
+\cvlistitem {Advisor: \textbf{Prof. Otto van Koert}  }
+\cventry{Aug 2015}{B.Sc. in Engineering}{}{Korea Aerospace University}{}{}{}
 
-%%%%%%%%%%%%%%%%% CONTACT INFORMATION %%%%%%%%%%%%%%%%%
-% Your email address, website, and Skype name are links to send email, open your website and add you on Skype. 
 
-\begin{center}
-\begin{tabular}{l l}
- Name of University    & \hspace{1in} \href{mailto:john.smith@email.com}{john.smith@email.com} \\
- Department/Institution    & \hspace{1in}  \href{www.johnsmith.com}{www.johnsmith.com}   \\
- Address             & \hspace{1in} Skype: \Absender  \\
- City Name, State 12345-6789 & \hspace{1in} Phone: +1 (123) 456-7899 \\
-\end{tabular}
-\end{center}
+\section{Research Interests}
+\cvitem{}{Stable homotopy theory, algebraic K-theory, and equivariant algebra, with a focus on duality phenomena, real and equivariant refinements, and connections to number theory, combinatorics.}
 
-\vspace{1em}
+\section{Publications}
+\cvlistitem{\textbf{K-theoretic Tate-Poitou duality at prime 2}, in \textit{Advances in Mathematics}, 477 (2025), Paper No. 110370, 26 pp.}
+\cvlistitem{\textbf{Kobayashi hyperbolicity on analytic stacks} with G. Cho. (in preparation)}
+\cvlistitem{\textbf{Homological trace methods for real topological Hochschild homology} with T. Gerhardt, L. Keenan, J. Moreno, J.D. Quigley. (in preparation)}
+\cvlistitem{\textbf{Realizability of compatible pairs} with D. Chan, D. Mehrle, P. Sanchez Ocal, A. Osorno, B. Szczesny, and P. Verdugo. (in preparation)}
 
-%%%%%%%%%%%%%%%%% MAIN BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% The main body is contained in a tabular environment. To move sections onto the next page, simply end the tabular environment and begin a new tabular environment.
+\section{Honors \& Awards}
+\cvitem{2025}{Outstanding Thesis Award, Indiana University}
+\cvitem{2024--2025}{College of Arts and Sciences Dissertation Research Fellowship, Indiana University}
+\cvitem{2019}{Robert E. Weber Memorial Award, Indiana University}
+\cvitem{2016}{Lecture and Research Scholarship, Seoul National University}
 
-\noindent \begin{tabular}{@{} l l}
- \Large{Education}    & \textbf{Most Recent University} \\
-     & Ph.D., Economics, 2015. \\
-     & Fields: International Trade, Monetary Economics, Development \\
-     & M.A., Political Science, 2013. \\
-     & \\
-     & \textbf{University of Illinois Champaign-Urbana} \\
-     & B.A., Economics, 2005. \\
-     & \\
- \Large{Dissertation}    & ``Title of Dissertation" \\
-    & \parbox{5.0in}{Short description/summary of research and estimation techniques. This can be several lines long because of the paragraph box.}\\
-    & \\
- \Large{Research}    & \textbf{Department, University} \\
-     & Postdoctoral Research Associate \\
-     & Project: Title of Research \\
-     & \\
-  \Large{Teaching}   & \textbf{Department, University} \\
-     & Instructor, Fundamentals of the Global Economy, 2016 \\
-     & \\
-     &\textbf{Department, University} \\
-     & Job Title, Course Name, 2014-2015 \\
-     & Job Title, Course Name, 2012-2014 \\
-     & \\
-     & \textbf{Department, University} \\
-     & Job Title, Course Name, 2013 \\
-     & Job Title, Course Name, 2013 \\
-     & \\
- \Large{Awards and }    & \textbf{Graduate Student Teacher of the Year, Department} \\
-  \Large{Fellowships}   & Course Name, 2014-2015 \\
-     & \\
-     & \textbf{Fulbright Scholarship} \\
-     & City, Country, 2006-2009 \\
-     & \\
-  \Large{Languages}   & English (native), German (advanced) \\
-\Large{and Skills}    & Stata, \LaTeX, Eviews, Mathematica  \\
-\end{tabular}
 
-\newpage
+\section{Talks}
+\subsection{Invited}
+\cvitem{Jan 2026}{Joint Mathematics Meetings, Special Session on New Voices in Homotopy Theory}
+\cvitem{Apr 2025}{Indiana University, Algebra Seminar}
+\cvitem{Mar 2025}{AMS 2025 Spring Central Sectional Meeting, Special Session on Homotopy Theory and Algebraic K-Theory}
+\cvitem{Oct 2024}{Columbia University, Algebraic Topology Seminar}
+\cvitem{Oct 2024}{University of Virginia, Topology Seminar}
+\cvitem{Sep 2024}{Indiana University, Topology Seminar}
+\cvitem{Sep 2024}{Ohio State University, Homotopy Seminar}
+\cvitem{Jan 2024}{FRG Virtual Seminar}
+\subsection{Contributed}
+\cvitem{Aug 2024}{MathFest 2024, Contributed Session: Advances in Algebraic Topology, Indianapolis}
+\cvitem{Nov 2023}{BUGCAT Conference, Binghamton University}
+\cvitem{Jun 2023}{Scissors Congruence, Algebraic K-Theory, and Trace Methods, Indiana University}
 
-%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%%%%%%%%%
-% The reference section has links to your references' websites and email addresses.
 
-\noindent \begin{tabular}{@{} l l l}
- \Large{References} & \href{http://www.professorone.com}{Professor One} & \href{http://www.professortwo.com}{Professor Two} \\
- & Department Name &  Department Name  \\
- & University Name &  University Name \\
- & \small{\href{mailto:prof1@email.com}{prof1@email.com},+1\,(123)\,456-7899} & \small{\href{mailto:prof2@email.com}{prof2@email.com},+1\,(987)\,654-3210} \\
-&& \\
- & \href{http://www.professorthree.com}{Professor Three} & \href{http://www.professorfour.com}{Professor Four}  \\
- & Department Name &  Department Name \\
- & University Name &  University Name \\
- & \small{\href{mailto:prof3@email.com}{prof3@email.com},+1\,(123)\,789-1011} & \small{\href{mailto:prof4@email.com}{prof4@email.com},+1\,(789)\,456-9879} \\
-\end{tabular}
+\section{Teaching}
+
+\subsection{Columbia University}
+\cvitem{}{ Analysis and Optimization (F2025)}
+
+\subsection{Indiana University Bloomington}
+\cvitem{}{ Calculus 3 (TA, F2019, S2022, F2023, S2024)}
+\cvitem{}{ Calculus 1 (F2022)}
+\cvitem{}{ Calculus 2 (TA, F2019)}
+\cvitem{}{ Mathematics of Decision and Beauty (Co-instructor, Su2020, F2020, S2021)}
+
+
+\subsection{Seoul National University}
+\cvitem{}{Calculus I/II -- \textsc{TA} (multiple semesters, 2015–2018)}
 
 
 
-\clearpage
-\setlength\parindent{0cm}
-\pagenumbering{gobble} %cover letter should be one page, {gobble}=no page number
+\section{Mentoring}
+\subsection{Directed Reading Program (Indiana University)}
+\cvitem{Fall 2023}{\emph{Exponential Law in Vector Spaces — A Glimpse of the Adjoint Isomorphism Theorem}. Book: J.\ Rotman, \emph{An Introduction to Homological Algebra}.}
+\cvitem{Spring 2023}{\emph{Simplicial Homotopy Theory}. Book: P.\ Goerss and R.\ Jardine, \emph{Simplicial Homotopy Theory}.}
+\cvitem{Fall 2022}{\emph{A Ring Structure on Vector Bundles}. Book: M.\ Aguilar, S.\ Gitler, C.\ Prieto, \emph{Algebraic Topology from a Homotopical Viewpoint}.}
+\subsection{Undergraduate Tutoring (SNU)}
+\cvitem{Fall 2016}{Introduction to Analysis 1}
 
 
 
-\begin{flushright}
- \today                           \\
- \vspace{1em}                              
- Home University            \\
- Home Department                  \\
- Street Address                       \\
- City, State. 12345-67899   \\
- Phone: +1 (123) 456-7899         \\
-\href{mailto:john.smith@email.com}{john.smith@email.com}  \\ %insert your email address here for a clickable link
-\end{flushright}
+\section{Service and Organizational Activities}
+\cvitem{2025--2026}{Algebraic Topology Seminar, Columbia University}
+\cvitem{2024--2025}{Topology Seminar, Indiana University}
+\cvitem{Apr 2025}{Graduate Student Topology and Geometry Conference 2025, Indiana University}
+\cvitem{Fall 2023}{Reading Seminar on Equivariant Stable Homotopy Theory, Indiana University}
+\cvitem{May 2023}{Reading Seminar on Stable Homotopy Theory, Indiana University}
+\cvitem{Fall 2021}{Graduate Student Homotopy Theory Seminar, Indiana University}
+\cvitem{Spring 2021}{Graduate Student Homotopy Theory Seminar, Indiana University}
+\cvitem{2015--2018}{Mathemaniac (Graduate Student Biannual Seminar), Seoul National University}
 
 
-\begin{flushleft}
- \textbf{Faculty Search Committee}         \\
- Name of University \\
-Name of Department                  \\
-Address of Department \\
-City, State. Zip Code
-\end{flushleft}
 
-\vspace{2em}
+\section{References}
+\cvlistitem{\textbf{Michael Mandell} \\ Department of Mathematics, Indiana University Bloomington \\mmandell@iu.edu\\}
+\cvlistitem{\textbf{Andrew Blumberg} \\ Department of Mathematics, Columbia University \\andrew.blumberg@columbia.edu\\}
+\cvlistitem{\textbf{Ayelet Lindenstrauss} \\ Department of Mathematics, Indiana University Bloomington \\ alindens@iu.edu\\}
+\cvlistitem{\textbf{Vladimir Eiderman} (teaching) \\ Department of Mathematics, Indiana University Bloomington \\ veiderma@iu.edu\\}
 
-Dear Sir or Madam, \\
 
-\vspace{1em}
-\onehalfspacing
 
-My name is John Smith and I'm applying to the academic position in this subject at the Name of University. I have experience teaching something and something else and my research focuses on this and that. I completed my Ph.D. in this subject in September 2015 at my alma mater.
-
-\vspace{1em}
-
-My educational background is in this and that at the former university along with an earned Master's and Ph.D. degree in this recent subject at this alma mater. I have taught this, that, and everything else. My research is in this area, that area, and another area still.
-
-\vspace{1em}
-
-My dissertation advisor, Professor Head Adviser, and committee members Professor Two and Professor Three have been instrumental throughout my time at Home University. Please feel free to contact me with any questions.
-
-\vspace{1em}
-
-\begin{flushright}
-Sincerely, \\
-\vspace{1em} 
-\includegraphics[scale=0.4]{Phillips} \\ %insert your own signature here
-\vspace{1em} 
-John Smith \\
-\end{flushright}
 
 \end{document}
+
+
+%% end of file `template.tex'.
