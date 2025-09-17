@@ -153,25 +153,32 @@ In what follows, I describe how my work builds on these ideas, beginning with th
 \subsection{Algebraic K-theory and Arithmetic Duality}
 My dissertation work explores connections between algebraic K-theory, number theory, and topology, focusing on fundamental questions about the structure of rings of integers in number fields and related objects. {\it Algebraic K-theory} is a powerful invariant that captures both algebraic and geometric information, playing a central role in arithmetic geometry. A fundamental duality algebraic number theory is {\it arithmetic Tate-Poitou duality}, which describes profound relationships between the cohomology groups of number rings and their completions. Motivated by the intricate relationships described by fundamental arithmetic dualities like Tate-Poitou duality, exploring their K-theoretic analogues has become an important direction of investigation.
 
-My work \cite{Cho} establishes a crucial step towards this goal by proving {\it K-theoretic Tate-Poitou duality at prime 2}. This theorem provides a homotopical refinement of the classical arithmetic duality, revealing structural relationships within the {\it $K(1)$-localized algebraic K-theory} of a number ring and its completions. Specifically, for a number field $F$, I prove a {\it canonical weak equivalence} between the {\it homotopy fiber of the completion map} $\ka$ in $K(1)$-local algebraic K-theory:
-\[\ka: L_{K(1)}K(\calO[\tfrac{1}{2}]) \to \prod_{\nu\in S} L_{K(1)}K (F_\nu^\w)\]
- and a form of {\it $\bZ_2$-Anderson dual} applied to the algebraic K-theory of the input ring: 
+My work establishes a crucial step towards this goal by proving {\it K-theoretic Tate-Poitou duality at prime 2}. This theorem provides a homotopical refinement of the classical arithmetic duality, revealing structural relationships within the {\it $K(1)$-localized algebraic K-theory} of a number ring and its completions.
+\begin{theorem}[\cite{Cho}]
+Let $F$ be a number field.
+There is a canonical weak equivalence between  the {\it homotopy fiber of the completion map} $\ka$ in $K(1)$-local algebraic K-theory:
+\[\ka: L_{K(1)}K(\calO_F[\tfrac{1}{2}]) \longrightarrow \prod_{\nu \mid 2} L_{K(1)}K(F_\nu^\w)\]
+and the $\bZ_2$-Anderson dual of the algebraic $K$-theory of $\calO_F[\tfrac{1}{2}]$:
  \begin{equation}\label{fib}
  \Fib(\ka) \simeq \SI^{-1} I_{\bZ_2} L_{K(1)}K(\calO_F[\tfrac{1}{2}]).
 \end{equation}
+\end{theorem}
 
-A significant application and consequence of this main duality theorem is a new insight into the algebraic K-theory of the {\it sphere spectrum} ($\bS$). The sphere spectrum, a fundamental object in stable homotopy theory, behaves in many ways like the ring of integers $\bZ$ in classical algebra. Using my K-theoretic Tate-Poitou duality (specifically, for the rational numbers $\bQ$), combined with foundational results in the field, I proved that the connective cover of the homotopy fiber of the 2-completed {\it cyclotomic trace map} $\ta_\bS$ for the sphere spectrum:
-\[\ta_\bS: K(\bS)_2^\w \to TC(\bS)_2^\w\]
- is weakly equivalent to the $\bZ_2$-Anderson dual of the $K(1)$-localized algebraic K-theory of the integer: 
-\[\Fib(\ta_\bS)[0,\infty) \simeq \SI^{-1}I_{\bZ_2} L_{K(1)} K(\bZ)[0,\infty).\]
-This result makes explicit calculations in the $2$-primary algebraic K-theory of $\bS$ possible, and it clarifies how the homological behavior of the integers enters stable homotopy theory through algebraic K-theory.
+A significant application and consequence of this main duality theorem is a new insight into the algebraic K-theory of the {\it sphere spectrum} ($\bS$).
+Using the case $F=\bQ$ together with {\it trace methods}, one obtains the following result.
+\begin{corollary}[\cite{Cho}]
+Let $\ta_\bS: K(\bS)_2^\w \to TC(\bS)_2^\w$ be the $2$-completed cyclotomic trace map for the sphere spectrum.
+After taking connective covers, the homotopy fiber $\Fib(\ta_\bS)$ is canonically weakly equivalent to the $\bZ_2$-Anderson dual of $L_{K(1)}K(\bZ)$:
+\[\Fib(\ta\bS)[0,\infty) \simeq \Sigma^{-1} I{\bZ_2}\, L_{K(1)}K(\bZ)[0,\infty).\]
+\end{corollary}
+This result makes explicit calculations in $K(\bS)_2^\w$ possible, and shows how the homological behavior of the integers enters stable homotopy theory through algebraic K-theory.
+
+It also extends foundational results of Blumberg, Mandell, and Yuan \cite{MR4121155,BMY}, who proved the duality at odd primes and conjectured its validity for $p=2$. The prime $2$ case presents distinctive challenges because of the essential role of real embeddings of number fields, which fundamentally change the behavior of related invariants and require new technical methods not needed in the odd prime case.
 
 Furthermore, the homotopy fiber of the completion map $\Fib(\ka)$ that appears in (\ref{fib}) is known to be related to objects studied in other areas, including the {\it $p$-adic Langlands correspondence} \cite{MR2905536} and {\it compactly supported K-theory} \cite{MR3211458}. 
 By giving a precise description of $\Fib(\ka)$, my work sets the stage for examining how it interacts with related structures with these structures.
 
-This work extends foundational results by Blumberg, Mandell and Yuan \cite{MR4121155,BMY}, who proved this duality for odd primes and conjectured its validity for the prime 2 case. The prime 2 case presents unique and significant challenges due to the essential role of real embeddings of the number field, which fundamentally alters the behavior of related invariants and necessitates new technical machinery not required in the odd prime setting.
-
-This research develops new methods in algebraic K-theory that clarify the structure of number rings and yield concrete tools for studying central objects such as the sphere spectrum.
+This research develops new methods in 2-primary algebraic K-theory that clarify the structure of number rings and yield concrete tools for studying central objects such as the sphere spectrum.
 The K-theoretic Tate-Poitou duality established here has numerous potential implications and suggests several directions for future investigation in more general settings.
 
 \subsection{Real algebraic K-theory and homological trace methods}
@@ -193,17 +200,21 @@ Achieving such an analogue would furnish concrete computational tools and clarif
 
 
 \subsection{Equivariant algebras and homotopical combinatorics}
-My research in {\it equivariant algebra} focuses on transfer systems \cite{MR4244201}, which encode the combinatorial structure behind algebraic operations arising from equivariant stable homotopy theory.
-A transfer system is essentially a way of selecting a subset of possible ``transfer'' operations between subgroups, subject to natural coherence conditions such as compatibility with conjugation and restriction.
+My research in {\it equivariant algebra} focuses on {\it transfer systems} \cite{MR4244201}, which encode the combinatorial structure behind algebraic operations arising from equivariant stable homotopy theory.
+A transfer system is essentially a way of selecting a subset of possible ``{\it transfer}'' operations between subgroups, subject to natural coherence conditions such as compatibility with conjugation and restriction.
 They provide the combinatorial input for understanding algebraic structures (e.g., {\it Tambara functors}) that arise in equivariant stable homotopy theory.
 
-{\it Tambara functors} \cite{MR1209937} arise as the $\pi_0$ of commutative $G$-ring spectra in genuine equivariant stable homotopy theory, and admit natural variations such as {\it incomplete} and {\it bi-incomplete} Tambara functors \cite{MR3773736,MR4327103}.
-The structure of these functors--particularly the presence or absence of certain additive (transfers) and multiplicative (norms) operations--is precisely determined by the data of the associated transfer system, subject to natural coherence conditions \cite{MR4696086}.
+Tambara functors \cite{MR1209937} arise as the $\pi_0$ of commutative $G$-ring spectra in genuine equivariant stable homotopy theory, and admit natural variations such as {\it incomplete} and {\it bi-incomplete} Tambara functors \cite{MR3773736,MR4327103}.
+The structure of these functors--particularly the presence or absence of certain additive (transfers) and multiplicative (norms) operations--is precisely determined by the data of the associated transfer systems, subject to natural coherence conditions \cite{MR4696086}, often formulated as the requirement that the additive and multiplicative transfer systems form a compatible pair.
 In this way, transfer systems provide the link between combinatorial data and the $N_\infty$-operad which parametrizes the admissible operations on commutative $G$-ring spectra.
 
 In collaboration with David Chan, David Mehrle, Pablo Sanchez Ocal, Angelica Osorno, Ben Szczesny, and Paula Verdugo, our work aims to establish an equivalence between two descriptions of the structures governing incomplete Tambara functors. 
-One is a combinatorial description using compatible pairs of transfer systems, and the other is a homotopical description using {\it pairing of operads} \cite{MR2544392}. Our team has proved one direction of this equivalence: that an action of one $N_\infty$-operad on another implies their associated transfer systems form a compatible pair. 
-We have also established the converse in the case where the additive transfer system is complete. A primary goal of our ongoing work is to prove the converse in full generality--that any compatible pair of transfer systems can be realized as an $N_\infty$-operad action. Achieving this equivalence would provide a unified framework for understanding the structures governing incomplete Tambara functors, bridging combinatorial and operadic perspectives.
+One is a combinatorial description using compatible pairs of transfer systems, and the other is a homotopical description using {\it pairing of operads} \cite{MR2544392}. Our team has proved one direction of this equivalence, and a partial result toward the converse.
+\begin{theorem}[Chan–Mehrle–Sanchez Ocal–Osorno–Szczesny–Verdugo]
+An action of one $N_\infty$-operad on another implies that their associated transfer systems form a compatible pair.
+If a compatible pair of transfer systems has a complete additive component, then there exists a pairing of $N_\infty$-operads that realizes it.
+\end{theorem}
+A primary goal of our ongoing work is to prove the converse in full generality--that any compatible pair of transfer systems can be realized as an $N_\infty$-operad action. Achieving this equivalence would provide a unified framework for understanding the structures governing incomplete Tambara functors, bridging combinatorial and operadic perspectives.
 
 
 \section{Future research direction}
