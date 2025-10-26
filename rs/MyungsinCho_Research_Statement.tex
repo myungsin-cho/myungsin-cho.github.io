@@ -169,7 +169,7 @@ For example, in the case of the cyclic group $C_{p^2}$, the possible transfer sy
   % x: 5.0, 6.5, 8.0, 9.5, 11.0 / y: 0, 1, 2
   % (각 기둥을 먼저 박스로 감싸기 위해 박스부터 그림)
   \foreach \x in {5.0,6.5,8.0,9.5,11.0}{
-    \draw[gray!70, densely dotted, rounded corners=3pt]
+    \draw[gray!100, densely dotted, rounded corners=3pt]
       (\x-0.45,-0.3) rectangle (\x+0.45,2.3);
   }
 
@@ -178,21 +178,21 @@ For example, in the case of the cyclic group $C_{p^2}$, the possible transfer sy
 
   % (2) bottom–middle
   \node at (6.5,0) {$\bullet$}; \node at (6.5,1) {$\bullet$}; \node at (6.5,2) {$\bullet$};
-  \draw (6.5,0.1) -- (6.5,0.9);
+  \draw (6.5,0.2) -- (6.5,0.8);
 
   % (3) middle–top
   \node at (8.0,0) {$\bullet$}; \node at (8.0,1) {$\bullet$}; \node at (8.0,2) {$\bullet$};
-  \draw (8.0,1.1) -- (8.0,1.9);
+  \draw (8.0,1.2) -- (8.0,1.8);
 
   % (4) full chain
   \node at (9.5,0) {$\bullet$}; \node at (9.5,1) {$\bullet$}; \node at (9.5,2) {$\bullet$};
-  \draw (9.5,0.1) -- (9.5,0.9);
+  \draw (9.5,0.2) -- (9.5,0.8);
   \draw plot [smooth, tension=1.4] coordinates {(9.6,0.1) (9.9,1.0) (9.6,1.9)};
 
   % (5) chain + curved bottom–top
   \node at (11.0,0) {$\bullet$}; \node at (11.0,1) {$\bullet$}; \node at (11.0,2) {$\bullet$};
-  \draw (11.0,0.1) -- (11.0,0.9);
-  \draw (11.0,1.1) -- (11.0,1.9);
+  \draw (11.0,0.2) -- (11.0,0.8);
+  \draw (11.0,1.2) -- (11.0,1.8);
   \draw plot [smooth, tension=1.4] coordinates {(11.1,0.1) (11.4,1.0) (11.1,1.9)};
 \end{tikzpicture}
 \captionsetup{font=footnotesize} % ← 캡션 크기 줄이기
@@ -208,7 +208,7 @@ In collaboration with David Chan, David Mehrle, Pablo Sanchez Ocal, Angelica Oso
 a combinatorial one, formulated in terms of compatible pairs of transfer systems, and a homotopical one, expressed via {\it pairings of operads} \cite{MR2544392}.
 Constructing such pairings is a subtle problem even in the non-equivariant case, and our results provide the first systematic framework for realizing them in the genuine equivariant setting.
 
-\begin{theorem}[Chan–C.–Mehrle–Sanchez Ocal–Osorno–Szczesny–Verdugo]
+\begin{theorem}[\cite{CCM+}]
 An action of one $N_\infty$-operad on another implies that their associated transfer systems form a compatible pair.
 If a compatible pair of transfer systems has a complete additive component, then there exists a pairing of $N_\infty$-operads that realizes it.
 \end{theorem}
@@ -299,7 +299,7 @@ A complementary direction of my research concerns the study of {\it hyperbolicit
 In complex geometry, notions of hyperbolicity—such as those of {\it Brody} and {\it Kobayashi}—capture rigidity phenomena and asymptotic constraints on holomorphic maps.
 Work of Borghesi and Tomassini \cite{MR3673667} has extended these ideas to {\it stacks} and {\it simplicial presheaves}, showing that hyperbolicity can be meaningfully formulated beyond the classical context of complex manifolds.
 
-As a first step in this direction, my collaborator Geonhee Cho and I are developing a stack-theoretic extension of the Green–Griffiths–Demailly (GGD) method for studying Brody hyperbolicity via jet differentials on compact analytic Deligne–Mumford stacks.
+As a first step in this direction, my collaborator Geonhee Cho and I are developing a stack-theoretic extension of the {\it Green–Griffiths–Demailly} method for studying Brody hyperbolicity via jet differentials on compact analytic {\it Deligne–Mumford stacks}.
 This project establishes an analytic foundation that unifies the study of hyperbolicity for complex manifolds and orbifold quotients while preserving the asymptotic behavior of Green–Griffiths bundles.
 It provides the analytic groundwork for a broader program aimed at formulating hyperbolicity for higher and derived stacks.
 
