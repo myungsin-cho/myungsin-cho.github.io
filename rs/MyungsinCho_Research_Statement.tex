@@ -62,11 +62,13 @@
 \newtheorem*{conjecture}{Conjecture}
 
 \let\overto\xrightarrow
-
+\title{Research Statement}
+\author{Myungsin Cho}
+\date{}
 \begin{document}
-\begin{center}\LARGE{Research Statement}
-\end{center}
-\vspace{1em}
+%\begin{center}\LARGE{Research Statement}\end{center}\vspace{1em}
+
+\maketitle
 
 Algebraic topology began as a way to use algebraic methods to study and classify spaces, but over time it has become central to the interaction between algebra and topology in modern mathematics.
 My research investigates how techniques from algebraic topology can clarify homotopical structures of algebraic systems such as number fields and equivariant commutative rings.
@@ -81,10 +83,10 @@ In what follows, I describe how these ideas take shape in my recent and ongoing 
 
 \subsection{Algebraic K-theory and Arithmetic Duality.}
 My dissertation investigates how duality phenomena from number theory manifest in algebraic K-theory, focusing on the structure of rings of integers in number fields and their completions.
-In arithmetic geometry, a central duality known as Tate–Poitou duality describes relationships between the cohomology of number rings and their completions. 
+In arithmetic geometry, a central duality known as {\it Tate–Poitou duality} describes relationships between the cohomology of number rings and their completions. 
 A natural question is whether an analogous duality exists in algebraic K-theory, where homotopical methods can capture deeper structural connections between arithmetic and topology.
 
-The case at the prime $2$ had remained open since the work of Blumberg and Mandell, who proved the duality for all odd primes but left the even-prime case conjectural due to the essential role of real embeddings and the resulting technical complications.
+The case at the prime $2$ had remained open since the work of Blumberg and Mandell \cite{MR4121155}, who proved the duality for all odd primes but left the even-prime case conjectural due to the essential role of real embeddings and the resulting technical complications.
 My dissertation resolves this case, establishing a K-theoretic version of Tate–Poitou duality at the prime $2$.
 
 \begin{theorem}[\cite{Cho}]
@@ -104,11 +106,11 @@ and the $\bZ_2$-Anderson dual of the algebraic K-theory of $\calO_F[\tfrac{1}{2}
     \arrow[d, decorate, decoration={snake, amplitude=0.3mm, segment length=2.5mm}, 
            "\text{\footnotesize Thomason SS}" right]
     &
-  {H^s_{\textup{\'et}}\!\big(\calO_F[\tfrac{1}{p}];\,\bZ_p(\tfrac{t}{2})\big)}
+  {H^s_{\textup{\'et}}\!\big(\calO_F[\tfrac{1}{p}];\,\bZ/p^k(\tfrac{t}{2})\big)}
     \arrow[d, Rightarrow]
     \arrow[rr, leftrightarrow, "\text{\footnotesize Pontryagin dual}"]
     &&
-  {H^{3-s}_c\!\big(\calO_F[\tfrac{1}{p}];\,\bQ_p/\bZ_p(\tfrac{t}{2})\big)}
+  {H^{3-s}_c\!\big(\calO_F[\tfrac{1}{p}];\,\bZ/p^k(-\tfrac{t}{2})\big)}
     \arrow[d, Rightarrow] \\[1ex]
   \textbf{\small Homotopical duality:}
     &
@@ -196,7 +198,7 @@ For example, in the case of the cyclic group $C_{p^2}$, the possible transfer sy
   \draw plot [smooth, tension=1.4] coordinates {(11.1,0.1) (11.4,1.0) (11.1,1.9)};
 \end{tikzpicture}
 \captionsetup{font=footnotesize} % ← 캡션 크기 줄이기
-\caption{Subgroup lattice of $C_{p^2}$ (left) and the five distinct transfer systems (right). These five systems classify, up to homotopy, the $N_\infty$-operads for $C_{p^2}$.}
+\caption{Subgroup lattice of the cyclic group $C_{p^2}$ of order $p^2$  (left) and its five distinct transfer systems (right). These five systems classify, up to homotopy, the $N_\infty$-operads for $C_{p^2}$.}
 \label{fig:transferCp2}
 \end{figure}
 
@@ -259,10 +261,15 @@ In particular, we aim to establish a {\it real analogue of the Segal conjecture}
 %This work, now available as a preprint, lays the analytic groundwork for a broader program aimed at extending hyperbolicity to higher and derived stacks.
 
 \section{Future research direction}
-My future research direction build directly on my current work, extending results on duality phenomena in algebraic K-theory and pursuing further developments in equivariant algebra.
-I am also interested in exploring connection to complex geometry, where tools from algebraic K-theory and equivariant methods may reveal new interactions.
-In addition to these research programs, I plan to create opportunities for accessible projects that emphasize concrete computations and examples, particularly in areas such as homotopical combinatorics and topological data analysis.
-These topics are well suited for undergraduate involvement and provide natural entry points into algebraic topology and I see engaging students in such projects as an essential part of advancing the field and training the next generation of researchers.
+My future research builds directly on my current work, extending results on duality phenomena in algebraic K-theory and advancing the foundations of equivariant algebra. 
+A central aim is to further develop the connections between homotopical methods, arithmetic dualities, and symmetry in algebraic and geometric contexts.
+
+I am particularly interested in exploring links to complex and derived geometry, where tools from algebraic K-theory and equivariant homotopy theory may reveal new relationships between curvature, symmetry, and cohomological phenomena. 
+This direction naturally extends the analytic and homotopical aspects of my research, bridging ideas from topology and geometry.
+
+In parallel, I plan to develop projects that emphasize concrete computations and examples, especially in areas such as homotopical combinatorics and topological data analysis. 
+These topics are well suited for undergraduate involvement and provide natural entry points into algebraic topology. 
+I view cultivating such accessible research directions as an essential part of advancing the field and training the next generation of mathematicians.
 
 \subsection*{Duality and Symmetry in Algebraic K-theory}
 Building on my work on K-theoretic Tate–Poitou duality, I plan to extend these ideas in several directions: higher-dimensional analogues, chromatic refinements, and new formulations in the real algebraic K-theory setting.
@@ -326,12 +333,12 @@ These connections remain an active area of research, and concrete case studies i
 In this way, projects in combinatorics and TDA serve not only as entry points for undergraduate participation but also as stepping stones toward more advanced problems aligned with my core research agenda.
 
 \section{Conclusion}
-Across these projects, a unifying theme of my research is the use of duality, symmetry, and equivariant structures to connect algebra, topology, and geometry.
-From establishing K-theoretic Tate-Poitou duality at prime 2, to developing foundations for equivariant commutative algebra, to extending notions of hyperbolicity to derived stacks, my works focus how homotopical methods can clarify and connect seemingly disparate parts of mathematics.
+A recurring theme throughout my research is the use of duality, symmetry, and equivariant structures to uncover how algebraic, topological, and geometric ideas inform one another. 
+From establishing K-theoretic duality at the prime 2 to developing foundations for equivariant commutative algebra and exploring geometric extensions through derived stacks, my work emphasizes how homotopical methods can reveal deep structural relationships across different areas of mathematics.
 
-Looking ahead, my long term goal is to build a coherent research program where these methods not only advance our understanding of (real) algebraic K-theory and equivariant algebra, but also provide computational tools and conceptual frameworks that other can build on.
-Equally important to me is ensuring that parts of this program remain accessible at multiple levels, including problems suitable for undergraduate research.
-In this way, my research combines technical development with opportunities for broad participation.
+Looking ahead, my goal is to develop a coherent and sustainable research program that advances the study of algebraic K-theory and equivariant algebra while providing conceptual and computational tools that others can build on. 
+Equally important to me is keeping parts of this program accessible at multiple levels—offering concrete projects for students and fostering broad participation in homotopy-theoretic research. 
+In this way, my research aims to contribute both to the technical development of the field and to the collaborative growth of the mathematical community.
 
 \bibliography{RS_bib}
 \bibliographystyle{alphaurl}
