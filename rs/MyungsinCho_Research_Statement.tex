@@ -66,25 +66,23 @@
 \author{Myungsin Cho}
 \date{}
 \begin{document}
-%\begin{center}\LARGE{Research Statement}\end{center}\vspace{1em}
+\begin{center}\LARGE{Research Statement}\end{center}\vspace{.5em}
+%\maketitle
 
-\maketitle
-
-Algebraic topology began as a way to use algebraic methods to study and classify spaces, but over time it has become central to the interaction between algebra and topology in modern mathematics.
-My research investigates how techniques from algebraic topology can clarify homotopical structures of algebraic systems such as number fields and equivariant commutative rings.
-My thesis work translates a duality principle from arithmetic geometry into the language of homotopy theory, showing how ideas from topology can mirror and illuminate phenomena in number theory.
-More broadly, I explore the interplay of stable homotopy theory with algebraic K-theory, equivariant algebra, and combinatorics, aiming to identify precise correspondences between different mathematical descriptions and to develop new tools for studying algebraic invariants and equivariant objects.
-
+Algebraic topology, originally developed to study spaces via algebraic invariants, now plays a central role in connecting algebra and topology.
+My research investigates how techniques from algebraic topology can reveal homotopical structures of algebraic systems such as number fields and equivariant commutative rings.
+My doctroal thesis translates a duality principle from arithmetic geometry into homotopy theory, revealing parallel structures between topology and number theory.
+More broadly, my work aims to clarify how homotopical ideas organize diverse phenomena across topology and arithmetic, revealing underlying patterns and methods for computation.
 \section{Current research and direction}
 
-My current research program develops this perspective through three interconnected themes within {\it stable homotopy theory}, {\it algebraic K-theory}, and {\it equivariant algebra}, with additional links to number theory and combinatorics.
+My current research program builds on a homotopical perspective that connects algebra, topology, and arithmetic through three interconnected themes: {\it stable homotopy theory}, {\it algebraic K-theory}, and {\it equivariant algebra}, with further links to number theory and combinatorics.
 Rather than treating these areas separately, I study how structural ideas—such as duality, symmetry, and operadic compatibility—emerge across them in parallel forms.
 In what follows, I describe how these ideas take shape in my recent and ongoing work.
 
 \subsection{Algebraic K-theory and Arithmetic Duality.}
 My dissertation investigates how duality phenomena from number theory manifest in algebraic K-theory, focusing on the structure of rings of integers in number fields and their completions.
 In arithmetic geometry, a central duality known as {\it Tate–Poitou duality} describes relationships between the cohomology of number rings and their completions. 
-A natural question is whether an analogous duality exists in algebraic K-theory, where homotopical methods can capture deeper structural connections between arithmetic and topology.
+A natural question is whether an analogous duality exists in algebraic K-theory.
 
 The case at the prime $2$ had remained open since the work of Blumberg and Mandell \cite{MR4121155}, who proved the duality for all odd primes but left the even-prime case conjectural due to the essential role of real embeddings and the resulting technical complications.
 My dissertation resolves this case, establishing a K-theoretic version of Tate–Poitou duality at the prime $2$.
@@ -99,6 +97,8 @@ and the $\bZ_2$-Anderson dual of the algebraic K-theory of $\calO_F[\tfrac{1}{2}
 \end{equation}
 \end{theorem}
 
+This equivalence can be viewed as a homotopical counterpart of classical Artin-Verdier duality.
+Figure~\ref{fig:duality} illustrates how the arithmetic and homotopical dualities align, connected through the Thomason descent spectral sequence.
 \begin{figure}[h]
 \centering
 \begin{tikzcd}[column sep=4em, row sep=2em]
@@ -124,6 +124,7 @@ and the $\bZ_2$-Anderson dual of the algebraic K-theory of $\calO_F[\tfrac{1}{2}
 Arithmetic and homotopical dualities in parallel,
 linked by the Thomason descent spectral sequence.
 }
+\label{fig:duality}
 \end{figure}
 
 An immediate consequence of this main theorem gives new insight into the algebraic K-theory of the {\it sphere spectrum} $\bS$.
