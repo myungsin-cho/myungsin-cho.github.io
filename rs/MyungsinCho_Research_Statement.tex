@@ -69,18 +69,120 @@
 \begin{center}\LARGE{Research Statement}\end{center}\vspace{.5em}
 %\maketitle
 
-Algebraic topology, originally developed to study spaces via algebraic invariants, now plays a central role in connecting algebra and topology.
-My research investigates how techniques from algebraic topology can reveal homotopical structures of algebraic systems such as number fields and equivariant commutative rings.
-My doctroal thesis translates a duality principle from arithmetic geometry into homotopy theory, revealing parallel structures between topology and number theory.
-More broadly, my work aims to clarify how homotopical ideas organize diverse phenomena across topology and arithmetic, revealing underlying patterns and methods for computation.
-\section{Current research and direction}
+My research investigates how ideas from algebraic topology illuminate the structural relationships between algebra and arithmetic.
+In particular, I use methods from stable homotopy theory to understand how duality, symmetry, and equivariant phenomena organize and connect seemingly distinct areas of mathematics.
+My doctoral work contributed to leveraging arithmetic duality at the homotopical level, within the framework of algebraic K-theory.
+More broadly, my research aims to develop conceptual and computational tools that reveal how homotopical structures govern both arithmetic and equivariant phenomena.
 
-My current research program builds on a homotopical perspective that connects algebra, topology, and arithmetic through three interconnected themes: {\it stable homotopy theory}, {\it algebraic K-theory}, and {\it equivariant algebra}, with further links to number theory and combinatorics.
-Rather than treating these areas separately, I study how structural ideas—such as duality, symmetry, and operadic compatibility—emerge across them in parallel forms.
-In what follows, I describe how these ideas take shape in my recent and ongoing work.
+\section{Background}
+One of the central aims of topology is to classify spaces according to appropriate notions of equivalence.  
+The most rigid notion of sameness is that of a {\it homeomorphism}, a continuous map with its inverse.  
+While this captures topological equivalence precisely, it is often too strict for understanding spaces up to deformation.  
+{\it Homotopy theory} offers a more flexible perspective by identifying spaces that can be continuously deformed into one another, leading to the notion of a {\it homotopy type}.  
+The resulting invariants, {\it homotopy groups} carry the deepest information: they completely determine the homotopy type, but are notoriously difficult to compute.
+
+A guiding idea in {\it stable homotopy theory} is to study those properties of spaces that are preserved under iterated suspension:
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=1,>=stealth]
+
+  % S^0: two points
+  \node at (0,1.2) {$S^0$};
+  \fill (-0.5,0) circle (2pt);
+  \fill (0.5,0)  circle (2pt);
+
+  % arrow to S^1
+  \draw[->] (1.4,0) -- (2.4,0) node[midway,above] {$\Sigma$};
+
+  % S^1: circle
+  \node at (3.8,1.2) {$\SI S^0 \cong S^1$};
+  \draw (3.8,0) circle (0.6);
+
+  % arrow to S^2
+  \draw[->] (5,0) -- (6,0) node[midway,above] {$\Sigma$};
+
+  % S^2: sphere (projected)
+  \node at (7.0,1.2) {$\SI S^1 \cong S^2$};
+  \draw (7.0,0) circle (0.6);
+  \draw (7.0,-0.6) arc (-90:90:0.2 and 0.6);
+  \draw[dashed] (7.0,0.6) arc (90:270:0.2 and 0.6);
+
+  % arrow to dots
+  \draw[->] (8.2,0) -- (9.2,0) node[midway,above] {$\Sigma$};
+
+  % dots ...
+  \node at (9.8,0) {$\cdots$};
+
+\end{tikzpicture}
+\captionsetup{font=footnotesize}
+\caption{
+Iterated suspensions $\SI^n S^0 \cong S^n$ of spheres.
+}
+\end{figure}
+
+In particular, the {\it Freudenthal suspension theorem} shows that the homotopy classes of maps $[X,Y]$ stabilize after finitely many suspensions, providing a linear approximation to homotopy theory itself.
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[>=stealth, every node/.style={font=\footnotesize}]
+  % Top row: homotopy classes
+  \node (c0) at (0,0.6) {$[S^1,S^0]$};
+  \node (c1) at (2.0,0.6) {$[S^2,S^1]$};
+  \node (c2) at (4.0,0.6) {$[S^3,S^2]$};
+  \node (c3) at (6.0,0.6) {$[S^4,S^3]$};
+  \node (c4) at (8.0,0.6) {$[S^5,S^4]$};
+  \node (c5) at (9.6,0.6) {$\cdots$};
+
+  % Bottom row: resulting groups
+  \node (v0) at (0,-0.6) {$0$};
+  \node (v1) at (2.0,-0.6) {$0$};
+  \node (v2) at (4.0,-0.6) {$\mathbb{Z}$};
+  \node (v3) at (6.0,-0.6) {$\mathbb{Z}/2$};
+  \node (v4) at (8.0,-0.6) {$\mathbb{Z}/2$};
+  \node (v5) at (9.6,-0.6) {$\mathbb{Z}/2$};
+
+  % Horizontal arrows (homotopy classes)
+  \draw[->] (c0) -- (c1) node[midway,above] {$\Sigma$};
+  \draw[->] (c1) -- (c2) node[midway,above] {$\Sigma$};
+  \draw[->] (c2) -- (c3) node[midway,above] {$\Sigma$};
+  \draw[->] (c3) -- (c4) node[midway,above] {$\Sigma$};
+  \draw[->] (c4) -- (c5);
+
+  % Horizontal arrows (values)
+  \draw[->] (v0) -- (v1);
+  \draw[->] (v1) -- (v2);
+  \draw[->] (v2) -- (v3);
+  \draw[->] (v3) -- (v4);
+  \draw[dashed,->] (v4) -- (v5);
+
+  % Rotated isomorphisms
+  \foreach \i in {0,1,2,3,4}{
+    \node at ($(c\i)!0.5!(v\i)$) {\rotatebox{90}{$\cong$}};
+  }
+  \node at ($(c5)!0.5!(v5)$) {\rotatebox{90}{$\cong$}};
+
+  % Annotation
+%  \node[right=1pt of v5] {\scriptsize (stabilized value)};
+\end{tikzpicture}
+\captionsetup{font=footnotesize}
+\caption{
+The sequence $0 \to 0 \to \mathbb{Z} \to \mathbb{Z}/2 \to \cdots$ stabilizes at $\mathbb{Z}/2$, illustrating the suspension theorem in a concrete case.
+}
+\end{figure}
+
+Suspensions of homotopy groups eventually stabilize after finitely many iterations, and this stabilization provides the linear approximation described by Freudenthal’s theorem.
+In this stabilized setting, new patterns and algebraic structures emerge, making it possible to study homotopical phenomena that were previously too complex to handle directly.
+This shift—from spaces to stable homotopy types—establishes a framework in which algebraic and homotopical ideas can be applied in a unified way, forming the foundation of modern algebraic topology.
+
+Much of my work takes place within this stable framework, where duality, symmetry, and equivariant structures reveal deep connections between algebra and topology.
+
+\section{Current research and direction}
+Building on the framework of stable homotopy theory, my current research explores how algebraic and homotopical ideas interact across several fronts—particularly through {\it algebraic K-theory}, {\it equivariant algebra}, and their connections to number theory and combinatorics.
+Rather than treating these areas in isolation, I study how organizing principles such as duality, symmetry, and operadic compatibility arise in parallel forms across them.
+The following sections describe how these themes manifest in my recent and ongoing work.
+
 
 \subsection{Algebraic K-theory and Arithmetic Duality.}
-My dissertation investigates how duality phenomena from number theory manifest in algebraic K-theory, focusing on the structure of rings of integers in number fields and their completions.
+My dissertation investigates how duality phenomena from number theory manifest in algebraic K-theory.
 In arithmetic geometry, a central duality known as {\it Tate–Poitou duality} describes relationships between the cohomology of number rings and their completions. 
 A natural question is whether an analogous duality exists in algebraic K-theory.
 
@@ -146,7 +248,7 @@ Overall, this research develops new methods in $2$-primary algebraic K-theory th
 The duality established here offers a model for future generalizations to higher chromatic heights and more general arithmetic contexts.
 
 \subsection{Equivariant algebras and homotopical combinatorics.}
-My research in equivariant algebras investigates how combinatorial structures capture and control algebraic operations arising in equivariant stable homotopy theory.
+My research in equivariant algebras investigates how combinatorial structures capture and control  operations arising in equivariant stable homotopy theory.
 A central organizing idea is the notion of a {\it transfer system} \cite{MR4244201}, which encodes which “transfer” maps between subgroups are allowed, subject to natural coherence conditions such as compatibility with conjugation and restriction.
 For example, in the case of the cyclic group $C_{p^2}$, the possible transfer systems are shown in Figure~\ref{fig:transferCp2}.
 \begin{figure}[h]
@@ -204,13 +306,10 @@ For example, in the case of the cyclic group $C_{p^2}$, the possible transfer sy
 \label{fig:transferCp2}
 \end{figure}
 
-Transfer systems provide a combinatorial model for the algebraic structure underlying genuine equivariant commutative ring spectra, described in terms of {\it Tambara functors} \cite{MR1209937}.
-The presence or absence of additive (transfer) and multiplicative (norm) operations in these functors is governed by a pair of associated transfer systems that must satisfy a compatibility condition, often referred to as forming a {\it compatible pair}.
-Transfer systems form a bridge between discrete combinatorial data and the $N_\infty$-operads that parametrize admissible operations in equivariant stable homotopy theory.
-
-In collaboration with David Chan, David Mehrle, Pablo Sanchez Ocal, Angelica Osorno, Ben Szczesny, and Paula Verdugo, our work aims to establish an equivalence between two parallel descriptions of the structures governing incomplete Tambara functors:
-a combinatorial one, formulated in terms of compatible pairs of transfer systems, and a homotopical one, expressed via {\it pairings of operads} \cite{MR2544392}.
-Constructing such pairings is a subtle problem even in the non-equivariant case, and our results provide the first systematic framework for realizing them in the genuine equivariant setting.
+Transfer systems provide a combinatorial model for the algebraic structure underlying genuine equivariant commutative ring spectra, encoded by {\it Tambara functors} \cite{MR1209937}.
+Their additive (transfer) and multiplicative (norm) operations are governed by a pair of transfer systems satisfying a compatibility condition, forming a {\it compatible pair}.
+In collaboration with David Chan, David Mehrle, Pablo Sanchez Ocal, Angelica Osorno, Ben Szczesny, and Paula Verdugo, we study the correspondence between such combinatorial data and the {\it pairings of $N_\infty$-operads} \cite{MR2544392} that model these operations.
+Constructing these pairings is subtle even non-equivariantly, and our results give the first systematic framework for realizing them in the genuine equivariant setting.
 
 \begin{theorem}[\cite{CCM+}]
 An action of one $N_\infty$-operad on another implies that their associated transfer systems form a compatible pair.
@@ -221,26 +320,22 @@ Motivated by this result, we conjecture that the correspondence between compatib
 \begin{conjecture}
  For every finite group $G$, every compatible pair of $G$-transfer systems should be realizable by some pairing of $N_\infty$-operads.
 \end{conjecture}
+
 Establishing this equivalence would complete the conceptual bridge between the combinatorial and homotopical descriptions of incomplete Tambara functors and provide a combinatorial classification of admissible equivariant multiplicative structures.
 
 
 Building on this framework, we have proved several further realizability results that support this conjecture.
 For instance, the transfer systems associated to the {\it equivariant linear isometries} and {\it Steiner operads} are realized by the corresponding pairing of operads, and $J$-local transfer systems $(\mathcal{T}_J,\mathcal{T}_J)$ are likewise realizable for any subgroup $J\le G$.
+Moreover, we introduce a general construction principle showing that whenever two {\it intersection monoids} $M$ and $N$ admit a pairing $\xi\colon M\times N\to N$, one obtains a corresponding pairing of operads $(\mathcal{O}^{\vee}(M),\mathcal{O}^{\vee}(N))$.
 
-
-Moreover, the conjectural picture can be reduced to verifying realizability for pairs of the form $(\mathrm{Hull}(\mathcal{T}),\mathcal{T})$, where $\mathrm{Hull}(\mathcal{T})$ denotes the {\it multiplicative hull} of $\mathcal{T}$ \cite[7.84]{MR4327103}.
-Finally, we introduce a general construction principle showing that whenever two {\it intersection monoids} $M$ and $N$ admit a pairing $\xi\colon M\times N\to N$, one obtains a corresponding pairing of operads $(\mathcal{O}^{\vee}(M),\mathcal{O}^{\vee}(N))$.
-
-Taken together, these results represent the first systematic progress toward a classification of compatible transfer system pairs and their operadic realizations.
-They clarify how the combinatorial and homotopical perspectives on equivariant algebra fit together within a unified conceptual framework, providing a computable foundation for studying incomplete Tambara functors and genuine equivariant ring spectra.
-Beyond their immediate scope, this work demonstrates how ideas from combinatorics and operad theory can drive new advances in equivariant homotopy theory.
+Together, these results form the first systematic framework for classifying compatible transfer system pairs and understanding how combinatorial and homotopical perspectives on equivariant algebra align.
+They provide a computable foundation for studying incomplete Tambara functors and genuine equivariant ring spectra, and illustrate how ideas from combinatorics and operad theory drive new advances in equivariant homotopy theory.
 
 
 \subsection{Real algebraic K-theory and homological trace methods.}
 Real algebraic K-theory offers a framework for studying algebraic structures equipped with involutive symmetries, combining topological and arithmetic ideas.
 Introduced by Hesselholt and Madsen \cite{HMreal}, it assigns {\it genuine $C_2$-equivariant spectra} to rings with an {\it anti-involution}.
 This theory refines and unifies classical algebraic K-theory, Hermitian K-theory, and $L$-theory by incorporating this additional symmetry.
-Through this perspective, one can study rings with anti-involution in a way that connects naturally to questions in topology and geometry, and recent progress shows that computational tools from equivariant homotopy theory are particularly effective in this setting.
 
 In collaboration with Teena Gerhardt, Liam Keenan, Juan Moreno, and J.D. Quigley, we are extending the {\it homological trace methods} developed by Bruner and Rognes \cite{MR2153113} to the $C_2$-equivariant setting.
 Our work constructs a new spectral sequence based on $RO(C_2)$-graded homology, providing computational access to invariants in real algebraic K-theory.
