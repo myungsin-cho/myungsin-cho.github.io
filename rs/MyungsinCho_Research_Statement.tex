@@ -81,7 +81,7 @@ While this captures topological equivalence precisely, it is often too strict fo
 {\it Homotopy theory} offers a more flexible perspective by identifying spaces that can be continuously deformed into one another, leading to the notion of a {\it homotopy type}.  
 The resulting invariants, {\it homotopy groups} carry the deepest information: they completely determine the homotopy type, but are notoriously difficult to compute.
 
-A guiding idea in {\it stable homotopy theory} is to study those properties of spaces that are preserved under iterated suspension:
+A guiding idea in {\it stable homotopy theory} is to study those properties of spaces that are preserved under iterated suspension $(\SI)$:
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[scale=1,>=stealth]
@@ -97,6 +97,8 @@ A guiding idea in {\it stable homotopy theory} is to study those properties of s
   % S^1: circle
   \node at (3.8,1.2) {$\SI S^0 \cong S^1$};
   \draw (3.8,0) circle (0.6);
+  \fill (3.2,0) circle (1.5pt);
+  \fill (4.4,0)  circle (1.5pt);
 
   % arrow to S^2
   \draw[->] (5,0) -- (6,0) node[midway,above] {$\Sigma$};
@@ -106,7 +108,9 @@ A guiding idea in {\it stable homotopy theory} is to study those properties of s
   \draw (7.0,0) circle (0.6);
   \draw (7.0,-0.6) arc (-90:90:0.2 and 0.6);
   \draw[dashed] (7.0,0.6) arc (90:270:0.2 and 0.6);
-
+  \fill (7.2,0) circle (1.5pt);
+  \fill (6.8,0) circle (1.5pt);
+  
   % arrow to dots
   \draw[->] (8.2,0) -- (9.2,0) node[midway,above] {$\Sigma$};
 
@@ -169,11 +173,14 @@ The sequence $0 \to 0 \to \mathbb{Z} \to \mathbb{Z}/2 \to \cdots$ stabilizes at 
 }
 \end{figure}
 
-Suspensions of homotopy groups eventually stabilize after finitely many iterations, and this stabilization provides the linear approximation described by Freudenthal’s theorem.
+Suspensions of homotopy groups eventually stabilize after finitely many iterations, and this stabilization provides the linear approximation.
 In this stabilized setting, new patterns and algebraic structures emerge, making it possible to study homotopical phenomena that were previously too complex to handle directly.
 This shift—from spaces to stable homotopy types—establishes a framework in which algebraic and homotopical ideas can be applied in a unified way, forming the foundation of modern algebraic topology.
 
 Much of my work takes place within this stable framework, where duality, symmetry, and equivariant structures reveal deep connections between algebra and topology.
+In particular, \emph{higher algebraic K-theory} arises within this framework: for a suitable ring or category, it is defined as the sequence of stable homotopy groups of its \emph{algebraic K-theory spectrum}.
+This viewpoint places algebraic K-theory firmly within stable homotopy theory, bridging algebraic and arithmetic structures with topological methods.
+
 
 \section{Current research and direction}
 Building on the framework of stable homotopy theory, my current research explores how algebraic and homotopical ideas interact across several fronts—particularly through {\it algebraic K-theory}, {\it equivariant algebra}, and their connections to number theory and combinatorics.
@@ -338,7 +345,7 @@ This theory refines and unifies classical algebraic K-theory, Hermitian K-theory
 
 In collaboration with Teena Gerhardt, Liam Keenan, Juan Moreno, and J.D. Quigley, we are extending the {\it homological trace methods} developed by Bruner and Rognes \cite{MR2153113} to the $C_2$-equivariant setting.
 Our work constructs a new spectral sequence based on $RO(C_2)$-graded homology, providing computational access to invariants in real algebraic K-theory.
-\begin{theorem}[Gerhardt--C.--Keenan--Moreno--Quigley]
+\begin{theorem}[Gerhardt--Cho--Keenan--Moreno--Quigley]
  For a $C_2$-equivariant $\ef$-ring spectrum $R$ with twisted $\bT$-action, there is a natural $\aA_\star^{C_2}$-comodule algebra spectral sequence of Mackey functors$\colon$
  \[E^2_{\ast,\star} = H^{-\ast}(B_{C_2}\bT; H \ul{\bF_2}_\star (R)) \Rightarrow H\ul{\bF_2}_\star^c (R^{h_{C_2}\bT})\]
 \end{theorem}
@@ -368,20 +375,21 @@ These topics are well suited for undergraduate involvement and provide natural e
 I view cultivating such accessible research directions as an essential part of advancing the field and training the next generation of mathematicians.
 
 \subsection*{Duality and Symmetry in Algebraic K-theory}
-Building on my work on K-theoretic Tate–Poitou duality, I plan to extend these ideas in several directions: higher-dimensional analogues, chromatic refinements, and new formulations in the real algebraic K-theory setting.
+The emerging framework of {\it K-theoretic duality} reveals deep structural parallels between arithmetic geometry and stable homotopy theory.
+Its development points naturally toward several new directions—higher-dimensional analogues, chromatic refinements, and real equivariant formulations—that extend the reach of duality across algebraic and homotopical contexts.
 
-A first line of investigation concerns higher-dimensional analogues of the K-theoretic duality.
-While progress has been made for odd primes \cite{Braunling}, the higher-dimensional case at the prime 2 remains open.
-Building on the techniques I developed to address the unique challenges of the prime 2 setting, I aim to extend these results to this remaining case.
+A natural first step is to understand how K-theoretic duality behaves in higher dimensions.
+While substantial progress has been made for odd primes \cite{Braunling}, the higher-dimensional case at the prime 2 remains unresolved.
+The techniques developed in my thesis for addressing the subtleties of the 2-adic setting provide the tools needed to approach this open case and to clarify how duality extends across arithmetic dimension.
 
-These arithmetic extensions naturally connect to chromatic phenomena in stable homotopy theory.
-Recent results \cite{HRW} suggest that the connective Adams summand $l$ behaves in ways analogous to local rings in arithmetic geometry.
-Motivated by this analogy, I plan to develop a chromatic analogue of arithmetic duality, formulating a K-theoretic duality at higher chromatic heights.
+At the same time, these arithmetic phenomena suggest parallel structures in the {\it chromatic} layers of stable homotopy theory.
+Recent results \cite{HRW} indicate that the connective Adams summand~$l$ exhibits arithmetic-like behavior analogous to that of local rings in number theory.
+This analogy points toward a chromatic form of arithmetic duality, and I aim to formulate a corresponding K-theoretic duality at higher chromatic heights.
 
-Finally, I aim to pursue these ideas within the framework of real algebraic K-theory.
-An ultimate goal is to construct a {\it real Thomason spectral sequence}, providing a systematic computational tool for the theory.
-This will require developing a genuine equivariant version of \'etale cohomology for commutative ring spectra, followed by adapting classical descent spectral sequence techniques to the $C_2$-equivariant setting.
-Such a construction would parallel Thomason’s spectral sequence in the classical case and offer a new computational approach to real algebraic K-theory.
+A third direction arises in the {\it real} or $C_2$-equivariant context, where algebraic K-theory interacts with symmetry in a genuinely equivariant way.
+An ultimate goal is the construction of a {\it real Thomason spectral sequence}, serving as a computational bridge between equivariant cohomology and real algebraic~$K$-theory.
+Achieving this requires developing an equivariant form of 'etale cohomology for commutative ring spectra and adapting descent methods to the $C_2$-equivariant setting.
+Such a framework would parallel Thomason’s classical spectral sequence while opening a systematic approach to the computation of real algebraic~$K$-theory.
 
 
 \subsection*{Foundations for Equivariant Algebra}
