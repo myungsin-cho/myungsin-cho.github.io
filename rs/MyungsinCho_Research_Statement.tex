@@ -81,7 +81,7 @@ While this captures topological equivalence precisely, it is often too strict fo
 {\it Homotopy theory} offers a more flexible perspective by identifying spaces that can be continuously deformed into one another, leading to the notion of a {\it homotopy type}.  
 The resulting invariants, {\it homotopy groups} carry the deepest information: they completely determine the homotopy type, but are notoriously difficult to compute.
 
-A guiding idea in {\it stable homotopy theory} is to study those properties of spaces that are preserved under iterated suspension $(\SI)$:
+A guiding idea in {\it stable homotopy theory} is to study properties of spaces that are preserved under iterated suspension $(\SI)$:
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[scale=1,>=stealth]
@@ -202,12 +202,12 @@ Let $F$ be a number field.
 There is a canonical weak equivalence between  the {\it homotopy fiber of the completion map} $\ka$ in $K(1)$-local algebraic K-theory$\colon$
 \[\ka\colon L_{K(1)}K(\calO_F[\tfrac{1}{2}]) \longrightarrow \prod_{\nu \mid 2} L_{K(1)}K(F_\nu^\w)\]
 and the $\bZ_2$-Anderson dual of the algebraic K-theory of $\calO_F[\tfrac{1}{2}]\colon$
- \begin{equation}\label{fib}
- \Fib(\ka) \simeq \SI^{-1} I_{\bZ_2} L_{K(1)}K(\calO_F[\tfrac{1}{2}]).
-\end{equation}
+\[
+\Fib(\ka) \simeq \SI^{-1} I_{\bZ_2} L_{K(1)}K(\calO_F[\tfrac{1}{2}]).
+\]
 \end{theorem}
 
-This equivalence can be viewed as a homotopical counterpart of classical Artin-Verdier duality.
+This equivalence can be viewed as a homotopical counterpart of Artin-Verdier duality of number rings.
 Figure~\ref{fig:duality} illustrates how the arithmetic and homotopical dualities align, connected through the Thomason descent spectral sequence.
 \begin{figure}[h]
 \centering
