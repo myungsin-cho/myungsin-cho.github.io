@@ -72,6 +72,7 @@
 My research investigates how ideas from algebraic topology reveal the structural relationships between algebra and arithmetic.
 In particular, I use methods from stable homotopy theory to understand how duality and equivariant phenomena organize and connect seemingly distinct areas of mathematics.
 My doctoral work contributed to leveraging arithmetic duality at the homotopical level, within the framework of algebraic K-theory.
+Beyond these arithmetic and equivariant settings, I also explore how the homotopical viewpoint extends to analytic geometry illustrating the broader reach of topology across modern mathematics.
 More broadly, my research aims to develop conceptual and computational tools that show how homotopical structures govern both arithmetic and equivariant phenomena.
 
 \section{Background}
@@ -175,7 +176,7 @@ The sequence $0 \to 0 \to \mathbb{Z} \to \mathbb{Z}/2 \to \cdots$ stabilizes at 
 
 Suspensions of homotopy groups eventually stabilize after finitely many iterations, and this stabilization provides the linear approximation.
 In this stabilized setting, new patterns and algebraic structures emerge, making it possible to study homotopical phenomena that were previously too complex to handle directly.
-This shift—from spaces to stable homotopy types—establishes a framework in which algebraic and homotopical ideas can be applied in a unified way, forming the foundation of modern algebraic topology.
+This shift from spaces to stable homotopy types establishes a framework in which algebraic and homotopical ideas can be applied in a unified way, forming the foundation of modern algebraic topology.
 
 Much of my work takes place within this stable framework, where duality and equivariant structures reveal deep connections between algebra and topology.
 In particular, \emph{higher algebraic K-theory} arises within this framework: for a suitable ring or category, it is defined as the sequence of stable homotopy groups of its \emph{algebraic K-theory spectrum}.
@@ -183,7 +184,7 @@ This viewpoint places algebraic K-theory firmly within stable homotopy theory, b
 
 
 \section{Current research and direction}
-Building on the framework of stable homotopy theory, my current research explores how algebraic and homotopical ideas interact across several fronts—particularly through {\it algebraic K-theory}, {\it equivariant algebra}, and their connections to number theory and combinatorics.
+Building on the framework of stable homotopy theory, my current research explores how algebraic and homotopical ideas interact across several fronts, particularly through {\it algebraic K-theory}, {\it equivariant algebra}, and their connections to number theory and combinatorics.
 Rather than treating these areas in isolation, I study how organizing principles such as duality, symmetry, and operadic compatibility arise in parallel forms across them.
 The following sections describe how these themes manifest in my recent and ongoing work.
 
@@ -211,7 +212,7 @@ This equivalence can be viewed as a homotopical counterpart of Artin-Verdier dua
 Figure~\ref{fig:duality} illustrates how the arithmetic and homotopical dualities align, connected through the Thomason descent spectral sequence.
 \begin{figure}[h]
 \centering
-\begin{tikzcd}[column sep=4em, row sep=2em]
+\begin{tikzcd}[column sep=4em, row sep=1em]
   \textbf{\small Arithmetic duality:}
     \arrow[d, decorate, decoration={snake, amplitude=0.3mm, segment length=2.5mm}, 
            "\text{\footnotesize Thomason SS}" right]
@@ -357,18 +358,23 @@ Extending the homological approach of Bruner and Rognes to this setting yields n
 The long-term goal of this project is to apply these techniques to analyze the real algebraic K-theory of fundamental spectra including $MU_\bR$ and the {\it real Brown--Peterson spectrum} $BP_\bR$.
 In particular, we aim to establish a {\it real analogue of the Segal conjecture} for these spectra, which would parallel one of the most powerful computational results in classical topology and provide new insights into how symmetry shapes algebraic K-theory at chromatic height 1 and beyond.
 
-% 아카이브에 페이퍼 올라올 시
-%\textbf{Analytic Stacks and Hyperbolicity.}
-%In a parallel project with Geonhee Cho, we develop a stack-theoretic extension of the Green–Griffiths–Demailly (GGD) method for studying Brody hyperbolicity via jet differentials on compact analytic Deligne–Mumford stacks.
-%Our framework provides a unified analytic setting encompassing both complex manifolds and orbifold quotients while preserving the asymptotic behavior of Green–Griffiths bundles.
-%This work, now available as a preprint, lays the analytic groundwork for a broader program aimed at extending hyperbolicity to higher and derived stacks.
+\subsection{Hyperbolicity and Homotopical Perspective}
+The framework of homotopy theory provides a remarkably general language for studying invariance and deformation, extending beyond topological spaces through simplicial presheaves and higher stacks.
+In complex geometry, the notion of \emph{hyperbolicity} reflects a closely related idea: for instance, a compact Riemann surface of genus $g \ge 2$ is hyperbolic, admitting no nonconstant holomorphic maps from $\mathbb{C}$, which serves as a geometric analogue of homotopical rigidity.
+
+Demailly’s approach to hyperbolicity translates curvature conditions into cohomological language.
+Building on this perspective, Borghesi and Tomassini \cite{MR3673667} extended the notions of Brody and Kobayashi hyperbolicity to simplicial presheaves and established their equivalence for compact analytic Deligne–Mumford stacks, generalizing the classical manifold case.
+My recent joint work with Gunhee Cho \cite{CC} develops this further by proving that the Green–Griffiths–Demailly thresholds governing invariant jet differentials remain unchanged when passing from a compact complex manifold to a smooth analytic Deligne–Mumford stack.
+This invariance provides an analytic manifestation of homotopical stability in a stack-theoretic setting.
+\begin{theorem}[\cite{CC}]
+Let $\calX$ be a compact smooth analytic Deligne–Mumford stack satisfying suitable cohomological regularity assumptions.
+Then every nonconstant entire map $f\colon \bC \to \calX$ factors through a proper closed analytic substack of $\calX$.
+\end{theorem}
+This result offers a concrete model for how invariance principles from homotopy theory can appear in analytic geometry and forms the foundation for ongoing work extending hyperbolicity and deformation theory to higher and derived stacks.
 
 \section{Future research direction}
 My future research builds directly on my current work, extending results on duality phenomena in algebraic K-theory and advancing the foundations of equivariant algebra. 
 A central aim is to further develop the connections between homotopical methods, arithmetic dualities, and symmetry in algebraic and geometric contexts.
-
-I am particularly interested in exploring links to complex and derived geometry, where tools from algebraic K-theory and equivariant homotopy theory may reveal new relationships between curvature, symmetry, and cohomological phenomena. 
-This direction naturally extends the analytic and homotopical aspects of my research, bridging ideas from topology and geometry.
 
 In parallel, I plan to develop projects that emphasize concrete computations and examples, especially in areas such as homotopical combinatorics and topological data analysis. 
 These topics are well suited for undergraduate involvement and provide natural entry points into algebraic topology. 
@@ -376,7 +382,7 @@ I view cultivating such accessible research directions as an essential part of a
 
 \subsection*{Duality and Symmetry in Algebraic K-theory}
 The emerging framework of {\it K-theoretic duality} reveals deep structural parallels between arithmetic geometry and stable homotopy theory.
-Its development points naturally toward several new directions—higher-dimensional analogues, chromatic refinements, and real equivariant formulations—that extend the reach of duality across algebraic and homotopical contexts.
+Its development points naturally toward several new directions, including higher-dimensional analogues, chromatic refinements, and real equivariant formulations that extend the reach of duality across algebraic and homotopical contexts.
 
 A natural first step is to understand how K-theoretic duality behaves in higher dimensions.
 While substantial progress has been made for odd primes \cite{Braunling}, the higher-dimensional case at the prime 2 remains unresolved.
@@ -404,24 +410,16 @@ Beginning with these manageable cases allows one to develop the algebraic intuit
 My goal is to establish such foundational concepts and structures within the equivariant setting.
 This foundational program would provide the analogue of commutative algebra for equivariant algebraic geometry, bridging the gap between algebraic and homotopical formulations of equivariant descent.
 
-\subsection*{Analytic Stacks and Hyperbolicity}
-Another direction of my research concerns the study of {\it hyperbolicity} in the setting of stacks.
-In complex geometry, hyperbolicity captures rigidity and asymptotic constraints on holomorphic maps, and recent work by Borghesi and Tomassini \cite{MR3673667} has extended these ideas to {\it stacks} and {\it simplicial presheaves}, showing that they admit meaningful formulations beyond complex manifolds.
-
-Together with Geonhee Cho, I am developing a stack-theoretic extension of the {\it Green–Griffiths–Demailly} method for studying Brody hyperbolicity via jet differentials on compact analytic {\it Deligne–Mumford stacks}.
-This project establishes an analytic foundation that unifies the treatment of hyperbolicity for complex manifolds and orbifold quotients and serves as a first step toward formulating hyperbolicity for higher and derived stacks.
-
-Building on this framework, we aim to extend the theory to derived and higher stacks, constructing explicit examples that illustrate how rigidity and curvature behave in these generalized settings.
-Ultimately, this work connects classical analytic geometry with modern homotopical and stack-theoretic methods, uncovering new interactions between symmetry, deformation, and geometric structure.
-
 \subsection*{Undergraduate Research Directions}
 Several aspects of my work give rise to problems and projects that are accessible at an undergraduate level yet remain closely connected to broader research questions.
 Two areas in particular, combinatorial transfer systems and topological data analysis (TDA), offer tractable problems that both engage students and contribute to the development of my research programs.
 
-One direction is the study of {\it transfer systems} from a combinatorial perspective.
-Transfer systems are defined directly in terms of subgroup lattices, making them elementary to describe while still encoding the algebraic constraints that govern equivariant operations.
-Counting and classifying finite posets associated with transfer systems not only provides combinatorial insight but also informs the structural classification of $N_\infty$-operads and Tambara functors, clarifying how discrete data control admissible algebraic operations.
-This line of investigation illustrates how even elementary combinatorics can feed directly into ongoing developments in equivariant algebra.
+One direction of my work focuses on the study of {\it transfer systems} from a combinatorial and educational perspective.  
+Because transfer systems are defined directly in terms of subgroup lattices, they are easy to state and visualize, making them particularly suitable for undergraduate research projects.  
+At the same time, their enumeration already reveals rich combinatorial structure: for example, the number of transfer systems for cyclic groups coincides with the {\it Catalan numbers} \cite{MR4366744}, and many related patterns remain to be understood.
+Exploring these systems provides an accessible way to connect discrete mathematics with deeper questions in equivariant topology.  
+Counting and classifying finite posets associated with transfer systems not only offer combinatorial insight but also inform the structural classification of $N_\infty$-operads and Tambara functors, clarifying how discrete data govern admissible algebraic operations.  
+In this way, the topic serves both as an entry point for students and as a bridge between combinatorics and the homotopical study of equivariant algebra.
 
 Another area is {\it topological data analysis} (TDA), which applies algebraic topology to study the structure of high-dimensional data sets.
 Methods such as {\it persistent homology} can be introduced in a visual and computationally accessible way, yet they lead naturally into deeper questions about stability, functoriality, and the role of cohomology operations.
@@ -430,7 +428,7 @@ These connections remain an active area of research, and concrete case studies i
 In this way, projects in combinatorics and data science serve not only as entry points for undergraduate participation but also as stepping stones toward more advanced problems aligned with my core research agenda.
 
 \section{Conclusion}
-At the heart of my research lies the perspective of \emph{stable homotopy theory}—a framework in which topology, algebra, and geometry meet on equal footing.
+At the heart of my research lies the perspective of \emph{stable homotopy theory}, a framework in which topology, algebra, and geometry meet on equal footing.
 Within this setting, ideas such as duality and equivariance reveal how seemingly distinct structures reflect the same underlying homotopical patterns.
 My work develops this viewpoint to expose the shared logic that links arithmetic, combinatorics, and topology.
 
