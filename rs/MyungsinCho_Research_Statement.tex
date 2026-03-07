@@ -341,13 +341,15 @@ They provide a computable foundation for studying incomplete Tambara functors an
 Introduced by Hesselholt and Madsen \cite{HMreal}, it assigns genuine $C_2$-equivariant spectra to rings with an {\it anti-involution}.
 This theory refines and unifies classical algebraic K-theory, Hermitian K-theory, and $L$-theory by incorporating this additional symmetry.
 
-In collaboration with Teena Gerhardt, Liam Keenan, Juan Moreno, and J.D. Quigley, we are extending the {\it homological trace methods} developed by Bruner and Rognes \cite{MR2153113} to the $C_2$-equivariant setting.
-Our work constructs a new spectral sequence based on $RO(C_2)$-graded homology, providing computational access to invariants in real algebraic K-theory.
+In collaboration with Teena Gerhardt, Liam Keenan, Juan Moreno, and J.D. Quigley, we are extending the {\it homological trace methods} developed by Bruner and Rognes \cite{MR2153113} to the $C_2$-equivariant setting, specifically targeting \emph{Real Topological Hochschild Homology} (THR).
+To manage the equivariant filtration, we define the notion of a \emph{slice complex}, which serves as a CW complex counterpart to the slice filtration. 
+Using this framework, we prove an analogue of the cellular approximation theorem for these complexes. 
+This foundation allows us to construct a new spectral sequence based on $RO(C_2)$-graded homology, providing computational access to invariants in real algebraic K-theory.
 \begin{theorem}[Gerhardt--Cho--Keenan--Moreno--Quigley]
  For a $C_2$-equivariant $\ef$-ring spectrum $R$ with twisted $\bT$-action, there is a natural $\aA_\star^{C_2}$-comodule algebra spectral sequence of Mackey functors$\colon$
  \[E^2_{\ast,\star} = H^{-\ast}(B_{C_2}\bT; H \ul{\bF_2}_\star (R)) \Rightarrow H\ul{\bF_2}_\star^c (R^{h_{C_2}\bT})\]
 \end{theorem}
-This construction provides the first homological tool for accessing real algebraic K-theory, extending classical trace methods while incorporating genuine $C_2$-equivariance.
+The introduction of the slice complex does more than facilitate this spectral sequence. We expect this framework to yield other CW complex properties and provide a more intuitive geometric perspective on equivariant spaces and spectra.
 
 Our approach builds on recent advances in {\it real trace methods}, which adapt topological Hochschild and cyclic homology to the $C_2$-equivariant context \cite{Dotto,Hogenhaven}.
 Extending the homological approach of Bruner and Rognes to this setting yields new computational methods for studying equivariant invariants and new approximations for important spectra such as the {\it real bordism spectrum} $MU_\bR$.
