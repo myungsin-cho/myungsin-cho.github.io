@@ -344,32 +344,34 @@ This theory refines and unifies classical algebraic K-theory, Hermitian K-theory
 In collaboration with Teena Gerhardt, Liam Keenan, Juan Moreno, and J.D. Quigley, we are extending the {\it homological trace methods} developed by Bruner and Rognes \cite{MR2153113} to the $C_2$-equivariant setting, specifically targeting \emph{Real Topological Hochschild Homology} (THR).
 To manage the equivariant filtration, we define the notion of a \emph{slice complex}, which serves as a CW complex counterpart to the slice filtration. 
 Using this framework, we prove an analogue of the cellular approximation theorem for these complexes. 
-This foundation allows us to construct a new spectral sequence based on $RO(C_2)$-graded homology, providing computational access to invariants in real algebraic K-theory.
+This foundation allows us to construct a new spectral sequence based on $RO(C_2)$-graded homology, providing computational access to invariants in Real algebraic K-theory.
 \begin{theorem}[Gerhardt--Cho--Keenan--Moreno--Quigley]
  For a $C_2$-equivariant $\ef$-ring spectrum $R$ with twisted $\bT$-action, there is a natural $\aA_\star^{C_2}$-comodule algebra spectral sequence of Mackey functors$\colon$
  \[E^2_{\ast,\star} = H^{-\ast}(B_{C_2}\bT; H \ul{\bF_2}_\star (R)) \Rightarrow H\ul{\bF_2}_\star^c (R^{h_{C_2}\bT})\]
 \end{theorem}
 The introduction of the slice complex does more than facilitate this spectral sequence. We expect this framework to yield other CW complex properties and provide a more intuitive geometric perspective on equivariant spaces and spectra.
 
-Our approach builds on recent advances in {\it real trace methods}, which adapt topological Hochschild and cyclic homology to the $C_2$-equivariant context \cite{Dotto,Hogenhaven}.
-Extending the homological approach of Bruner and Rognes to this setting yields new computational methods for studying equivariant invariants and new approximations for important spectra such as the {\it real bordism spectrum} $MU_\bR$.
+Our approach builds on recent advances in {\it Real trace methods}, which adapt topological Hochschild and cyclic homology to the $C_2$-equivariant context \cite{Dotto,Hogenhaven}.
+Extending the homological approach of Bruner and Rognes to this setting yields new computational methods for studying equivariant invariants and new approximations for important spectra such as the {\it Real bordism spectrum} $MU_\bR$.
 
-The long-term goal of this project is to apply these techniques to analyze the real algebraic K-theory of fundamental spectra including $MU_\bR$ and the {\it real Brown--Peterson spectrum} $BP_\bR$.
-In particular, we aim to establish a {\it real analogue of the Segal conjecture} for these spectra, which would parallel one of the most powerful computational results in classical topology and provide new insights into how symmetry shapes algebraic K-theory at chromatic height 1 and beyond.
+The long-term goal of this project is to apply these techniques to analyze the Real algebraic K-theory of fundamental spectra including $MU_\bR$ and the {\it Real Brown-Peterson spectrum} $BP_\bR$.
+In particular, we aim to establish a {\it Real analogue of the Segal conjecture} for these spectra, which would parallel one of the most powerful computational results in classical topology and provide new insights into how symmetry shapes algebraic K-theory at chromatic height 1 and beyond.
 
 \subsection{Hyperbolicity and Homotopical Perspective}
-The framework of homotopy theory provides a remarkably general language for studying invariance and deformation, extending beyond topological spaces through simplicial presheaves and higher stacks.
-In complex geometry, the notion of \emph{hyperbolicity} reflects a closely related idea: for instance, a compact Riemann surface of genus $g \ge 2$ is hyperbolic, admitting no nonconstant holomorphic maps from $\mathbb{C}$, which serves as a geometric analogue of homotopical rigidity.
-
-Demailly’s approach to hyperbolicity translates curvature conditions into cohomological language.
-Building on this perspective, Borghesi and Tomassini \cite{MR3673667} extended the notions of Brody and Kobayashi hyperbolicity to simplicial presheaves and established their equivalence for compact analytic Deligne–Mumford stacks, generalizing the classical manifold case.
-My recent joint work with Gunhee Cho \cite{CC} develops this further by proving that the Green–Griffiths–Demailly thresholds governing invariant jet differentials remain unchanged when passing from a compact complex manifold to a smooth analytic Deligne–Mumford stack.
-This invariance provides an analytic manifestation of homotopical stability in a stack-theoretic setting.
+A central idea in modern homotopy theory is the notion of localization, such as $\bA_1$-locality in the motivic setting. 
+When translated to complex analytic geometry, a space is $\bC$-local if every holomorphic map from $\bC$ into it is constant. 
+This exactly recovers the classical geometric condition of Brody hyperbolicity. 
+For example, a compact Riemann surface of genus $g\ge 2$ is hyperbolic, which serves as a geometric analogue of homotopical rigidity. In this sense, hyperbolicity can be natively understood as a localization condition on categories of simplicial presheaves and stacks.
+ 
+Demailly’s approach to hyperbolicity provides a systematic framework by translating curvature conditions into cohomological language. 
+Building on this perspective and the work of Borghesi and Tomassini \cite{MR3673667}, who formalized hyperbolicity for simplicial presheaves, my recent joint work with Gunhee Cho \cite{CC} investigates the obstructions to $\bC$-locality using the theory of jet differentials. 
+We prove that the \emph{Green--Griffiths--Demailly thresholds}, which govern invariant jet differentials, remain unchanged when passing from a compact complex manifold to a \emph{smooth analytic Deligne--Mumford stack}.
 \begin{theorem}[\cite{CC}]
 Let $\calX$ be a compact smooth analytic Deligne–Mumford stack satisfying suitable cohomological regularity assumptions.
 Then every nonconstant entire map $f\colon \bC \to \calX$ factors through a proper closed analytic substack of $\calX$.
 \end{theorem}
-This result offers a concrete model for how invariance principles from homotopy theory can appear in analytic geometry and forms the foundation for ongoing work extending hyperbolicity and deformation theory to higher and derived stacks.
+Viewing hyperbolicity strictly through the lens of $\bC$-locality provides a concrete model for applying homotopy-theoretic invariance to analytic geometry. 
+This stack-theoretic approach forms the foundation for our ongoing work extending these localization principles to study hyperbolicity and deformation theory in the broader context of higher and derived stacks.
 
 \section{Future research direction}
 My future research builds directly on my current work, extending results on duality phenomena in algebraic K-theory and advancing the foundations of equivariant algebra. 
@@ -381,7 +383,7 @@ I view cultivating such accessible research directions as an essential part of a
 
 \subsection*{Duality and Symmetry in Algebraic K-theory}
 The emerging framework of {\it K-theoretic duality} reveals deep structural parallels between arithmetic geometry and stable homotopy theory.
-Its development points naturally toward several new directions, including higher-dimensional analogues, chromatic refinements, and real equivariant formulations that extend the reach of duality across algebraic and homotopical contexts.
+Its development points naturally toward several new directions, including higher-dimensional analogues, chromatic refinements, and Real equivariant formulations that extend the reach of duality across algebraic and homotopical contexts.
 
 A natural first step is to understand how K-theoretic duality behaves in higher dimensions.
 While substantial progress has been made for odd primes \cite{Braunling}, the higher-dimensional case at the prime 2 remains unresolved.
@@ -391,10 +393,10 @@ At the same time, these arithmetic phenomena suggest parallel structures in the 
 Recent results \cite{HRW} indicate that the connective Adams summand~$l$ exhibits arithmetic-like behavior analogous to that of local rings in number theory.
 This analogy points toward a chromatic form of arithmetic duality, and I aim to formulate a corresponding K-theoretic duality at higher chromatic heights.
 
-A third direction arises in the {\it real} or $C_2$-equivariant context, where algebraic K-theory interacts with symmetry in a genuinely equivariant way.
-An ultimate goal is the construction of a {\it real Thomason spectral sequence}, serving as a computational bridge between equivariant cohomology and real algebraic~$K$-theory.
+A third direction arises in the {\it Real} or $C_2$-equivariant context, where algebraic K-theory interacts with symmetry in a genuinely equivariant way.
+An ultimate goal is the construction of a {\it Real Thomason spectral sequence}, serving as a computational bridge between equivariant cohomology and Real algebraic~$K$-theory.
 Achieving this requires developing an equivariant form of 'etale cohomology for commutative ring spectra and adapting descent methods to the $C_2$-equivariant setting.
-Such a framework would parallel Thomason’s classical spectral sequence while opening a systematic approach to the computation of real algebraic~$K$-theory.
+Such a framework would parallel Thomason’s classical spectral sequence while opening a systematic approach to the computation of Real algebraic~$K$-theory.
 
 
 \subsection*{Foundations for Equivariant Algebra}
@@ -427,15 +429,11 @@ These connections remain an active area of research, and concrete case studies i
 In this way, projects in combinatorics and data science serve not only as entry points for undergraduate participation but also as stepping stones toward more advanced problems aligned with my core research agenda.
 
 \section{Conclusion}
-At the heart of my research lies the perspective of \emph{stable homotopy theory}, a framework in which topology, algebra, and geometry meet on equal footing.
-Within this setting, ideas such as duality and equivariance reveal how seemingly distinct structures reflect the same underlying homotopical patterns.
-My work develops this viewpoint to expose the shared logic that links arithmetic, combinatorics, and topology.
+At the heart of my research lies the perspective of \emph{stable homotopy theory}, a framework in which topology, algebra, and geometry meet on equal footing. Within this setting, ideas such as duality and equivariance reveal how seemingly distinct structures reflect the same underlying homotopical patterns. My work develops this viewpoint to clarify the shared logic that links arithmetic, combinatorics, and topology.
 
-Looking ahead, I aim to expand this program by using stable homotopy theory as a unifying language for understanding duality and symmetry across mathematical contexts.
-A central goal is to build conceptual and computational tools—within algebraic K-theory, equivariant homotopy theory, and beyond—that clarify how these structures behave and interact.
-Equally important is keeping this program accessible: developing problems that invite undergraduate participation and creating avenues for collaboration across levels of expertise.
+Looking ahead, I aim to expand this program by using stable homotopy theory to understand duality and symmetry across mathematical contexts. A central goal is to build conceptual and computational tools in algebraic K-theory and equivariant homotopy theory that clarify how these structures behave and interact. I also consider it essential to keep this research program accessible by identifying problems suitable for undergraduate projects and fostering collaboration at various levels of expertise.
 
-In this sense, my research advances not only the technical reach of stable homotopy theory but also its role as a common ground where diverse mathematical ideas can meet, evolve, and inspire new connections.
+Ultimately, my research advances both the technical reach of stable homotopy theory and its practical role as a common ground where diverse mathematical ideas can interact.
 
 \bibliography{RS_bib}
 \bibliographystyle{alphaurl}
