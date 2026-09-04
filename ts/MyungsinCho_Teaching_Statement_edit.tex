@@ -1,0 +1,107 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{hyperref}
+
+\usepackage{newtxtext, kotex}
+\usepackage{amsfonts}
+
+\usepackage{fancyhdr}
+%\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+
+
+\usepackage[textwidth=1in,textsize=small,colorinlistoftodos]{todonotes} % todo 노트
+
+\pagestyle{fancy}
+\lhead{Myungsin Cho\\ }
+%\chead{\LARGE Teaching Statement}
+%\rhead{\univ \\ Ph.D. Mathematics}
+
+% section 폰트 바꿔주는거
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\center}{\thesection}{.5em}{}
+%\titleformat{\subsection}[runin]{\normalfont\bfseries}{\thesubsection}{.5em}{}
+
+\newcommand{\yourname}{Myungsin Cho}
+
+\newcommand\quelle[1]{{%
+      \unskip\nobreak\hfil\penalty50
+      \hskip2em\hbox{}\nobreak\hfil #1%
+      \parfillskip=0pt \finalhyphendemerits=0 \par}}
+      
+\title{Research Statement}
+\author{Myungsin Cho}
+\date{}
+\begin{document}
+\begin{center}\LARGE{Teaching Statement}\end{center}
+
+I have taught mathematics across a wide range of levels and to students with very different mathematical backgrounds, from introductory calculus and linear algebra to proof-based analysis and optimization. 
+These experiences have taught me that effective teaching cannot be reduced to a fixed set of techniques. 
+I continually adapt the pace, structure, assignments, and assessments of my courses in response to what my students need and to changes in the broader educational environment, including the rapid development of AI. 
+
+What remains constant is my goal: to make serious mathematical thinking accessible without removing the intellectual demands that make mathematics worth learning. 
+I want students with weaker preparation to develop confidence and mastery of fundamental skills, while also challenging them to move beyond computation toward conceptual understanding, critical judgment, and rigorous mathematical reasoning.
+
+
+\paragraph{Teaching Students with Different Mathematical Backgrounds}\quad
+
+My teaching experience has shown me that differences in preparation cannot be measured simply by the number of courses students have taken. 
+Some students are fluent in computation but have little experience reading or writing proofs; others understand abstract ideas but lack confidence in basic techniques. 
+Their goals also vary: some are preparing for more advanced mathematics, while others are completing what may be their final mathematics requirement. 
+My task is therefore not to make every student proceed in exactly the same way, but to provide multiple points of entry into the material while maintaining clear intellectual goals for the class. 
+I want every student to develop a genuine understanding of the central mathematics, while giving well-prepared students opportunities to engage with greater abstraction and rigor.
+
+This challenge is especially visible in Analysis and Optimization, which enrolls students from mathematics, economics, computer science, engineering, and the natural sciences. Although linear algebra is a prerequisite, students enter with widely varying command of it, and many have never written a formal proof. Rather than treating these gaps as deficiencies that students must overcome on their own, I build support into the course. I review prerequisite material when it is needed, begin new ideas with concrete examples, and ask frequent questions that allow me to see where students are losing the thread. When students struggled with proofs, I redesigned parts of the homework as guided worksheets: the main structure of an argument was provided, while students supplied definitions, justifications, and intermediate steps. Students specifically noted that this adjustment helped them follow the logic of proofs and made previously inaccessible material understandable.
+
+Accommodating different backgrounds does not mean lowering expectations uniformly. I distinguish clearly between the foundational work that every student should master and the more demanding reasoning required for the highest level of achievement. A student who learns the central definitions and reliably carries out basic computations should have a realistic path to succeeding in the course; stronger performance requires interpreting unfamiliar situations, answering conceptual questions, and writing coherent mathematical arguments. I reinforce this distinction by aligning homework, quizzes, and exams closely, so that students can identify what they understand and where they need further work. This structure allows students who begin with weaker preparation to make meaningful progress without limiting those ready for deeper challenges. Ideally, every student leaves knowing that there is mathematics they can genuinely understand and do—and knowing how to continue beyond it.
+
+\paragraph{Organizing Mathematics Around Ideas, Not Procedures}\quad
+
+I organize my courses around a small number of recurring mathematical ideas rather than presenting the material as a sequence of procedures. Before introducing a theorem or method, I ask what problem calls for it: Why should the result be plausible? What makes it nontrivial? What will it allow us to do? I often begin with a motivating example or question and return to it as the formal theory develops. In this way, definitions, theorems, and computations become parts of a coherent line of reasoning. Students also gain a basis for deciding which method is relevant when they encounter a problem that does not look exactly like one they have practiced.
+
+In Analysis and Optimization, for example, I organize much of the course around approximation. I return throughout the semester to one guiding principle: linear approximation helps us locate possible extrema, while quadratic approximation allows us to classify local behavior. Rather than presenting gradients, Hessians, the second derivative test, and Newton’s method as separate tools, I show how each answers a different question arising from this principle. Concrete optimization problems provide an entry point, but they also motivate the theory: students can see why the hypotheses of a theorem matter and why a more refined approximation yields stronger information. Applications are therefore not substitutes for theory in my courses; they are often the route by which students come to understand why the theory is needed.
+
+I use a similar question-driven structure in Linear Algebra. We ask why matrix multiplication has its particular definition, how the solvability of \(A\mathbf{x}=\mathbf{b}\) changes as \(\mathbf{b}\) varies, whether every subspace of \(\mathbb{R}^n\) can be realized as the solution space of a homogeneous system, and how abstract linear transformations can be represented concretely by matrices. These questions lead naturally to composition, column spaces and null spaces, bases and dimension, and changes of coordinates. I also identify the broader habits of thought that recur among them: asking whether an object exists, whether it is unique, how nonunique objects can be classified, how new objects can be generated from known ones, and how an abstract structure can be made concrete. By returning to these questions throughout the course, I want students to see row reduction, basis selection, and diagonalization not as isolated recipes, but as tools for investigating mathematical structure.
+
+
+
+\paragraph{Designing Assessment as Part of Learning}\quad
+
+I design assessment not only to measure learning, but also to shape how students study throughout the semester. Each component therefore serves a distinct purpose. Homework is primarily a low-stakes opportunity to practice, make mistakes, and prepare for later assessments. In response to the growing availability of AI, I have reduced its role as evidence of independent mastery and instead connect it directly to short, supervised quizzes. In my current system, quiz questions are drawn from selected homework problems, and strong quiz performance can replace part of the routine-computation section of the corresponding exam. Students are thus rewarded for consistent preparation, while the exam can devote more attention to conceptual understanding and mathematical reasoning. I continue to require handwritten homework, not because handwriting can prevent AI use, but because the act of rewriting creates productive friction: even students who consult external tools must slow down and trace the argument for themselves.
+
+Clear assessment design also allows me to maintain rigorous standards while giving students with different goals and backgrounds a transparent path through the course. I separate routine computation, core conceptual understanding, and proof rather than allowing strength or weakness in one area to obscure the others. A student who reliably masters the central concepts and computations has a realistic path to success, while the highest grades require the ability to explain ideas clearly and construct logically coherent arguments. I also use several assessments rather than allowing a single exam to determine a student’s standing, and, when appropriate, give greater weight to stronger performances so that an early setback does not remove the incentive to improve. In some courses, I have allowed students to correct missed exam problems for partial credit; in oral examinations, I provide sample problems and possible follow-up questions beforehand. These practices make reassessment an occasion to revisit the mathematics and ensure that oral exams evaluate preparation, reasoning, and explanation rather than a student’s reaction to an unexpected question.
+
+Assessment also provides information that I use to revise my teaching. When homework, exams, and student questions revealed that many students in Analysis and Optimization lacked experience with proofs, I redesigned assignments to guide them through the structure of an argument before asking them to write it independently. Students later reported that this change substantially improved their understanding. Similarly, short quizzes allow me to identify common misconceptions early enough to address them through additional examples or a change in emphasis, rather than discovering them only on a midterm. I make documented accommodations in timing and format while preserving the same learning goals. In this way, assessment creates a continuing feedback loop among students, instructor, and course design: it communicates what matters, gives students repeated opportunities to develop, and helps me adapt instruction to the needs of the class.
+
+\paragraph{Teaching Mathematics in a Changing Environment}\quad
+
+Effective teaching requires more than refining a fixed collection of techniques. Students’ needs and habits change, new technologies alter how they approach coursework, and a policy that served one class well may not serve the next. I therefore treat course design as an ongoing process of revision. I use student work, classroom interactions, and feedback to identify where the structure of a course is no longer supporting its goals, and I adjust the format of assignments and assessments accordingly. These changes do not mean lowering my standards; they mean reconsidering how students can best reach them in a changing environment.
+
+The rapid development of AI has made this adaptability especially important. I do not believe that completely prohibiting AI is either realistic or educationally productive. Instead, I tell students that one increasingly important reason to learn mathematics is to use such tools responsibly. This means more than learning how to write an effective prompt. Students need enough mathematical understanding to follow an argument, identify its assumptions, test its conclusions, and recognize an answer that is plausible but incorrect. AI has therefore not made mathematical knowledge less valuable. It has made independent mathematical judgment more important.
+
+My course policies reflect the distinction between receiving assistance and demonstrating understanding. I require handwritten homework, not because handwriting can prevent the use of AI, but because rewriting a solution by hand creates productive friction: even a student who has consulted an external tool must slow down and read through the reasoning at least once. At the same time, I treat homework primarily as practice rather than conclusive evidence of mastery. I keep its weight relatively low, align it closely with assessments, and ask students to demonstrate their understanding independently in supervised settings. The particular balance will continue to evolve as technology and students’ learning practices change, but the underlying principle will remain the same: students should leave a mathematics course able not only to obtain an answer, but also to decide whether that answer deserves to be trusted.
+
+
+
+\paragraph{Reflection and Continuous Improvement}\quad
+
+Reflection begins during the semester, not only after it. I pay attention to student questions, recurring errors in their work, conversations during office hours, and course evaluations. These sources help me identify not only what students find difficult, but also where the organization, pacing, or presentation of a course may be creating unnecessary obstacles.
+
+For example, students in an early iteration of Analysis and Optimization reported that the pace and theoretical emphasis sometimes made it difficult to see the main ideas. In response, I slowed down at important transitions, clarified the purpose of a theorem before presenting its proof, and added more intermediate steps and guided proofs. I continued making adjustments during the semester as I observed where students were struggling. Later feedback specifically noted that these changes made proofs and course material more accessible.
+
+At the end of each course, I compare my learning goals with what students were ultimately able to explain and accomplish. I then identify which parts of the course should be retained and which need to be redesigned. My teaching methods will continue to evolve with my students and their learning environment, while my commitment to rigor and independent mathematical reasoning remains constant.
+
+\paragraph{Conclusion}\quad
+
+I see teaching as an ongoing process of adjustment. 
+Students arrive with different backgrounds, courses pose different challenges, and the environment in which students learn continues to change. 
+My responsibility is to respond to those differences while keeping the central goals of mathematics intact: conceptual understanding, careful reasoning, and the ability to judge whether an argument is correct. 
+I hope to bring this combination of breadth, responsiveness, and mathematical rigor to courses across the undergraduate curriculum, while continuing to refine my teaching in response to the students I teach.
+
+\end{document}
+
+
+
+
+
+
