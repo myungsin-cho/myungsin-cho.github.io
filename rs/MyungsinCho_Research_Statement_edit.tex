@@ -1,0 +1,331 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{mytex}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}%
+
+\usepackage{bookmark}
+
+\usepackage{newtxtext, kotex}
+\usepackage[all,cmtip]{xy}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{calc,positioning}
+
+\usepackage{pgfplots}
+\usepackage{caption}
+
+\usepackage{fancyhdr}
+%\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+
+
+\usepackage[textwidth=1in,textsize=small,colorinlistoftodos]{todonotes} % todo 노트
+
+\pagestyle{fancy}
+\lhead{Myungsin Cho}
+\chead{}
+\rhead{}
+%\rfoot{\date}
+
+%Bibliography line spacing
+% ADD THE FOLLOWING COUPLE LINES INTO YOUR PREAMBLE
+\let\OLDthebibliography\thebibliography
+\renewcommand\thebibliography[1]{
+  \OLDthebibliography{#1}
+  \setlength{\parskip}{0pt}
+  \setlength{\itemsep}{0pt plus 0.3ex}
+}
+
+% section 폰트 바꿔주는거
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\center}{\thesection}{.5em}{}
+\titleformat{\subsection}[runin]{\normalfont\bfseries}{\thesubsection}{.5em}{}
+
+\newcommand{\yourname}{Myungsin Cho}
+
+\newcommand\quelle[1]{{%
+      \unskip\nobreak\hfil\penalty50
+      \hskip2em\hbox{}\nobreak\hfil #1%
+      \parfillskip=0pt \finalhyphendemerits=0 \par}}
+      
+
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs}
+\usepackage{amsthm,thmtools}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{goal}{Goal}
+\newtheorem*{conjecture}{Conjecture}
+
+\let\overto\xrightarrow
+
+\author{Myungsin Cho}
+\date{}
+\begin{document}
+\begin{center}\LARGE{Research Statement}\end{center}\vspace{.5em}
+%\maketitle
+\section*{Introduction}
+
+Many fundamental questions in arithmetic have a local-to-global form. One seeks to recover global information from simpler local data and to understand why seemingly different invariants are related by duality. Descent provides a mechanism for such reconstruction, while duality reveals complementary structures within the resulting information. My research asks how these two principles extend from arithmetic into stable homotopy theory. The central goal of my research program is to understand the duality phenomena and descent behavior of \emph{Real algebraic K-theory}.
+
+Algebraic K-theory organizes arithmetic and algebraic information into a spectrum, allowing relationships that are difficult to see at the level of individual groups to be studied homotopically. Real algebraic K-theory enriches this construction by retaining information about duality and symmetry. Its underlying nonequivariant theory is ordinary algebraic K-theory, while its fixed-point theory recovers Grothendieck--Witt theory, which studies symmetric and quadratic forms. It therefore provides a natural setting in which to ask whether descent and duality can be understood simultaneously across algebraic K-theory and the theory of forms. Such a framework would offer both structural explanations and new methods for computing these theories.
+
+My work approaches this long-term problem from several complementary directions. My dissertation establishes a K-theoretic form of arithmetic duality at the prime \(2\), completing a case in which real embeddings introduce phenomena absent at odd primes. This gives the first nonequivariant step toward understanding duality in the Real setting. My current work studies the corresponding question for Grothendieck--Witt theory, the fixed-point side of Real algebraic K-theory. In parallel, my collaborative work on Real trace methods develops tools for approximating and computing equivariant invariants that are otherwise difficult to access directly. My research on transfer systems and equivariant algebra investigates the algebraic structures needed to organize operations in genuine equivariant homotopy theory. Together, these projects form a broader program to understand how arithmetic duality, descent, and equivariant structure interact in Real algebraic K-theory.
+
+\section{Background}
+
+Stable homotopy theory provides a setting in which algebraic invariants are organized into \emph{spectra}. A spectrum contains a sequence of homotopy groups together with the maps and operations that connect them, allowing one to study the structure relating different invariants rather than treating each group separately. Algebraic K-theory applies this perspective to rings and categories. To a ring \(R\), it assigns a spectrum \(K(R)\) whose homotopy groups encode information about projective modules, their automorphisms, and higher relations among them. These groups contain important arithmetic information, but they are often extremely difficult to compute directly.
+
+One way to make algebraic K-theory more accessible is through \emph{descent}. Rather than studying a global object all at once, descent attempts to reconstruct it from data over simpler local pieces. For arithmetic rings, the Thomason descent spectral sequence connects algebraic K-theory to étale cohomology, whose local-to-global behavior is much better understood. At a prime \(p\), \(K(1)\)-localization isolates the first periodic layer of algebraic K-theory, where this connection becomes especially effective. Descent therefore serves both as a computational tool and as a bridge between stable homotopy theory and arithmetic geometry.
+
+Arithmetic cohomology also satisfies powerful duality theorems. Tate--Poitou duality, for example, relates the global cohomology of a number field to cohomological information coming from its completions. Through the descent spectral sequence, such arithmetic dualities suggest corresponding duality phenomena in algebraic K-theory. In this homotopical formulation, one expects the failure of a global-to-local map in K-theory to be described by a dual of the original K-theory spectrum. My dissertation proves such a statement at the prime \(2\), where real embeddings create additional complications that do not appear at odd primes.
+
+Real algebraic K-theory places this arithmetic picture in an equivariant setting. A ring equipped with an anti-involution has not only modules and automorphisms, but also dual modules and symmetric forms. Real algebraic K-theory packages these structures into a genuine \(C_2\)-equivariant spectrum \cite{HMreal}. Forgetting the \(C_2\)-action recovers ordinary algebraic K-theory, while taking fixed points recovers Grothendieck--Witt theory. Thus, a descent theory for Real algebraic K-theory should simultaneously account for ordinary K-theory, the arithmetic of symmetric forms, and the equivariant structure relating them.
+
+This leads to the guiding problem of my research: can global Real algebraic K-theory be reconstructed from local or étale information, and how does this reconstruction interact with duality? Addressing this problem requires more than extending nonequivariant arguments formally. Fixed points, transfers, norms, and representation-graded homotopy groups introduce new structures that must remain compatible throughout the descent process. The following sections describe my progress toward this goal, beginning with arithmetic duality in ordinary algebraic K-theory and continuing with Grothendieck--Witt duality, Real trace methods, and the algebraic foundations of equivariant homotopy theory.
+
+
+
+\section{Current research and direction}
+Building on the framework of stable homotopy theory, my current research explores how algebraic and homotopical ideas interact across several fronts, particularly through {\it algebraic K-theory}, {\it equivariant algebra}, and their connections to number theory and combinatorics.
+Rather than treating these areas in isolation, I study how organizing principles such as duality, symmetry, and operadic compatibility arise in parallel forms across them.
+The following sections describe how these themes manifest in my recent and ongoing work.
+
+
+\subsection{Algebraic K-theory and Arithmetic Duality.}
+My dissertation investigates how duality phenomena from number theory manifest in algebraic K-theory.
+In arithmetic geometry, a central duality known as {\it Tate–Poitou duality} describes relationships between the cohomology of number rings and their completions. 
+A natural question is whether an analogous duality exists in algebraic K-theory.
+
+The case at the prime $2$ had remained open since the work of Blumberg and Mandell \cite{MR4121155}. 
+They proved the duality for all odd primes but left the even-prime case conjectural due to the essential role of real embeddings and the resulting technical complications.
+My dissertation resolves this case, establishing a K-theoretic version of Tate–Poitou duality at the prime $2$.
+
+\begin{theorem}[\cite{Cho}]
+Let $F$ be a number field.
+There is a canonical weak equivalence between  the {\it homotopy fiber of the completion map} $\ka$ in $K(1)$-local algebraic K-theory$\colon$
+\[\ka\colon L_{K(1)}K(\calO_F[\tfrac{1}{2}]) \longrightarrow \prod_{\nu \mid 2} L_{K(1)}K(F_\nu^\w)\]
+and the $\bZ_2$-Anderson dual of the algebraic K-theory of $\calO_F[\tfrac{1}{2}]\colon$
+\[
+\Fib(\ka) \simeq \SI^{-1} I_{\bZ_2} L_{K(1)}K(\calO_F[\tfrac{1}{2}]).
+\]
+\end{theorem}
+
+This equivalence can be viewed as a homotopical counterpart of Artin-Verdier duality of number rings.
+Figure~\ref{fig:duality} illustrates how the arithmetic and homotopical dualities align, connected through the Thomason descent spectral sequence.
+\begin{figure}[h]
+\centering
+\begin{tikzcd}[column sep=4em, row sep=1em]
+  \textbf{\small Arithmetic duality:}
+    \arrow[d, decorate, decoration={snake, amplitude=0.3mm, segment length=2.5mm}, 
+           "\text{\footnotesize Thomason SS}" right]
+    &
+  {H^s_{\textup{\'et}}\!\big(\calO_F[\tfrac{1}{p}];\,\bZ/p^k(\tfrac{t}{2})\big)}
+    \arrow[d, Rightarrow]
+    \arrow[rr, leftrightarrow, "\text{\footnotesize Pontryagin dual}"]
+    &&
+  {H^{3-s}_c\!\big(\calO_F[\tfrac{1}{p}];\,\bZ/p^k(-\tfrac{t}{2})\big)}
+    \arrow[d, Rightarrow] \\[1ex]
+  \textbf{\small Homotopical duality:}
+    &
+  {L_{K(1)}K(\calO_F[\tfrac{1}{p}])}
+    \arrow[rr, leftrightarrow, "\text{\footnotesize Anderson dual}"]
+    &&
+  {\Fib(\kappa)}
+\end{tikzcd}
+\captionsetup{font=footnotesize, skip=0em}
+\caption{
+Arithmetic and homotopical dualities in parallel,
+linked by the Thomason descent spectral sequence.
+}
+\label{fig:duality}
+\end{figure}
+
+An immediate consequence of this theorem gives new insight into the algebraic K-theory of the {\it sphere spectrum} $\bS$.
+Using the case $F=\bQ$ together with {\it trace methods}, one obtains the following result.
+
+\begin{corollary}[\cite{Cho}]
+Let $\ta_\bS\colon K(\bS)_2^\w \to TC(\bS)_2^\w$ be the $2$-completed cyclotomic trace map for the sphere spectrum.
+After taking connective covers, the homotopy fiber $\Fib(\ta_\bS)$ is canonically weakly equivalent to the $\bZ_2$-Anderson dual of $L_{K(1)}K(\bZ)\colon$
+\[\Fib(\ta_\bS)[0,\infty) \simeq \Sigma^{-1} I_{\bZ_2}\, L_{K(1)}K(\bZ)[0,\infty).\]
+\end{corollary}
+Together, these results provide concrete computational tools for the $2$-primary algebraic K-theory of $\bS$, clarifying how the homological behavior of the integers is reflected in stable homotopy theory through algebraic K-theory.
+
+Beyond computation, this work relates to several active areas in arithmetic and homotopy theory.
+The homotopy fiber $\Fib(\kappa)$ appearing in the duality theorem connects to objects such as the $p$-adic Langlands correspondence \cite{MR2905536} and compactly supported K-theory \cite{MR3211458}.
+By giving a precise homotopical description of $\Fib(\kappa)$, this work provides a foundation for exploring how these structures interact across arithmetic geometry and higher algebra.
+
+Overall, this research develops new methods in $2$-primary algebraic K-theory that clarify the structure of number rings and point toward broader extensions in arithmetic topology.
+
+\subsection{Equivariant algebras and homotopical combinatorics.}
+My research in equivariant algebras investigates how combinatorial structures capture and control  operations arising in \emph{equivariant stable homotopy theory}.
+A central organizing idea is the notion of a {\it transfer system} \cite{MR4244201}, which encodes which “transfer” maps between subgroups are allowed, subject to natural coherence conditions such as compatibility with conjugation and restriction.
+For example, in the case of the cyclic group $C_{p^2}$, the possible transfer systems are shown in Figure~\ref{fig:transferCp2}.
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=.8, every node/.style={font=\footnotesize}]
+  % Titles
+  \node at (0,2.8) {Subgroup lattice of $C_{p^2}$};
+  \node[align=center] at (7.5,2.8)
+    {Transfer systems of $C_{p^2}$\\ \footnotesize(vertical lines indicate transfers)};
+
+  % --- 구분선 ---
+  \draw[gray, thin] (-2,2.35) -- (12.2,2.35);
+
+  % === Left: subgroup lattice ===
+  \node (C1)  at (0,0)   {$C_{1}$};
+  \node (Cp)  at (0,1.0) {$C_{p}$};
+  \node (Cp2) at (0,2.0) {$C_{p^2}$};
+
+  \draw (C1) -- (Cp);
+  \draw (Cp) -- (Cp2);
+  \draw plot [smooth, tension=1.2] coordinates {(0.2,0.1) (0.45,1.0) (.2,1.8)};
+
+  % === Right: five transfer systems ===
+  % x: 5.0, 6.5, 8.0, 9.5, 11.0 / y: 0, 1, 2
+  % (각 기둥을 먼저 박스로 감싸기 위해 박스부터 그림)
+  \foreach \x in {5.0,6.5,8.0,9.5,11.0}{
+    \draw[gray!100, densely dotted, rounded corners=3pt]
+      (\x-0.45,-0.3) rectangle (\x+0.45,2.3);
+  }
+
+  % (1) isolated dots
+  \node at (5.0,0) {$\bullet$}; \node at (5.0,1) {$\bullet$}; \node at (5.0,2) {$\bullet$};
+
+  % (2) bottom–middle
+  \node at (6.5,0) {$\bullet$}; \node at (6.5,1) {$\bullet$}; \node at (6.5,2) {$\bullet$};
+  \draw (6.5,0.2) -- (6.5,0.8);
+
+  % (3) middle–top
+  \node at (8.0,0) {$\bullet$}; \node at (8.0,1) {$\bullet$}; \node at (8.0,2) {$\bullet$};
+  \draw (8.0,1.2) -- (8.0,1.8);
+
+  % (4) full chain
+  \node at (9.5,0) {$\bullet$}; \node at (9.5,1) {$\bullet$}; \node at (9.5,2) {$\bullet$};
+  \draw (9.5,0.2) -- (9.5,0.8);
+  \draw plot [smooth, tension=1.4] coordinates {(9.6,0.1) (9.9,1.0) (9.6,1.9)};
+
+  % (5) chain + curved bottom–top
+  \node at (11.0,0) {$\bullet$}; \node at (11.0,1) {$\bullet$}; \node at (11.0,2) {$\bullet$};
+  \draw (11.0,0.2) -- (11.0,0.8);
+  \draw (11.0,1.2) -- (11.0,1.8);
+  \draw plot [smooth, tension=1.4] coordinates {(11.1,0.1) (11.4,1.0) (11.1,1.9)};
+\end{tikzpicture}
+\captionsetup{font=footnotesize} % ← 캡션 크기 줄이기
+\caption{Subgroup lattice of the cyclic group $C_{p^2}$ of order $p^2$  (left) and its five distinct transfer systems (right). These five systems classify, up to homotopy, the $N_\infty$-operads for $C_{p^2}$.}
+\label{fig:transferCp2}
+\end{figure}
+
+Transfer systems provide a combinatorial model for the algebraic structure underlying genuine equivariant commutative ring spectra, encoded by {\it Tambara functors} \cite{MR1209937}.
+Their additive (transfer) and multiplicative (norm) operations are governed by a pair of transfer systems satisfying a compatibility condition, forming a {\it compatible pair}.
+In collaboration with David Chan, David Mehrle, Pablo Sanchez Ocal, Angelica Osorno, Ben Szczesny, and Paula Verdugo, we study the correspondence between such combinatorial data and the {\it pairings of $N_\infty$-operads} \cite{MR2544392} that model these operations.
+Constructing an operad pairing is subtle even non-equivariantly, and our results give the first systematic framework for realizing them in the genuine equivariant setting through explicit combinatorial data.
+
+\begin{theorem}[\cite{CCM+}]
+If two $N_\infty$-operads admit a pairing, then their associated transfer systems form a compatible pair.
+If a compatible pair of transfer systems has a complete additive component, then there exists a pairing of $N_\infty$-operads that realizes it.
+\end{theorem}
+
+Motivated by this result, we conjecture that the correspondence between compatible pairs and operadic pairings holds in full generality:
+\begin{conjecture}
+ For every finite group $G$, every compatible pair of $G$-transfer systems should be realizable by some pairing of $N_\infty$-operads.
+\end{conjecture}
+
+Establishing this equivalence would complete the conceptual bridge between the combinatorial and homotopical descriptions of {incomplete Tambara functors} and provide a combinatorial classification of admissible equivariant multiplicative structures.
+
+
+Building on this framework, we have proved several further realizability results that support this conjecture.
+For instance, the transfer systems associated to the equivariant linear isometries and Steiner operads are realized by the corresponding pairing of operads, and $J$-local transfer systems $(\mathcal{T}_J,\mathcal{T}_J)$ are likewise realizable for any subgroup $J\le G$.
+Moreover, we introduce a general construction principle showing that whenever two {\it intersection monoids} $M$ and $N$ admit a pairing $\xi\colon M\times N\to N$, one obtains a corresponding pairing of operads $(\mathcal{O}^{\vee}(M),\mathcal{O}^{\vee}(N))$.
+
+Together, these results form the first systematic framework for classifying compatible transfer system pairs and understanding how combinatorial and homotopical perspectives on equivariant algebra align.
+They provide a computable foundation for studying incomplete Tambara functors and genuine equivariant ring spectra, and illustrate how ideas from combinatorics and operad theory drive new advances in equivariant homotopy theory.
+
+
+\subsection{Real algebraic K-theory and homological trace methods.}
+\emph{Real algebraic K-theory} offers a framework for studying algebraic structures equipped with involutive symmetries, combining topological and arithmetic ideas.
+Introduced by Hesselholt and Madsen \cite{HMreal}, it assigns genuine $C_2$-equivariant spectra to rings with an {\it anti-involution}.
+This theory refines and unifies classical algebraic K-theory, Hermitian K-theory, and $L$-theory by incorporating this additional symmetry.
+
+In collaboration with Teena Gerhardt, Liam Keenan, Juan Moreno, and J.D. Quigley, we are extending the {\it homological trace methods} developed by Bruner and Rognes \cite{MR2153113} to the $C_2$-equivariant setting, specifically targeting \emph{Real Topological Hochschild Homology} (THR).
+To manage the equivariant filtration, we define the notion of a \emph{slice complex}, which serves as a CW complex counterpart to the slice filtration. 
+Using this framework, we prove an analogue of the cellular approximation theorem for these complexes. 
+This foundation allows us to construct a new spectral sequence based on $RO(C_2)$-graded homology, providing computational access to invariants in Real algebraic K-theory.
+\begin{theorem}[Gerhardt--Cho--Keenan--Moreno--Quigley]
+ For a $C_2$-equivariant $\ef$-ring spectrum $R$ with twisted $\bT$-action, there is a natural $\aA_\star^{C_2}$-comodule algebra spectral sequence of Mackey functors$\colon$
+ \[E^2_{\ast,\star} = H^{-\ast}(B_{C_2}\bT; H \ul{\bF_2}_\star (R)) \Rightarrow H\ul{\bF_2}_\star^c (R^{h_{C_2}\bT})\]
+\end{theorem}
+The introduction of the slice complex does more than facilitate this spectral sequence. We expect this framework to yield other CW complex properties and provide a more intuitive geometric perspective on equivariant spaces and spectra.
+
+Our approach builds on recent advances in {\it Real trace methods}, which adapt topological Hochschild and cyclic homology to the $C_2$-equivariant context \cite{Dotto,Hogenhaven}.
+Extending the homological approach of Bruner and Rognes to this setting yields new computational methods for studying equivariant invariants and new approximations for important spectra such as the {\it Real bordism spectrum} $MU_\bR$.
+
+The long-term goal of this project is to apply these techniques to analyze the Real algebraic K-theory of fundamental spectra including $MU_\bR$ and the {\it Real Brown-Peterson spectrum} $BP_\bR$.
+In particular, we aim to establish a {\it Real analogue of the Segal conjecture} for these spectra, which would parallel one of the most powerful computational results in classical topology and provide new insights into how symmetry shapes algebraic K-theory at chromatic height 1 and beyond.
+\section{Future research direction}
+My future research builds directly on my current work, extending results on duality phenomena in algebraic K-theory and advancing the foundations of equivariant algebra. 
+A central aim is to further develop the connections between homotopical methods, arithmetic dualities, and symmetry in algebraic and geometric contexts.
+
+In parallel, I plan to develop projects that emphasize concrete computations and examples, especially in areas such as homotopical combinatorics and topological data analysis. 
+These topics are well suited for undergraduate involvement and provide natural entry points into algebraic topology. 
+I view cultivating such accessible research directions as an essential part of advancing the field and training the next generation of mathematicians.
+
+\subsection*{Duality and Symmetry in Algebraic K-theory}
+The emerging framework of {\it K-theoretic duality} reveals deep structural parallels between arithmetic geometry and stable homotopy theory.
+Its development points naturally toward several new directions, including higher-dimensional analogues, chromatic refinements, and Real equivariant formulations that extend the reach of duality across algebraic and homotopical contexts.
+
+A natural first step is to understand how K-theoretic duality behaves in higher dimensions.
+While substantial progress has been made for odd primes \cite{Braunling}, the higher-dimensional case at the prime 2 remains unresolved.
+The techniques developed in my thesis for addressing the subtleties of the 2-adic setting provide the tools needed to approach this open case and to clarify how duality extends across arithmetic dimension.
+
+At the same time, these arithmetic phenomena suggest parallel structures in the {\it chromatic} layers of stable homotopy theory.
+Recent results \cite{HRW} indicate that the connective Adams summand~$l$ exhibits arithmetic-like behavior analogous to that of local rings in number theory.
+This analogy points toward a chromatic form of arithmetic duality, and I aim to formulate a corresponding K-theoretic duality at higher chromatic heights.
+
+A third direction arises in the {\it Real} or $C_2$-equivariant context, where algebraic K-theory interacts with symmetry in a genuinely equivariant way.
+An ultimate goal is the construction of a {\it Real Thomason spectral sequence}, serving as a computational bridge between equivariant cohomology and Real algebraic~$K$-theory.
+Achieving this requires developing an equivariant form of 'etale cohomology for commutative ring spectra and adapting descent methods to the $C_2$-equivariant setting.
+Such a framework would parallel Thomason’s classical spectral sequence while opening a systematic approach to the computation of Real algebraic~$K$-theory.
+
+
+\subsection*{Foundations for Equivariant Algebra}
+A key direction of my future work is to develop the basic algebraic framework underlying equivariant stable homotopy theory.
+While advanced constructions such as Tambara functors capture much of the structure, many of the elementary notions familiar from commutative algebra remain to be formulated in the equivariant setting.
+
+A natural entry point is the study of commutative $G$-rings, a simpler type of equivariant algebraic object that Tambara functors generalize.
+Even in this case, elementary concepts such as algebraic extensions and algebraic closures exhibit subtle equivariant pathologies.
+Investigating these questions offers an accessible entry point that also exposes conceptual obstructions in the more general theory of Tambara functors.
+Beginning with these manageable cases allows one to develop the algebraic intuition and categorical techniques needed to approach the full equivariant framework.
+
+My goal is to establish such foundational concepts and structures within the equivariant setting.
+This foundational program would provide the analogue of commutative algebra for equivariant algebraic geometry, bridging the gap between algebraic and homotopical formulations of equivariant descent.
+
+\subsection*{Undergraduate Research Directions}
+Several aspects of my work give rise to problems and projects that are accessible at an undergraduate level yet remain closely connected to broader research questions.
+Two areas in particular, combinatorial transfer systems and topological data analysis (TDA), offer tractable problems that both engage students and contribute to the development of my research programs.
+
+One direction of my work focuses on the study of {\it transfer systems} from a combinatorial and educational perspective.  
+Because transfer systems are defined directly in terms of subgroup lattices, they are easy to state and visualize, making them particularly suitable for undergraduate research projects.  
+At the same time, their enumeration already reveals rich combinatorial structure: for example, the number of transfer systems for cyclic groups coincides with the {\it Catalan numbers} \cite{MR4366744}, and many related patterns remain to be understood.
+Exploring these systems provides an accessible way to connect discrete mathematics with deeper questions in equivariant topology.  
+Counting and classifying finite posets associated with transfer systems not only offer combinatorial insight but also inform the structural classification of $N_\infty$-operads and Tambara functors, clarifying how discrete data govern admissible algebraic operations.  
+In this way, the topic serves both as an entry point for students and as a bridge between combinatorics and the homotopical study of equivariant algebra.
+
+Another area is {\it topological data analysis} (TDA), which applies algebraic topology to study the structure of high-dimensional data sets.
+Methods such as {\it persistent homology} can be introduced in a visual and computationally accessible way, yet they lead naturally into deeper questions about stability, functoriality, and the role of cohomology operations.
+These connections remain an active area of research, and concrete case studies in TDA provide a natural testing ground for exploring how homotopical invariants can yield new insights into the shape and geometry of data.
+
+In this way, projects in combinatorics and data science serve not only as entry points for undergraduate participation but also as stepping stones toward more advanced problems aligned with my core research agenda.
+
+\section{Conclusion}
+At the heart of my research lies the perspective of \emph{stable homotopy theory}, a framework in which topology, algebra, and geometry meet on equal footing. Within this setting, ideas such as duality and equivariance reveal how seemingly distinct structures reflect the same underlying homotopical patterns. My work develops this viewpoint to clarify the shared logic that links arithmetic, combinatorics, and topology.
+
+Looking ahead, I aim to expand this program by using stable homotopy theory to understand duality and symmetry across mathematical contexts. A central goal is to build conceptual and computational tools in algebraic K-theory and equivariant homotopy theory that clarify how these structures behave and interact. I also consider it essential to keep this research program accessible by identifying problems suitable for undergraduate projects and fostering collaboration at various levels of expertise.
+
+Ultimately, my research advances both the technical reach of stable homotopy theory and its practical role as a common ground where diverse mathematical ideas can interact.
+
+\bibliography{RS_bib}
+\bibliographystyle{alphaurl}
+
+\end{document}
