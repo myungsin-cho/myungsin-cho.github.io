@@ -67,8 +67,7 @@
 %\maketitle
 \section*{Introduction}
 
-One of the most useful ideas in mathematics is \emph{duality}: two kinds of information that appear different can %nevertheless
- determine one another. Just as the landscape shapes the trees that grow on it, the trees can also reveal the landscape beneath them. In algebraic topology, homology and cohomology provide two such perspectives on a space. My research studies how this principle appears in stable homotopy theory and arithmetic. The central goal of my research program is to understand duality and descent in \emph{Real algebraic K-theory}, particularly how global information can be recovered from local data while retaining symmetry. 
+One of the most useful ideas in mathematics is \emph{duality}: two kinds of information that appear different can  determine one another. Just as the landscape shapes the trees that grow on it, the trees can also reveal the landscape beneath them. In algebraic topology, homology and cohomology provide two such perspectives on a space. My research studies how this principle appears in stable homotopy theory and arithmetic. The central goal of my research program is to understand duality and descent in \emph{Real algebraic K-theory}, particularly how global information can be recovered from local data while retaining symmetry. 
 My dissertation establishes a first step through a \emph{K-theoretic duality theorem} for number fields. My current work extends this question to \emph{Grothendieck--Witt theory} and develops \emph{Real trace methods} for computation, while my work in equivariant algebra provides a foundation for organizing the symmetries and operations that arise in this broader program.
 
 \section{Background}
@@ -79,24 +78,61 @@ The Universal Coefficient Theorem explains that these two kinds of information a
 \[
 H^n(X;k)\cong \operatorname{Hom}_k(H_n(X;k),k),
 \]
-Thus, two theories arising from different perspectives turn out to determine one another. 
 The power of duality  allows a problem expressed in one kind of information to be understood through a seemingly different kind.
 
-This raises a broader question: do more refined topological invariants admit similar dualities? 
-One such invariant is K-theory. 
-Topological K-theory studies vector bundles over spaces, while algebraic K-theory studies their algebraic counterparts, such as projective modules over rings.
-My dissertation studies an arithmetic duality of this kind in algebraic K-theory.
+The spaces and algebraic objects studied in topology often carry symmetries, which provide another important source of structure. For example, a circle can be reflected across an axis or rotated by half a turn. Reflection fixes two points, while the half-turn fixes none. Once the symmetries are forgotten, the underlying space is the same circle in both cases. Equivariant topology retains this information by studying not only the space itself, but also how its symmetries act and what remains fixed.
 
-%spectrum과 anderson dualtiy이야기는 좀더 뒤로 
-Stable homotopy theory carries this idea beyond the invariants of an individual space. 
-%첫무장도 마음에 안든다. 그냥 spectra in stalbe homotopy theory 는... 라고 시작해도 무방
-Its basic objects, called \emph{spectra}, provide a flexible setting for doing algebra with topological invariants. 
-Rather than recording isolated groups, a spectrum retains the relationships and operations connecting them. 
-Anderson duality packages the relationship between homology and cohomology into a duality between spectra.
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  >=stealth,
+  action/.style={draw=blue!60!black,thick,->},
+  fixed/.style={fill=red!70!black},
+  orbit/.style={fill=blue!60!black}
+]
+  % Reflection across the horizontal axis
+  \coordinate (L) at (-2.4,0);
+  \draw[thick] (L) circle (1);
 
-Real K-theory adds symmetry to this picture. Atiyah's Real K-theory studies complex vector bundles together with symmetry modeled on complex conjugation. Real algebraic K-theory carries the same idea to projective modules over rings with involution. Its fixed-point theory recovers Grothendieck--Witt theory, which studies bundles or modules equipped with nondegenerate bilinear forms and can be viewed as an algebraic analogue of \(KO\)-theory. Thus, duality in Grothendieck--Witt theory forms a natural next step from my dissertation toward duality for the full Real algebraic K-theory spectrum.
+  % Reflection axis
+  \draw[gray,dashed]
+    ($(L)+(-1.25,0)$) -- ($(L)+(1.25,0)$);
 
-A second organizing principle is \emph{descent}, which asks whether a global object can be reconstructed from information on simpler local pieces. In arithmetic, this means relating invariants of a number ring or field to corresponding invariants over its localizations, completions, or étale neighborhoods. Trace methods provide a complementary approach by comparing K-theory with homological invariants that are easier to compute. My long-term goal is to understand how these structural and computational methods extend to Real algebraic K-theory while preserving its symmetry. In this setting, descent and duality should work together: local information should reconstruct the global spectrum, while duality should reveal how its different parts determine one another.
+  % Fixed points
+  \fill[fixed] ($(L)+(-1,0)$) circle (2.2pt);
+  \fill[fixed] ($(L)+(1,0)$) circle (2.2pt);
+
+  % A pair exchanged by reflection
+  \coordinate (Lp) at ($(L)+(65:1)$);
+  \coordinate (Lq) at ($(L)+(295:1)$);
+  \fill[orbit] (Lp) circle (1.7pt);
+  \fill[orbit] (Lq) circle (1.7pt);
+  \draw[draw=blue!60!black,thick,<->] (Lp) -- (Lq);
+
+  \node[font=\small] at ($(L)+(0,1.55)$)
+    {Reflection};
+
+  % Half-turn rotation
+  \coordinate (R) at (2.4,0);
+  \draw[thick] (R) circle (1);
+
+  % Semicircular rotation arrow with the same center
+  \draw[action]
+    ($(R)+(30:0.8)$)
+    arc[start angle=30,end angle=210,radius=0.8];
+
+  \node[font=\small] at ($(R)+(0,1.55)$)
+    {Half-turn rotation};
+\end{tikzpicture}
+
+\captionsetup{font=footnotesize,skip=0.3em}
+\caption{Two symmetries of the same underlying circle.
+Reflection fixes two points, while rotation by half a turn fixes none.}
+\label{fig:circle-actions}
+\end{figure}
+
+K-theory is a central setting in which both duality and equivariant phenomena arise. Topological K-theory studies vector bundles over spaces, while algebraic K-theory studies their algebraic counterparts, such as projective modules over rings. When the spaces, bundles, or rings under study carry symmetries, K-theory can be refined to retain them. Atiyah introduced Real K-theory to study complex vector bundles together with symmetry modeled on complex conjugation. Real algebraic K-theory is an algebraic variant of Atiyah's theory for rings with involution. It therefore provides a setting in which duality in algebraic K-theory can be studied while retaining symmetry.
+
 
 \section{Current research and direction}
 Building on the framework of stable homotopy theory, my current research explores how algebraic and homotopical ideas interact across several fronts, particularly through {\it algebraic K-theory}, {\it equivariant algebra}, and their connections to number theory and combinatorics.
