@@ -134,33 +134,42 @@ Reflection fixes two points, while rotation by half a turn fixes none.}
 K-theory is a central setting in which both duality and equivariant phenomena arise. Topological K-theory studies vector bundles over spaces, while algebraic K-theory studies their algebraic counterparts, such as projective modules over rings. When the spaces, bundles, or rings under study carry symmetries, K-theory can be refined to retain them. Atiyah introduced Real K-theory to study complex vector bundles together with symmetry modeled on complex conjugation. Real algebraic K-theory is an algebraic variant of Atiyah's theory for rings with involution. It therefore provides a setting in which duality in algebraic K-theory can be studied while retaining symmetry.
 
 
-\section{Current research and direction}
-Building on the framework of stable homotopy theory, my current research explores how algebraic and homotopical ideas interact across several fronts, particularly through {\it algebraic K-theory}, {\it equivariant algebra}, and their connections to number theory and combinatorics.
-Rather than treating these areas in isolation, I study how organizing principles such as duality, symmetry, and operadic compatibility arise in parallel forms across them.
-The following sections describe how these themes manifest in my recent and ongoing work.
 
+\section{Arithmetic Duality and Algebraic K-theory}
+\subsection{K-theoretic Tate--Poitou duality.}
+In arithmetic, Tate--Poitou duality relates étale cohomology groups for number fields in complementary degrees. 
+My dissertation asks whether this arithmetic duality also appears in stable homotopy theory.
 
-\subsection{Algebraic K-theory and Arithmetic Duality.}
-My dissertation investigates how duality phenomena from number theory manifest in algebraic K-theory.
-In arithmetic geometry, a central duality known as {\it Tate–Poitou duality} describes relationships between the cohomology of number rings and their completions. 
-A natural question is whether an analogous duality exists in algebraic K-theory.
+Algebraic K-theory contains rich arithmetic information, but it is notoriously difficult to compute. 
+Its \(K(1)\)-local variant provides a more accessible approximation. 
+The Quillen--Lichtenbaum conjecture shows that this is a good approximation to algebraic K-theory, while the Thomason spectral sequence connects it to étale cohomology \cite{Thomason,MR1697095,MR1803955}. 
+This suggests that arithmetic duality should have a corresponding form in stable homotopy theory.
 
-The case at the prime $2$ had remained open since the work of Blumberg and Mandell \cite{MR4121155}. 
-They proved the duality for all odd primes but left the even-prime case conjectural due to the essential role of real embeddings and the resulting technical complications.
-My dissertation resolves this case, establishing a K-theoretic version of Tate–Poitou duality at the prime $2$.
+Calegari conjectured that this duality holds at the level of homotopy groups \cite{MR2905536}.
+Blumberg and Mandell proved a stronger spectrum-level duality at every odd prime using Anderson duality, a spectral refinement of Pontrjagin duality for abelian groups \cite{MR4121155}.
+The prime \(2\) remained open because real embeddings produce cohomological behavior that does not occur at odd primes. 
+My dissertation completes the result at this remaining prime.
 
 \begin{theorem}[\cite{Cho}]
-Let $F$ be a number field.
-There is a canonical weak equivalence between  the {\it homotopy fiber of the completion map} $\ka$ in $K(1)$-local algebraic K-theory$\colon$
-\[\ka\colon L_{K(1)}K(\calO_F[\tfrac{1}{2}]) \longrightarrow \prod_{\nu \mid 2} L_{K(1)}K(F_\nu^\w)\]
-and the $\bZ_2$-Anderson dual of the algebraic K-theory of $\calO_F[\tfrac{1}{2}]\colon$
+Let \(F\) be a number field. There is a canonical weak equivalence
 \[
-\Fib(\ka) \simeq \SI^{-1} I_{\bZ_2} L_{K(1)}K(\calO_F[\tfrac{1}{2}]).
+\operatorname{Fib}(\kappa_F)
+\simeq
+\Sigma^{-1}I_{\mathbb Z_2}
+L_{K(1)}K\bigl(\mathcal O_F[\tfrac{1}{2}]\bigr),
 \]
+where
+\[
+\kappa_F\colon
+L_{K(1)}K\bigl(\mathcal O_F[\tfrac{1}{2}]\bigr)
+\longrightarrow
+\prod_{\nu\mid 2}L_{K(1)}K(F_\nu)
+\]
+is the completion map.
 \end{theorem}
+The theorem gives a homotopical refinement of Tate--Poitou duality and it recovers the classical Tate--Poitou exact sequence on homotopy groups. 
 
-This equivalence can be viewed as a homotopical counterpart of Artin-Verdier duality of number rings.
-Figure~\ref{fig:duality} illustrates how the arithmetic and homotopical dualities align, connected through the Thomason descent spectral sequence.
+Figure~\ref{fig:duality} summarizes the passage from arithmetic duality to its homotopical refinement.
 \begin{figure}[h]
 \centering
 \begin{tikzcd}[column sep=4em, row sep=1em]
@@ -189,21 +198,79 @@ linked by the Thomason descent spectral sequence.
 \label{fig:duality}
 \end{figure}
 
-An immediate consequence of this theorem gives new insight into the algebraic K-theory of the {\it sphere spectrum} $\bS$.
-Using the case $F=\bQ$ together with {\it trace methods}, one obtains the following result.
 
-\begin{corollary}[\cite{Cho}]
-Let $\ta_\bS\colon K(\bS)_2^\w \to TC(\bS)_2^\w$ be the $2$-completed cyclotomic trace map for the sphere spectrum.
-After taking connective covers, the homotopy fiber $\Fib(\ta_\bS)$ is canonically weakly equivalent to the $\bZ_2$-Anderson dual of $L_{K(1)}K(\bZ)\colon$
-\[\Fib(\ta_\bS)[0,\infty) \simeq \Sigma^{-1} I_{\bZ_2}\, L_{K(1)}K(\bZ)[0,\infty).\]
-\end{corollary}
-Together, these results provide concrete computational tools for the $2$-primary algebraic K-theory of $\bS$, clarifying how the homological behavior of the integers is reflected in stable homotopy theory through algebraic K-theory.
+The case \(F=\bQ\) also has an application to the algebraic K-theory of the sphere spectrum. Combining the duality theorem with known comparison results gives a canonical equivalence in nonnegative degrees
+\begin{equation} \label{cyctrc}
+ \Sigma^{-1}I_{\bZ_2}L_{K(1)}K(\bZ) \mathrel{\underset{\scriptscriptstyle [0,\infty)}{\simeq}}
+\Fib \left( \operatorname{trc_\bS}: K(\bS)_2^\w \longrightarrow TC(\bS)_2^\w
+\right).
+\end{equation}
+Thus arithmetic information contained in the K-theory of the integers determines the error in a fundamental approximation to the algebraic K-theory of the sphere.
 
-Beyond computation, this work relates to several active areas in arithmetic and homotopy theory.
-The homotopy fiber $\Fib(\kappa)$ appearing in the duality theorem connects to objects such as the $p$-adic Langlands correspondence \cite{MR2905536} and compactly supported K-theory \cite{MR3211458}.
-By giving a precise homotopical description of $\Fib(\kappa)$, this work provides a foundation for exploring how these structures interact across arithmetic geometry and higher algebra.
+More broadly, this result provides a nonequivariant starting point for my study of duality in Real algebraic \(K\)-theory. It suggests that \(K\)-theoretic Tate--Poitou duality may be one shadow of a larger picture in which duality is compatible with involutions and \(C_2\)-symmetry. My next projects approach this broader question through Grothendieck--Witt theory and Real trace methods.
 
-Overall, this research develops new methods in $2$-primary algebraic K-theory that clarify the structure of number rings and point toward broader extensions in arithmetic topology.
+\subsection{Grothendieck--Witt theory and Real duality.}
+
+% To be added.
+K-theory가 proj module에 대한 이야기라면, GW는 module with bilinear form에 대한 이야기 입니다.
+또한 real vector bundle에 대응하는 algebraic analogue라고 볼수도 있습니다.
+ring에 involution이 있는 경우에, K-theory는 그 symmetry를 inherit하며, C2 fixed point가 바로 GW theory입니다.
+매우 중요함; algebraic L-theory과도 연관이 있고.. etc.
+
+F 가 local field인 경우에, K(1)-local GW 의 Anderson dual은 form twist를 2만큼 shift시킨다는게 conjecture.
+
+ 
+
+
+
+\newpage
+
+\subsection{Homological Real trace methods}
+While duality describes structural relationships in algebraic K-theory, explicit calculations usually require a different set of tools.
+Topological cyclic homology (TC(R)) is constructed from the circle-equivariant structure on topological Hochschild homology (THH(R)).
+Through the cyclotomic trace in \eqref{cyctrc}, it provides an effective and computable approximation to algebraic (K)-theory.
+Bruner and Rognes made this approach more practical by developing \emph{homological trace methods}, which  played an important role in Segal-conjecture computations for $THH(MU)$ \cite{MR2153113}.
+
+Recent work has developed a parallel theory that retains involutive symmetry \cite{HMreal,Dotto,Hogenhaven}. %involutive symmetry 대신에 Real setting이라고 쓰기
+For a ring $A$ equipped with involutive symmetry, Real topological Hochschild homology $THR(A)$ carries a natural $O(2)$-action, and Real topological cyclic homology $TCR(A)$ is constructed from this equivariant structure.
+The Real cyclotomic trace compares Real algebraic K-theory $KR(A)$ with $TCR(A)$, providing a symmetry-preserving analogue of classical trace methods.
+
+In joint work with Teena Gerhardt, Liam Keenan, Juan C. Moreno, and J.D. Quigley, I develop \emph{homological Real trace methods}, extending the framework of Bruner and Rognes to this genuine $C_2$-equivariant setting \cite{CGKMQ}.
+We construct a multiplicative spectral sequence and describe its interaction with equivariant power operations.
+Its main form can be summarized as follows. %highly sturctured라고 할까
+
+\begin{theorem}[\cite{CGKMQ}]
+For a \(C_2\)-equivariant commutative ring spectrum $A$, there is a natural multiplicative spectral sequence
+\[
+H_\star\bigl(THR(A)\bigr)\langle\bar y\rangle
+\Longrightarrow
+H^c_\star\bigl(TCR^-(A)\bigr).
+\]
+This spectral sequence is compatible with equivariant power operations.
+comodules over the \(C_2\)-equivariant dual Steenrod algebra.
+\end{theorem}
+
+We apply this method to calculate the homology of $TCR^-$ for Real bordism $MU_{\mathbb R}$, Real Brown--Peterson theory $BP_{\mathbb R}$, and its truncated variants.
+
+These examples show that the classical strategy of homological trace methods continues to produce concrete calculations while preserving genuine equivariant symmetry.
+A longer-term goal is to use this framework to study a Real analogue of the Segal conjecture for these spectra, connecting Real trace theory with completion phenomena in equivariant homotopy theory.
+
+This project supplies the computational side of my broader research program.
+Because these methods depend on genuine equivariant multiplicative operations, they also connect naturally to my work on the algebraic foundations of equivariant homotopy theory discussed next.
+
+
+
+
+
+\newpage
+
+\section{Current research and direction}
+Building on the framework of stable homotopy theory, my current research explores how algebraic and homotopical ideas interact across several fronts, particularly through {\it algebraic K-theory}, {\it equivariant algebra}, and their connections to number theory and combinatorics.
+Rather than treating these areas in isolation, I study how organizing principles such as duality, symmetry, and operadic compatibility arise in parallel forms across them.
+The following sections describe how these themes manifest in my recent and ongoing work.
+
+
+
 
 \subsection{Equivariant algebras and homotopical combinatorics.}
 My research in equivariant algebras investigates how combinatorial structures capture and control  operations arising in \emph{equivariant stable homotopy theory}.
