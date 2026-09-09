@@ -74,11 +74,12 @@ My dissertation establishes a first step through a \emph{K-theoretic duality the
 Topology often turns geometric questions about spaces into algebraic ones. 
 Homology studies geometric features inside a space, such as connected pieces, loops, and higher-dimensional holes.
 Cohomology begins from a different point of view: it studies algebraic data that behave like functions living on the space and how such data fit together globally. 
-The Universal Coefficient Theorem explains that these two kinds of information are closely related. For example, with coefficients in a field \(k\), this relationship takes the particularly simple form
+The \emph{Universal Coefficient Theorem} explains that these two kinds of information are closely related. For example, with coefficients in a field \(k\), this relationship takes the particularly simple form
 \[
 H^n(X;k)\cong \operatorname{Hom}_k(H_n(X;k),k),
 \]
 The power of duality  allows a problem expressed in one kind of information to be understood through a seemingly different kind.
+%아래문단과 자연스럽게 이어지도록 다듬기
 
 The spaces and algebraic objects studied in topology often carry symmetries, which provide another important source of structure. For example, a circle can be reflected across an axis or rotated by half a turn. Reflection fixes two points, while the half-turn fixes none. Once the symmetries are forgotten, the underlying space is the same circle in both cases. Equivariant topology retains this information by studying not only the space itself, but also how its symmetries act and what remains fixed.
 
@@ -127,7 +128,7 @@ The spaces and algebraic objects studied in topology often carry symmetries, whi
 
 \captionsetup{font=footnotesize,skip=0.3em}
 \caption{Two symmetries of the same underlying circle.
-Reflection fixes two points, while rotation by half a turn fixes none.}
+Reflection fixes two red points, while rotation by half a turn fixes none.}
 \label{fig:circle-actions}
 \end{figure}
 
@@ -142,6 +143,7 @@ My dissertation asks whether this arithmetic duality also appears in stable homo
 
 Algebraic K-theory contains rich arithmetic information, but it is notoriously difficult to compute. 
 Its \(K(1)\)-local variant provides a more accessible approximation. 
+%문장이 어색하게 끊어지는듯한 느낌
 The Quillen--Lichtenbaum conjecture shows that this is a good approximation to algebraic K-theory, while the Thomason spectral sequence connects it to étale cohomology \cite{Thomason,MR1697095,MR1803955}. 
 This suggests that arithmetic duality should have a corresponding form in stable homotopy theory.
 
@@ -169,7 +171,7 @@ is the completion map.
 \end{theorem}
 The theorem gives a homotopical refinement of Tate--Poitou duality and it recovers the classical Tate--Poitou exact sequence on homotopy groups. 
 
-Figure~\ref{fig:duality} summarizes the passage from arithmetic duality to its homotopical refinement.
+The following Figure summarizes the passage from arithmetic duality to its homotopical refinement.
 \begin{figure}[h]
 \centering
 \begin{tikzcd}[column sep=4em, row sep=1em]
@@ -225,40 +227,33 @@ F 가 local field인 경우에, K(1)-local GW 의 Anderson dual은 form twist를
 
 \newpage
 
-\subsection{Homological Real trace methods}
-While duality describes structural relationships in algebraic K-theory, explicit calculations usually require a different set of tools.
-Topological cyclic homology (TC(R)) is constructed from the circle-equivariant structure on topological Hochschild homology (THH(R)).
-Through the cyclotomic trace in \eqref{cyctrc}, it provides an effective and computable approximation to algebraic (K)-theory.
-Bruner and Rognes made this approach more practical by developing \emph{homological trace methods}, which  played an important role in Segal-conjecture computations for $THH(MU)$ \cite{MR2153113}.
+\subsection{Homological Real trace methods.}
+While duality describes structural relationships in Real algebraic K-theory, explicit calculations usually require a different set of tools. 
+In joint work with Teena Gerhardt, Liam Keenan, Juan C. Moreno, and J.D. Quigley, I develop \emph{homological Real trace methods} for computing Real trace invariants \cite{CGKMQ}. 
+Real trace methods approach $KR$ through more computable invariants built from Real topological Hochschild homology $\operatorname{THR}$.
+The natural \(O(2)\)-action on $\operatorname{THR}$ gives rise to more refined trace invariants, including $\operatorname{TCR}$ and $\operatorname{TCR}^-$.
 
-Recent work has developed a parallel theory that retains involutive symmetry \cite{HMreal,Dotto,Hogenhaven}. %involutive symmetry 대신에 Real setting이라고 쓰기
-For a ring $A$ equipped with involutive symmetry, Real topological Hochschild homology $THR(A)$ carries a natural $O(2)$-action, and Real topological cyclic homology $TCR(A)$ is constructed from this equivariant structure.
-The Real cyclotomic trace compares Real algebraic K-theory $KR(A)$ with $TCR(A)$, providing a symmetry-preserving analogue of classical trace methods.
-
-In joint work with Teena Gerhardt, Liam Keenan, Juan C. Moreno, and J.D. Quigley, I develop \emph{homological Real trace methods}, extending the framework of Bruner and Rognes to this genuine $C_2$-equivariant setting \cite{CGKMQ}.
-We construct a multiplicative spectral sequence and describe its interaction with equivariant power operations.
-Its main form can be summarized as follows. %highly sturctured라고 할까
-
+Our main tool is a spectral sequence that uses the homology of \(\operatorname{THR}\) to compute the continuous homology of \(\operatorname{TCR}^-\), while retaining multiplicative structure and equivariant power operations.
+As first applications, we carry out these computations for Real bordism \(MU_{\mathbb R}\), Real Brown--Peterson theory \(BP_{\mathbb R}\), and several truncated variants of \(BP_{\mathbb R}\), which form a fundamental family of examples in equivariant chromatic homotopy theory.
 \begin{theorem}[\cite{CGKMQ}]
-For a \(C_2\)-equivariant commutative ring spectrum $A$, there is a natural multiplicative spectral sequence
+For a \(C_2\)-equivariant commutative ring spectrum \(A\), there is a
+natural multiplicative spectral sequence
 \[
-H_\star\bigl(THR(A)\bigr)\langle\bar y\rangle
-\Longrightarrow
-H^c_\star\bigl(TCR^-(A)\bigr).
+H_\star\bigl(\operatorname{THR}(A); \ul{\bF}_2\bigr)\langle \bar y\rangle \Longrightarrow H^c_\star\bigl(\operatorname{TCR}^-(A); \ul{\bF}_2\bigr),
 \]
-This spectral sequence is compatible with equivariant power operations.
-comodules over the \(C_2\)-equivariant dual Steenrod algebra.
+compatible with equivariant power operations.
+For \(MU_{\mathbb R}\), \(BP_{\mathbb R}\), and several truncated
+Brown--Peterson theories,  we determine the differentials and the \(E_\infty\)-page of the resulting spectral sequences.
 \end{theorem}
 
-We apply this method to calculate the homology of $TCR^-$ for Real bordism $MU_{\mathbb R}$, Real Brown--Peterson theory $BP_{\mathbb R}$, and its truncated variants.
+Our construction is a Real refinement of the homological trace methods developed by Bruner and Rognes \cite{MR2153113}. In the nonequivariant setting, their methods became an important tool in the study of Segal conjectures for topological Hochschild homology of $MU$ and $BP$. 
+Guided by this precedent, my long-term goal is to use homological Real trace methods to formulate and study a Real analogue of the Segal conjecture, beginning with the trace invariants of \(MU_{\mathbb R}\) and \(BP_{\mathbb R}\). 
+This would extend the present calculations toward a broader understanding of \(\operatorname{TCR}\) and Real algebraic K-theory.
 
-These examples show that the classical strategy of homological trace methods continues to produce concrete calculations while preserving genuine equivariant symmetry.
-A longer-term goal is to use this framework to study a Real analogue of the Segal conjecture for these spectra, connecting Real trace theory with completion phenomena in equivariant homotopy theory.
-
-This project supplies the computational side of my broader research program.
-Because these methods depend on genuine equivariant multiplicative operations, they also connect naturally to my work on the algebraic foundations of equivariant homotopy theory discussed next.
-
-
+Our computations use the multiplicative and power-operation structure carried by the homology of \(THR\).
+This makes the algebra of genuine equivariant operations an essential input to Real trace methods.
+It leads to the broader question of which collections of equivariant operations can occur together.
+My work discussed next studies the algebraic and homotopical foundations of this question.
 
 
 
