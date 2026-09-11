@@ -206,9 +206,9 @@ The bottom row is obtained by applying \(I_{\mathbb Z_2}\) to the top row.
 	{$\prod\limits_{\nu\mid2}L_{K(1)}K(F_\nu)$};
 
 \node[main] (fiber) at (5.2,1.35) 
-	{$\Sigma\Fib(\kappa_F)$};
+	{$\Sigma\Fib(\kappa)$};
 
-\draw[seq]   (global) --  node[above,font=\scriptsize] {$\kappa_F$}  (local);
+\draw[seq]   (global) --  node[above,font=\scriptsize] {$\kappa$}  (local);
 
 \draw[seq] (local) -- (fiber);
 
@@ -216,7 +216,7 @@ The bottom row is obtained by applying \(I_{\mathbb Z_2}\) to the top row.
 
 % Bottom row
 \node[main] (Ifiber) at (-5.2,-1)   
-	{$I_{\mathbb Z_2} \bigl(\Sigma\Fib(\kappa_F)\bigr)$};
+	{$I_{\mathbb Z_2} \bigl(\Sigma\Fib(\kappa)\bigr)$};
 
 \node[local] (Ilocal) at (0,-1)
 	 {$I_{\mathbb Z_2}\! \Big( \prod\limits_{\nu\mid2}L_{K(1)}K(F_\nu)  \Big)$};
@@ -225,7 +225,7 @@ The bottom row is obtained by applying \(I_{\mathbb Z_2}\) to the top row.
 	  {$I_{\mathbb Z_2}L_{K(1)} K \bigl(\mathcal O_F[\tfrac12]\bigr)$};
 
 \draw[seq] (Ifiber) -- (Ilocal);
-\draw[seq] (Ilocal) --  node[above,font=\scriptsize] {$I_{\bZ_2}\kappa_F$} (Iglobal);
+\draw[seq] (Ilocal) --  node[above,font=\scriptsize] {$I_{\bZ_2}\kappa$} (Iglobal);
 
 \node[  font=\footnotesize,  text=black!60] at (0,-2)  {Anderson dual sequence};
 
@@ -461,7 +461,148 @@ The bottom row is obtained by applying \(I_{\mathbb Z_2}\) to the top row.
 Equivariant setting에서 Anderson duality; Ricka의 result.
  
 
+\begin{theorem}[Work in progress]
+Let \(F\) be a number field. The following diagram of completion
+cofiber sequences is self-dual under \(2\)-adic Anderson duality.
+The duality acts by a half-turn, interchanging the \(U\)- and
+Grothendieck--Witt-theoretic rows. Its middle slice is the
+\(K\)-theoretic Tate--Poitou duality theorem.
 
+\begin{center}
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[
+  >=Latex,
+  term/.style={
+    draw=black!42,
+    fill=white,
+    rounded corners=2.5pt,
+    inner xsep=5pt,
+    inner ysep=6pt,
+    align=center,
+    font=\scriptsize
+  },
+  seq/.style={->,semithick,black!75},
+  vertical/.style={->,semithick,black!55},
+  rotation/.style={
+    -{Latex[length=2.4mm]},
+    very thick,
+    blue!55!black
+  }
+]
+
+% U-theory row
+\node[term] (Ug) at (-4.75,2.05)
+  {$L_{K(1)}U\bigl(\mathcal O_F[\tfrac12]\bigr)$};
+
+\node[term] (Ul) at (0,2.05)
+  {$\prod\limits_{\nu\mid2}L_{K(1)}U(F_\nu^\wedge)$};
+
+\node[term] (Uc) at (4.75,2.05)
+  {$\Sigma\Fib(\kappa'')$};
+
+\draw[seq]
+  (Ug) -- node[above,font=\scriptsize] {$\kappa''$} (Ul);
+\draw[seq] (Ul) -- (Uc);
+
+% K-theory row
+\node[term] (Kg) at (-4.75,0)
+  {$L_{K(1)}K\bigl(\mathcal O_F[\tfrac12]\bigr)$};
+
+\node[term] (Kl) at (0,0)
+  {$\prod\limits_{\nu\mid2}L_{K(1)}K(F_\nu^\wedge)$};
+
+\node[term] (Kc) at (4.75,0)
+  {$\Sigma\Fib(\kappa)$};
+
+\draw[seq]
+  (Kg) -- node[above,font=\scriptsize] {$\kappa$} (Kl);
+\draw[seq] (Kl) -- (Kc);
+
+% Grothendieck--Witt-theory row
+\node[term] (GWg) at (-4.75,-2.05)
+  {$L_{K(1)}GW\bigl(\mathcal O_F[\tfrac12]\bigr)$};
+
+\node[term] (GWl) at (0,-2.05)
+  {$\prod\limits_{\nu\mid2}L_{K(1)}GW(F_\nu^\wedge)$};
+
+\node[term] (GWc) at (4.75,-2.05)
+  {$\Sigma\Fib(\kappa')$};
+
+\draw[seq]
+  (GWg) -- node[above,font=\scriptsize] {$\kappa'$} (GWl);
+\draw[seq] (GWl) -- (GWc);
+
+% Vertical maps
+\draw[vertical] (Ug) -- (Kg);
+\draw[vertical] (Ul) -- (Kl);
+\draw[vertical] (Uc) -- (Kc);
+
+\draw[vertical]
+  (Kg) -- node[right,font=\scriptsize] {$\operatorname{hyp}$} (GWg);
+\draw[vertical]
+  (Kl) -- node[right,font=\scriptsize] {$\operatorname{hyp}$} (GWl);
+\draw[vertical] (Kc) -- (GWc);
+
+% The full diagram and its K-theoretic slice
+\begin{scope}[on background layer]
+\node[
+  fit=(Ug)(Uc)(GWg)(GWc),
+  rounded corners=9pt,
+  fill=blue!1,
+  draw=blue!35!black,
+  line width=1pt,
+  inner xsep=12pt,
+  inner ysep=15pt
+] (whole) {};
+
+\node[
+  fit=(Kg)(Kl)(Kc),
+  rounded corners=5pt,
+  fill=black!5,
+  draw=black!18,
+  inner xsep=2pt,
+  inner ysep=4pt
+] (slice) {};
+\end{scope}
+
+% Labels
+\node[
+  fill=white,
+  inner xsep=5pt,
+  font=\footnotesize\scshape,
+  text=blue!45!black
+] at (whole.north)
+  {A larger self-dual completion diagram};
+
+\node[
+  fill=black!5,
+  inner xsep=4pt,
+  font=\scriptsize\itshape,
+  text=black!55
+] at ($(slice.north)+(-2.3,0.12)$)
+  {K-theoretic Tate--Poitou duality};
+
+% The half-turn induced by Anderson duality
+\draw[rotation]
+  ($(whole.north east)+(-0.10,-0.55)$)
+  to[out=5,in=-5,looseness=1.35]
+  node[
+    right=5pt,
+    align=center,
+    font=\scriptsize,
+    text=blue!50!black
+  ] {\(2\)-adic\\Anderson duality}
+  ($(whole.south east)+(-0.10,0.55)$);
+
+\draw[rotation]
+  ($(whole.south west)+(0.10,0.55)$)
+  to[out=185,in=175,looseness=1.35]
+  ($(whole.north west)+(0.10,-0.55)$);
+
+\end{tikzpicture}%
+}
+\end{center}
+\end{theorem}
 
 
 
