@@ -1,7 +1,9 @@
 \documentclass[11pt]{article}
 \usepackage[letterpaper,margin=1in]{geometry}
 \usepackage{mytex}
-\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}%
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true, citecolor=MidnightBlue, linkcolor=MidnightBlue]{hyperref} % hyperlinks
 
 \usepackage{bookmark}
 
@@ -20,6 +22,7 @@
 \renewcommand{\headrulewidth}{0pt}
 
 
+
 \usepackage[textwidth=1in,textsize=small,colorinlistoftodos]{todonotes} % todo 노트
 
 \pagestyle{fancy}
@@ -27,6 +30,8 @@
 \chead{}
 \rhead{}
 %\rfoot{\date}
+
+
 
 %Bibliography line spacing
 % ADD THE FOLLOWING COUPLE LINES INTO YOUR PREAMBLE
@@ -61,6 +66,8 @@
 
 \let\overto\xrightarrow
 
+
+
 \author{Myungsin Cho}
 \date{}
 \begin{document}
@@ -68,7 +75,10 @@
 %\maketitle
 \section*{Introduction}
 
-One of the most useful ideas in mathematics is \emph{duality}: two kinds of information that appear different can  determine one another. Just as the landscape shapes the trees that grow on it, the trees can also reveal the landscape beneath them. In algebraic topology, homology and cohomology provide two such perspectives on a space. My research studies how this principle appears in stable homotopy theory and arithmetic. 
+One of the most useful ideas in mathematics is \emph{duality}: two kinds of information that appear different can  determine one another. 
+Just as the landscape shapes the trees that grow on it, the trees can also reveal the landscape beneath them.
+%이 표현을 꼭 가져가고 싶긴 한데, 어디가 적절할지는 모르겠다.
+In algebraic topology, homology and cohomology provide two such perspectives on a space. My research studies how this principle appears in stable homotopy theory and arithmetic. 
 The central goal of my research program is to understand duality and descent in \emph{Real algebraic K-theory}, particularly how global information can be recovered from local data while retaining symmetry. %이렇게 말하면 descent에 너무 많은 힘이 실린다.
 %문단구분을 짓고싶은데 어디가 적절할까?
 My dissertation establishes a first step through a \emph{K-theoretic duality theorem} for number fields. 
@@ -144,6 +154,7 @@ K-theory is a central setting in which both duality and equivariant phenomena ar
 \subsection{K-theoretic Tate--Poitou duality.}
 In arithmetic, Tate--Poitou duality relates étale cohomology groups for number fields in complementary degrees. 
 My dissertation asks whether this arithmetic duality also appears in stable homotopy theory.
+%첫문장이 너무 heavy하다. 바로 읽기 싫어질거 같은데
 
 Algebraic K-theory contains rich arithmetic information, but it is notoriously difficult to compute. 
 Its \(K(1)\)-local variant provides a more accessible approximation. 
@@ -152,14 +163,15 @@ The Quillen--Lichtenbaum conjecture shows that this is a good approximation to a
 This suggests that arithmetic duality should have a corresponding form in stable homotopy theory.
 
 Calegari conjectured that this duality holds at the level of homotopy groups \cite{MR2905536}.
-Blumberg and Mandell proved a stronger spectrum-level duality at every odd prime using Anderson duality, a spectral refinement of Pontrjagin duality for abelian groups \cite{MR4121155}. % Anderson duality라는 도구를 이용한게 아니고, Anderson duality라는 언어로 fomulate했다는 뉘앙스가 들어갔으면 좋겠다.
+Blumberg and Mandell proved a stronger spectrum-level duality at every odd prime using Anderson duality $I_{\bZ_p}$, a spectral refinement of Pontrjagin duality for abelian groups \cite{MR4121155}. % Anderson duality라는 도구를 이용한게 아니고, Anderson duality라는 언어로 formulate했다는 뉘앙스가 들어갔으면 좋겠다.
+%local duality도 증명했다는 말을 넣고싶은데 이러면 너무 늘어질거 같긴 하다.
 The prime \(2\) remained open because real embeddings produce cohomological behavior that does not occur at odd primes. 
 My dissertation completes the result at this remaining prime.
 
-\begin{theorem}[\cite{Cho}]
-Let \(F\) be a number field. The completion sequence is self Anderson dual.
-The bottom row is obtained by applying \(I_{\mathbb Z_2}\) to the top row.
-
+\begin{theorem}[\cite{Cho}]\label{mainthm1}
+Let \(F\) be a number field. 
+The completion sequence of $K(1)$-local algebraic K-theory admits a canonical \(2\)-adic Anderson self-duality.
+The duality acts by a vertical reflection, interchanging two end terms and identifies the middle term with its own dual.
 \begin{center}
 \begin{tikzpicture}[
   >=Latex,
@@ -167,15 +179,15 @@ The bottom row is obtained by applying \(I_{\mathbb Z_2}\) to the top row.
     draw=black!40,
     fill=black!2,
     rounded corners=3pt,
-    inner xsep=7pt,
-    inner ysep=8pt,
+    inner xsep=6pt,
+    inner ysep=6pt,
     align=center,
     font=\small
   },
   main/.style={
     term,
-    draw=blue!55!black,
-    fill=blue!7,
+    draw=red!65!black!85!white,
+    fill=red!6,
     very thick
   },
   local/.style={
@@ -183,102 +195,84 @@ The bottom row is obtained by applying \(I_{\mathbb Z_2}\) to the top row.
     draw=black!30,
     fill=black!3
   },
-  seq/.style={->,thick,black!75},
-  main equiv/.style={
-    <->,
-    very thick,
-    densely dashed,
-    blue!55!black
+  seq/.style={
+    -{Latex[length=2.2mm]},
+    thick,
+    black!75
   },
-  local equiv/.style={
-    <->,
-    thin,
+  duality/.style={
+    {Latex[length=2mm]}-{Latex[length=2mm]},
+    thick,
     densely dashed,
-    black!45
+    red!55!black
   }
 ]
 
-% Top row
-\node[main] (global) at (-5.2,1.35)   
-	{$L_{K(1)}K\bigl(\mathcal O_F[\tfrac12]\bigr)$};
+\node[main] (global) at (-4.5,0)
+  {$L_{K(1)}K\bigl(\mathcal O_F[\tfrac12]\bigr)$};
+  
+  % Vertical mirror axis
+\draw[
+  densely dashed,
+  black!35
+]
+  (0,-1.55) -- (0,.8);
 
-\node[local] (local) at (0,1.35) 
-	{$\prod\limits_{\nu\mid2}L_{K(1)}K(F_\nu)$};
 
-\node[main] (fiber) at (5.2,1.35) 
-	{$\Sigma\Fib(\kappa)$};
+\node[local] (local) at (0,0)
+  {$\prod\limits_{\nu\mid2}L_{K(1)}K(F_\nu)$};
 
-\draw[seq]   (global) --  node[above,font=\scriptsize] {$\kappa$}  (local);
+\node[main] (fiber) at (4.5,0)
+  {$\operatorname{Cof}(\kappa)$};
 
-\draw[seq] (local) -- (fiber);
+% Completion sequence
+\draw[seq]
+  (global) --
+  node[above,font=\scriptsize] {$\kappa$}
+  (local);
 
-\node[  font=\footnotesize,  text=black!60] at (0,2.25)  {Completion sequence};
+\draw[seq]
+  (local) -- (fiber);
 
-% Bottom row
-\node[main] (Ifiber) at (-5.2,-1)   
-	{$I_{\mathbb Z_2} \bigl(\Sigma\Fib(\kappa)\bigr)$};
 
-\node[local] (Ilocal) at (0,-1)
-	 {$I_{\mathbb Z_2}\! \Big( \prod\limits_{\nu\mid2}L_{K(1)}K(F_\nu)  \Big)$};
 
-\node[main] (Iglobal) at (5.2,-1)
-	  {$I_{\mathbb Z_2}L_{K(1)} K \bigl(\mathcal O_F[\tfrac12]\bigr)$};
-
-\draw[seq] (Ifiber) -- (Ilocal);
-\draw[seq] (Ilocal) --  node[above,font=\scriptsize] {$I_{\bZ_2}\kappa$} (Iglobal);
-
-\node[  font=\footnotesize,  text=black!60] at (0,-2)  {Anderson dual sequence};
-
-% Main duality equivalences
-\draw[main equiv]
-  (global.south) --
-  node[right,font=\small,text=blue!55!black] {$\simeq$}
-  (Ifiber.north);
-
-\draw[main equiv]
-  (fiber.south) --
-  node[right,font=\small,text=blue!55!black] {$\simeq$}
-  (Iglobal.north);
 
 % Previously known local self-duality
-\draw[local equiv]
-  (local.south) --
-  node[  left=2pt,    align=right,    font=\scriptsize,    text=black!45  ] {$\simeq$}
-  node[  right=2pt,    align=right,    font=\scriptsize,    text=black!45  ] {self-duality}
-  (Ilocal.north);
-
-% Highlight the two equivalences proved by the theorem
-\begin{scope}[on background layer]
 \node[
-  fit=(global)(Ifiber),
-  rounded corners=7pt,
-  fill=blue!3,
-  draw=blue!15,
-  inner sep=5pt
-] {};
+  above=5pt,
+  font=\scriptsize,
+  text=black!48
+] at (local.north)
+  {self Anderson dual};
 
-\node[
-  fit=(fiber)(Iglobal),
-  rounded corners=7pt,
-  fill=blue!3,
-  draw=blue!15,
-  inner sep=5pt
-] {};
-\end{scope}
-
-% Dualize the entire sequence
-\draw[   -{Latex[length=2.3mm]},   thick,   black!45 ]
-  (7.15,1)
-  to[out=-15,in=15]   node[     right=3pt,     align=center,     font=\scriptsize,     text=black!50   ] {apply\\\(I_{\mathbb Z_2}\)}
-  (7.15,-0.5);
-
-\end{tikzpicture}
+\draw[duality]
+  (global.south)
+  -- ($(global.south)+(0,-0.50)$)
+  to[out=-90,in=180]
+  ($(global.south)+(0.22,-0.72)$)
+  --
+  node[
+    midway,
+    fill=white,
+    inner xsep=7pt,
+    font=\footnotesize,
+    text=red!55!black
+  ] {Anderson-dual pair}
+  ($(fiber.south)+(-0.22,-0.72)$)
+  to[out=0,in=-90]
+  ($(fiber.south)+(0,-0.50)$)
+  -- (fiber.south);
+  
+ \end{tikzpicture}
 \end{center}
+
+
 \end{theorem}
 
 The theorem gives a homotopical refinement of Tate--Poitou duality and it recovers the classical Tate--Poitou exact sequence on homotopy groups. 
 
 The following figure summarizes the passage from arithmetic duality to its homotopical refinement.
+%이렇게 밋밋하게 설명하지 말고, 증명의 핵심 아이디어로써 설명하자.
 \begin{figure}[h]
 \centering
 \begin{tikzcd}[column sep=4em, row sep=1em]
@@ -297,7 +291,7 @@ The following figure summarizes the passage from arithmetic duality to its homot
   {L_{K(1)}K(\calO_F[\tfrac{1}{p}])}
     \arrow[rr, leftrightarrow, "\text{\footnotesize Anderson dual}"]
     &&
-  {\Fib(\kappa)}
+  {\operatorname{Cof}(\kappa)}
 \end{tikzcd}
 \captionsetup{font=footnotesize, skip=0em}
 \caption{
@@ -316,21 +310,23 @@ The case \(F=\bQ\) also has an application to the algebraic K-theory of the sphe
 \end{equation}
 Thus arithmetic information contained in the K-theory of the integers determines the error in a fundamental approximation to the algebraic K-theory of the sphere.
 
-More broadly, this result provides a nonequivariant starting point for my study of duality in Real algebraic \(K\)-theory. It suggests that \(K\)-theoretic Tate--Poitou duality may be one shadow of a larger picture in which duality is compatible with involutions and \(C_2\)-symmetry. My next projects approach this broader question through Grothendieck--Witt theory and Real trace methods.
+More broadly, this result provides a nonequivariant starting point for my study of duality in Real algebraic \(K\)-theory. 
+It suggests that \(K\)-theoretic Tate--Poitou duality may be one shadow of a larger picture in which duality is compatible with involutions and \(C_2\)-symmetry. My next projects approach this broader question through Grothendieck--Witt theory and Real trace methods.
+%GW라는 용어는 여기서 쓰지 말자.
 
 \subsection{Grothendieck--Witt theory and Real duality.}
+Algebraic K-theory가 complex vector bundle의 analogue라면, Grothendieck-Witt theory는 real vector bundle의 analogue입니다.
+이는, 대수적으로는 projective module 뿐만 아니라, 그 위의 nondegenerate bilinear form까지 보겠다는 말이기도 합니다.
 
-% To be added.
-K-theory가 proj module에 대한 이야기라면, GW는 module with bilinear form에 대한 이야기 입니다.
-또한 real vector bundle에 대응하는 algebraic analogue라고 볼수도 있습니다.
 ring에 involution이 있는 경우에, K-theory는 그 symmetry를 inherit하며, C2 fixed point가 바로 GW theory입니다.
 
 $k$ 가 local field인 경우에, K(1)-local GW 의 Anderson dual은 form twist를 2만큼 shift시킨다는게 conjecture.
 
-
 \begin{theorem}[\cite{ChoYang}]
-Let \(k\) be a 2-adic local field. The hyperbolic sequence is self Anderson dual.
-The bottom row is obtained by applying \(I_{\mathbb Z_2}\) to the top row.
+Let \(k\) be a 2-adic local field. 
+The hyperbolic sequence of $K(1)$-local Grothendieck-Witt theory admits a canonical \(2\)-adic Anderson self-duality.
+The duality acts by a vertical reflection, interchanging two end terms and identifies the middle term with its own dual.
+
 \begin{center}
 \begin{tikzpicture}[
   >=Latex,
@@ -338,8 +334,8 @@ The bottom row is obtained by applying \(I_{\mathbb Z_2}\) to the top row.
     draw=black!40,
     fill=black!2,
     rounded corners=3pt,
-    inner xsep=7pt,
-    inner ysep=8pt,
+    inner xsep=6pt,
+    inner ysep=6pt,
     align=center,
     font=\small
   },
@@ -354,261 +350,226 @@ The bottom row is obtained by applying \(I_{\mathbb Z_2}\) to the top row.
     draw=black!30,
     fill=black!3
   },
-  seq/.style={->,thick,black!75},
-  main equiv/.style={
-    <->,
-    very thick,
+  seq/.style={
+    -{Latex[length=2.2mm]},
+    thick,
+    black!75
+  },
+  duality/.style={
+    {Latex[length=2mm]}-{Latex[length=2mm]},
+    thick,
     densely dashed,
     blue!55!black
-  },
-  local equiv/.style={
-    <->,
-    thin,
-    densely dashed,
-    black!45
   }
 ]
 
-% Top row
-\node[main] (global) at (-5.2,1.35)   
-	{$L_{K(1)}\Fib(\operatorname{hyp}_k)$};
+\node[main] (global) at (-4.5,0)
+  {$L_{K(1)}U(k)$};
+  
+  % Vertical mirror axis
+\draw[
+  densely dashed,
+  black!35
+]
+  (0,-1.55) -- (0,.8);
 
-\node[local] (local) at (0,1.35) 
-	{$L_{K(1)}K(k)$};
 
-\node[main] (fiber) at (5.2,1.35) 
-	{$L_{K(1)}GW(k)$};
+\node[local] (local) at (0,0)
+  {$L_{K(1)}K(k)$};
 
-\draw[seq]   (global) -- (local);
+\node[main] (fiber) at (4.5,0)
+  {$L_{K(1)}GW(k)$};
 
-\draw[seq] (local) -- node[above,font=\scriptsize] {$\operatorname{hyp}$}   (fiber);
+% Completion sequence
+\draw[seq]
+  (global) --  (local);
 
-\node[  font=\footnotesize,  text=black!60] at (0,2.25)  {Hyperbolic sequence};
+\draw[seq]
+  (local) --
+node[above,font=\scriptsize] {$\operatorname{hyp}$}
+   (fiber);
 
-% Bottom row
-\node[main] (Ifiber) at (-5.2,-1)   
-	{$I_{\mathbb Z_2} L_{K(1)}GW(k)$};
 
-\node[local] (Ilocal) at (0,-1)
-	 {$I_{\mathbb Z_2}\! \Big( L_{K(1)}K(k)  \Big)$};
 
-\node[main] (Iglobal) at (5.2,-1)
-	  {$I_{\mathbb Z_2}L_{K(1)} \Fib(\operatorname{hyp}_k)$};
-
-\draw[seq] (Ifiber) -- node[above,font=\scriptsize] {$I_{\bZ_2}\operatorname{hyp}_k$} (Ilocal);
-\draw[seq] (Ilocal) --   (Iglobal);
-
-\node[  font=\footnotesize,  text=black!60] at (0,-2)  {Anderson dual sequence};
-
-% Main duality equivalences
-\draw[main equiv]
-  (global.south) --
-  node[right,font=\small,text=blue!55!black] {$\simeq$}
-  (Ifiber.north);
-
-\draw[main equiv]
-  (fiber.south) --
-  node[right,font=\small,text=blue!55!black] {$\simeq$}
-  (Iglobal.north);
 
 % Previously known local self-duality
-\draw[local equiv]
-  (local.south) --
-  node[  left=2pt,    align=right,    font=\scriptsize,    text=black!45  ] {$\simeq$}
-  node[  right=2pt,    align=right,    font=\scriptsize,    text=black!45  ] {self-duality}
-  (Ilocal.north);
-
-% Highlight the two equivalences proved by the theorem
-\begin{scope}[on background layer]
 \node[
-  fit=(global)(Ifiber),
-  rounded corners=7pt,
-  fill=blue!3,
-  draw=blue!15,
-  inner sep=5pt
-] {};
+  above=5pt,
+  font=\scriptsize,
+  text=black!48
+] at (local.north)
+  {self Anderson dual};
 
-\node[
-  fit=(fiber)(Iglobal),
-  rounded corners=7pt,
-  fill=blue!3,
-  draw=blue!15,
-  inner sep=5pt
-] {};
-\end{scope}
-
-% Dualize the entire sequence
-\draw[
-  -{Latex[length=2.3mm]},
-  thick,
-  black!45
-]
-  (7.15,0.85)
-  to[out=-15,in=15]
+\draw[duality]
+  (global.south)
+  -- ($(global.south)+(0,-0.50)$)
+  to[out=-90,in=180]
+  ($(global.south)+(0.22,-0.72)$)
+  --
   node[
-    right=3pt,
-    align=center,
-    font=\scriptsize,
-    text=black!50
-  ] {apply\\\(I_{\mathbb Z_2}\)}
-  (7.15,-0.85);
-
-\end{tikzpicture}
+    midway,
+    fill=white,
+    inner xsep=7pt,
+    font=\footnotesize,
+    text=blue!55!black
+  ] {Anderson-dual pair}
+  ($(fiber.south)+(-0.22,-0.72)$)
+  to[out=0,in=-90]
+  ($(fiber.south)+(0,-0.50)$)
+  -- (fiber.south);
+  
+ \end{tikzpicture}
 \end{center}
+Here, $U(k)$ is the homotopy fiber of the hyperbolic map.
 \end{theorem}
-
-
-Equivariant setting에서 Anderson duality; Ricka의 result.
  
 
 \begin{theorem}[Work in progress]
-Let \(F\) be a number field. The following diagram of completion
-cofiber sequences is self-dual under \(2\)-adic Anderson duality.
-The duality acts by a half-turn, interchanging the \(U\)- and
-Grothendieck--Witt-theoretic rows. Its middle slice is the
-\(K\)-theoretic Tate--Poitou duality theorem.
-
+Let \(F\) be a number field.
+The completion cofiber sequences for \(U\)-theory, algebraic \(K\)-theory, and GW-theory assemble into a single diagram that is self-dual under \(2\)-adic Anderson duality.
+The duality acts by a half-turn, exchanging the \(U\)- and GW-theoretic rows and carrying the \(K\)-theoretic
+row to itself.
+The middle row recovers \(K\)-theoretic Tate--Poitou duality, while the middle column recovers local GW duality.
 \begin{center}
-\resizebox{\linewidth}{!}{%
 \begin{tikzpicture}[
   >=Latex,
+  x=1cm,
+  y=1cm,
   term/.style={
-    draw=black!42,
+    draw=black!32,
     fill=white,
-    rounded corners=2.5pt,
-    inner xsep=5pt,
-    inner ysep=6pt,
+    rounded corners=3pt,
+    inner xsep=6pt,
+    inner ysep=7pt,
     align=center,
-    font=\scriptsize
+    font=\small,
+    minimum height=1.00cm
   },
-  seq/.style={->,semithick,black!75},
-  vertical/.style={->,semithick,black!55},
-  rotation/.style={
-    -{Latex[length=2.4mm]},
-    very thick,
-    blue!55!black
-  }
+  seq/.style={-{Latex[length=2.1mm]},thick,black!70},
+  vert/.style={-{Latex[length=2mm]},semithick,black!55},
+  rotation/.style={-{Latex[length=2.4mm]},very thick,blue!55!black}
 ]
 
-% U-theory row
-\node[term] (Ug) at (-4.75,2.05)
-  {$L_{K(1)}U\bigl(\mathcal O_F[\tfrac12]\bigr)$};
-
-\node[term] (Ul) at (0,2.05)
+% U-row
+\node[term] (Ug) at (-4.7,1.9)
+  {$L_{K(1)}U\bigl(\calO_F[\tfrac12]\bigr)$};
+\node[term] (Ul) at (0,1.9)
   {$\prod\limits_{\nu\mid2}L_{K(1)}U(F_\nu^\wedge)$};
+\node[term] (Uc) at (4.7,1.9)
+  {$\Cof(\kappa'')$};
 
-\node[term] (Uc) at (4.75,2.05)
-  {$\Sigma\Fib(\kappa'')$};
-
-\draw[seq]
-  (Ug) -- node[above,font=\scriptsize] {$\kappa''$} (Ul);
-\draw[seq] (Ul) -- (Uc);
-
-% K-theory row
-\node[term] (Kg) at (-4.75,0)
-  {$L_{K(1)}K\bigl(\mathcal O_F[\tfrac12]\bigr)$};
-
+% K-row
+\node[term] (Kg) at (-4.7,0)
+  {$L_{K(1)}K\bigl(\calO_F[\tfrac12]\bigr)$};
 \node[term] (Kl) at (0,0)
   {$\prod\limits_{\nu\mid2}L_{K(1)}K(F_\nu^\wedge)$};
+\node[term] (Kc) at (4.7,0)
+  {$\Cof(\kappa)$};
 
-\node[term] (Kc) at (4.75,0)
-  {$\Sigma\Fib(\kappa)$};
-
-\draw[seq]
-  (Kg) -- node[above,font=\scriptsize] {$\kappa$} (Kl);
-\draw[seq] (Kl) -- (Kc);
-
-% Grothendieck--Witt-theory row
-\node[term] (GWg) at (-4.75,-2.05)
-  {$L_{K(1)}GW\bigl(\mathcal O_F[\tfrac12]\bigr)$};
-
-\node[term] (GWl) at (0,-2.05)
+% GW-row
+\node[term] (GWg) at (-4.7,-1.9)
+  {$L_{K(1)}GW\bigl(\calO_F[\tfrac12]\bigr)$};
+\node[term] (GWl) at (0,-1.9)
   {$\prod\limits_{\nu\mid2}L_{K(1)}GW(F_\nu^\wedge)$};
+\node[term] (GWc) at (4.7,-1.9)
+  {$\Cof(\kappa')$};
 
-\node[term] (GWc) at (4.75,-2.05)
-  {$\Sigma\Fib(\kappa')$};
-
-\draw[seq]
-  (GWg) -- node[above,font=\scriptsize] {$\kappa'$} (GWl);
+% Horizontal cofiber sequences
+\draw[seq] (Ug) -- node[above,font=\scriptsize] {$\kappa''$} (Ul);
+\draw[seq] (Ul) -- (Uc);
+\draw[seq] (Kg) -- node[above,font=\scriptsize] {$\kappa$} (Kl);
+\draw[seq] (Kl) -- (Kc);
+\draw[seq] (GWg) -- node[above,font=\scriptsize] {$\kappa'$} (GWl);
 \draw[seq] (GWl) -- (GWc);
 
-% Vertical maps
-\draw[vertical] (Ug) -- (Kg);
-\draw[vertical] (Ul) -- (Kl);
-\draw[vertical] (Uc) -- (Kc);
+% Vertical cofiber sequences
+\draw[vert] (Ug) -- (Kg);
+\draw[vert] (Kg) -- node[left,font=\scriptsize] {$\operatorname{hyp}$} (GWg);
+\draw[vert] (Ul) -- (Kl);
+\draw[vert] (Kl) -- node[left,font=\scriptsize] {$\operatorname{hyp}$} (GWl);
+\draw[vert] (Uc) -- (Kc);
+\draw[vert] (Kc) -- (GWc);
 
-\draw[vertical]
-  (Kg) -- node[right,font=\scriptsize] {$\operatorname{hyp}$} (GWg);
-\draw[vertical]
-  (Kl) -- node[right,font=\scriptsize] {$\operatorname{hyp}$} (GWl);
-\draw[vertical] (Kc) -- (GWc);
 
-% The full diagram and its K-theoretic slice
+% The labels make the two colors self-explanatory.
+\node[
+  anchor=west,
+  font=\scriptsize\itshape,
+  text=red!58!black,
+  fill=red!4,
+  inner xsep=4pt
+] at (-4.52,0.9)
+  {K-theoretic global duality};
+
+\node[
+  anchor=center,
+  font=\scriptsize\itshape,
+  text=blue!58!black,
+  fill=blue!5,
+  inner xsep=4pt
+] at (0,2.78)
+  {GW local duality};
+
+
+% Backgrounds: the earlier theorem is a horizontal slice of the larger diagram.
 \begin{scope}[on background layer]
-\node[
-  fit=(Ug)(Uc)(GWg)(GWc),
-  rounded corners=9pt,
-  fill=blue!1,
-  draw=blue!35!black,
-  line width=1pt,
-  inner xsep=12pt,
-  inner ysep=15pt
-] (whole) {};
+  \node[
+    fit=(Ul)(Kl)(GWl),
+    rounded corners=6pt,
+    fill=blue!38,
+    fill opacity=.13,
+    draw=blue!48!black,
+    draw opacity=.32,
+    inner xsep=3pt,
+    inner ysep=7pt
+  ] (localslice) {};
+  
+  \node[
+    fit=(Kg)(Kl)(Kc),
+    rounded corners=6pt,
+    fill=red!38,
+    fill opacity=.13,
+    draw=red!48!black,
+    draw opacity=.32,
+    inner xsep=5pt,
+    inner ysep=6pt
+  ] (kslice) {};
 
-\node[
-  fit=(Kg)(Kl)(Kc),
-  rounded corners=5pt,
-  fill=black!5,
-  draw=black!18,
-  inner xsep=2pt,
-  inner ysep=4pt
-] (slice) {};
+  \node[
+    fit=(Ug)(Ul)(Uc)(GWg)(GWl)(GWc)(kslice),
+    rounded corners=20pt,
+  draw=black!50,
+    line width=.7pt,
+    inner xsep=12pt,
+    inner ysep=20pt
+  ] (whole) {};
 \end{scope}
 
-% Labels
-\node[
-  fill=white,
-  inner xsep=5pt,
-  font=\footnotesize\scshape,
-  text=blue!45!black
-] at (whole.north)
-  {A larger self-dual completion diagram};
+\def\dualitygap{0.24}
 
-\node[
-  fill=black!5,
-  inner xsep=4pt,
-  font=\scriptsize\itshape,
-  text=black!55
-] at ($(slice.north)+(-2.3,0.12)$)
-  {K-theoretic Tate--Poitou duality};
-
-% The half-turn induced by Anderson duality
-\draw[rotation]
-  ($(whole.north east)+(-0.10,-0.55)$)
-  to[out=5,in=-5,looseness=1.35]
+\draw[
+  rotation,
+  rounded corners=27pt
+]
+  ($(whole.east |- Uc.east)+(\dualitygap,0)$)
+  -- ($(whole.south east)+(\dualitygap,-\dualitygap)$)
+  --
   node[
-    right=5pt,
-    align=center,
-    font=\scriptsize,
-    text=blue!50!black
-  ] {\(2\)-adic\\Anderson duality}
-  ($(whole.south east)+(-0.10,0.55)$);
-
-\draw[rotation]
-  ($(whole.south west)+(0.10,0.55)$)
-  to[out=185,in=175,looseness=1.35]
-  ($(whole.north west)+(0.10,-0.55)$);
-
-\end{tikzpicture}%
-}
+    midway,
+    below=3pt,
+    inner xsep=0pt,
+    font=\footnotesize,
+    text=black!62
+  ] {Anderson duality: $180^\circ$ rotation}
+  ($(whole.south)+(-4,-\dualitygap)$);
+\end{tikzpicture}
 \end{center}
 \end{theorem}
+Thus, the K-theoretic Tate--Poitou duality in \autoref{mainthm1} appears as one slice of a larger duality pattern linking U-theory, algebraic K-theory, and Grothendieck--Witt theory.
 
 
-
-
-
-
+Equivariant setting에서 Anderson duality; Ricka의 result.
+위 결과를 real algebraic K-theory로 확장하는것.
 
 
 
