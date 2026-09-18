@@ -152,25 +152,16 @@ K-theory is a central setting in which both duality and equivariant phenomena ar
 
 \section{Arithmetic Duality and Algebraic K-theory}
 \subsection{K-theoretic Tate--Poitou duality.}
-In arithmetic, Tate--Poitou duality relates étale cohomology groups for number fields in complementary degrees. 
-My dissertation asks whether this arithmetic duality also appears in stable homotopy theory.
-%첫문장이 너무 heavy하다. 바로 읽기 싫어질거 같은데
+My dissertation asks whether a classical arithmetic duality has a spectrum-level form in algebraic \(K\)-theory.
+The starting point is Tate--Poitou duality, a central cohomological duality for number fields traditionally expressed through étale cohomology.
 
-Algebraic K-theory contains rich arithmetic information, but it is notoriously difficult to compute. 
-Its \(K(1)\)-local variant provides a more accessible approximation. 
-%문장이 어색하게 끊어지는듯한 느낌
-The Quillen--Lichtenbaum conjecture shows that this is a good approximation to algebraic K-theory, while the Thomason spectral sequence connects it to étale cohomology \cite{Thomason,MR1697095,MR1803955}. 
-This suggests that arithmetic duality should have a corresponding form in stable homotopy theory.
-
-Calegari conjectured that this duality holds at the level of homotopy groups \cite{MR2905536}.
-Blumberg and Mandell proved a stronger spectrum-level duality at every odd prime using Anderson duality $I_{\bZ_p}$, a spectral refinement of Pontrjagin duality for abelian groups \cite{MR4121155}. % Anderson duality라는 도구를 이용한게 아니고, Anderson duality라는 언어로 formulate했다는 뉘앙스가 들어갔으면 좋겠다.
-%local duality도 증명했다는 말을 넣고싶은데 이러면 너무 늘어질거 같긴 하다.
-The prime \(2\) remained open because real embeddings produce cohomological behavior that does not occur at odd primes. 
-My dissertation completes the result at this remaining prime.
+Although algebraic \(K\)-theory is notoriously difficult to compute, its \(K(1)\)-localization provides a more tractable approximation that retains the arithmetic information relevant here.
+Through the Quillen--Lichtenbaum conjecture and the Thomason descent spectral sequence, this approximation is closely connected to étale cohomology \cite{Thomason,MR1697095,MR1803955}.
+This makes it natural to expect Tate-Poitou duality to lift to \(K(1)\)-local algebraic \(K\)-theory and my dissertation confirms this expectation at the prime \(2\).
 
 \begin{theorem}[\cite{Cho}]\label{mainthm1}
 Let \(F\) be a number field. 
-The completion sequence of $K(1)$-local algebraic K-theory admits a canonical \(2\)-adic Anderson self-duality.
+The completion cofiber sequence of $K(1)$-local algebraic K-theory admits a canonical \(2\)-adic Anderson self-duality.
 The duality acts by a vertical reflection, interchanging two end terms and identifies the middle term with its own dual.
 \begin{center}
 \begin{tikzpicture}[
@@ -265,14 +256,14 @@ The duality acts by a vertical reflection, interchanging two end terms and ident
   
  \end{tikzpicture}
 \end{center}
-
-
 \end{theorem}
 
-The theorem gives a homotopical refinement of Tate--Poitou duality and it recovers the classical Tate--Poitou exact sequence on homotopy groups. 
+A homotopy-group-level form of this duality was conjectured by Calegari \cite{MR2905536}.
+Blumberg and Mandell later formulated its spectrum-level refinement using Anderson duality \(I_{\mathbb Z_p}\), and proved the corresponding local and global results at every odd prime \cite{MR4121155}.
+The theorem above completes the spectrum-level picture at the remaining prime by accounting for the additional cohomological behavior arising from real embeddings.
 
-The following figure summarizes the passage from arithmetic duality to its homotopical refinement.
-%이렇게 밋밋하게 설명하지 말고, 증명의 핵심 아이디어로써 설명하자.
+At the heart of the proof is the Thomason descent spectral sequence, which connects \(K(1)\)-local algebraic \(K\)-theory with étale cohomology.
+Through this bridge, Tate--Poitou duality appears as the cohomological shadow of Anderson duality, and the resulting spectrum-level equivalence recovers the classical Tate--Poitou exact sequence on homotopy groups.
 \begin{figure}[h]
 \centering
 \begin{tikzcd}[column sep=4em, row sep=1em]
@@ -280,11 +271,11 @@ The following figure summarizes the passage from arithmetic duality to its homot
     \arrow[d, decorate, decoration={snake, amplitude=0.3mm, segment length=2.5mm}, 
            "\text{\footnotesize Descent SS}" right]
     &
-  {H^s_{\textup{\'et}}\!\big(\calO_F[\tfrac{1}{p}];\,\bZ/p^k(\tfrac{t}{2})\big)}
+  {H^\ast_{\textup{\'et}}\!\big(\calO_F[\tfrac{1}{p}];\,\bZ/p^k(\ast)\big)}
     \arrow[d, Rightarrow]
     \arrow[rr, leftrightarrow, "\text{\footnotesize Pontryagin dual}"]
     &&
-  {H^{3-s}_c\!\big(\calO_F[\tfrac{1}{p}];\,\bZ/p^k(1-\tfrac{t}{2})\big)}
+  {H^{\ast}_c\!\big(\calO_F[\tfrac{1}{p}];\,\bZ/p^k(\ast)\big)}
     \arrow[d, Rightarrow] \\[1ex]
   \textbf{\small Homotopical duality:}
     &
@@ -295,8 +286,7 @@ The following figure summarizes the passage from arithmetic duality to its homot
 \end{tikzcd}
 \captionsetup{font=footnotesize, skip=0em}
 \caption{
-Arithmetic and homotopical dualities in parallel,
-linked by the descent spectral sequence.
+The descent spectral sequence transfers arithmetic duality to homotopical duality.
 }
 \label{fig:duality}
 \end{figure}
