@@ -408,7 +408,7 @@ node[above,font=\scriptsize] {$\operatorname{hyp}$}
   to[out=0,in=-90]
   ($(fiber.south)+(0,-0.50)$)
   -- (fiber.south);
-  
+ 
  \end{tikzpicture}
 \end{center}
 Here, $U(k)$ is the homotopy fiber of the hyperbolic map.
@@ -578,14 +578,16 @@ While ordinary $\operatorname{THH}$ carries the familiar circle action, $\operat
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[
-  >=stealth
+    >=stealth,
+    rotation/.style={draw=blue!60!black,thick,->},
+    reflection/.style={draw=red!60!black,thick,<->}
 ]
 
 % Titles
-\node at (-2.5,1.15)
+\node at (-2.25,1.15)
     {\large $\operatorname{THH}(R)$};
 
-\node at (2.5,1.15)
+\node at (2.25,1.15)
     {\large $\operatorname{THR}(R)$};
 
 % THH center
@@ -604,7 +606,7 @@ While ordinary $\operatorname{THH}$ carries the familiar circle action, $\operat
 \def\rotradius{0.48}
 
 % Rotation arrow
-\draw[->]
+\draw[rotation]
     ([shift=(\rotstart:\rotradius)]thh)
     arc[
         start angle=\rotstart,
@@ -629,7 +631,7 @@ While ordinary $\operatorname{THH}$ carries the familiar circle action, $\operat
 \def\rotradiusthr{0.48}
 
 % Rotation arrow
-\draw[->]
+\draw[rotation]
     ([shift=(\rotstartthr:\rotradiusthr)]thr)
     arc[
         start angle=\rotstartthr,
@@ -645,11 +647,11 @@ While ordinary $\operatorname{THH}$ carries the familiar circle action, $\operat
     ($(thr)+(-0.65,0)$) -- ($(thr)+(0.68,0)$);
 
 % small vertical reflection arrow
-\draw[<->]
+\draw[reflection]
     ($(thr)+(0,-0.30)$) -- ($(thr)+(0,0.30)$);
 
 \end{tikzpicture}
-
+\captionsetup{font=footnotesize}
 \caption{
 The familiar $\bT$-action on $\operatorname{THH}$ extends in
 $\operatorname{THR}$ to an $O(2)\simeq \bT\rtimes C_2$-action.
@@ -672,25 +674,16 @@ For $MU_{\mathbb R}$, $BP_{\mathbb R}$, and several truncated
 Brown--Peterson theories, we determine the differentials and the $E_\infty$-page of the resulting spectral sequences.
 \end{theorem}
 
-These examples provide a first test of the method on a fundamental family of spectra in equivariant chromatic homotopy theory.
-Our construction is a Real refinement of the homological trace methods of Bruner and Rognes \cite{MR2153113}, whose nonequivariant version became an important tool in the study of Segal conjectures for topological Hochschild homology of $MU$ and $BP$.
+These computations demonstrate the method on a fundamental family of spectra in equivariant chromatic homotopy theory.
+Our construction is a Real refinement of the homological trace methods of Bruner and Rognes \cite{MR2153113}, whose nonequivariant methods became important in the study of Segal conjectures for topological Hochschild homology of $MU$ and $BP$.
 Motivated by this precedent, my long-term goal is to study a Real analogue of the Segal conjecture, beginning with the trace invariants of $MU_{\mathbb R}$ and $BP_{\mathbb R}$.
 This would extend the present calculations toward a broader computational understanding of Real trace invariants and, ultimately, Real algebraic $K$-theory.
 
-A distinctive feature of these computations is that they depend essentially on genuine equivariant multiplicative and power-operation structure.
-This raises a broader algebraic question: which collections of equivariant operations can occur together, and how should they be organized?
+The role of genuine equivariant operations in these computations also raises a broader question: which collections of equivariant operations can arise, and how should they be organized?
 My work discussed next studies the algebraic and homotopical foundations of this question.
 
 
-
-
-
-
-
-
-
 \newpage
-
 \subsection{Equivariant algebra: operations and gradings.}
 
 Symmetry changes not only the objects of stable homotopy theory, but also the algebra needed to describe their invariants. Genuine equivariant invariants carry richer operations and richer gradings than their nonequivariant counterparts. My work studies these two complementary aspects of equivariant algebra: which equivariant operations can coexist, and how representation-graded information should be organized.
@@ -757,31 +750,79 @@ $N_\infty$-operads.
 This gives a homotopical realization of a combinatorial compatibility condition.  
 We conjecture that the converse holds without this additional assumption and prove several further families of realizable pairs.
 
-Operations are only one part of the story. Equivariant gradings themselves
-carry structure that is invisible if one regards $RO(C_2)$ simply as a
-discrete set of degrees. Passing to an $RO(C_2)$-degree can forget
-symmetries of the underlying representation.
-
-\[
-\begin{tikzcd}[row sep=3.2em]
-M_V(C_2/C_2)
-\arrow[d, shift left=.7ex, "\mathrm{res}"]
-\arrow[loop left, "\text{\footnotesize grading}"']
-\\
-M_V(C_2/e)
-\arrow[u, shift left=.7ex, "\mathrm{tr}"]
-\arrow[loop left, "\text{\footnotesize grading}"']
-\arrow[loop right, "\text{\footnotesize Weyl}"]
-\end{tikzcd}
-\]
+Operations are only one part of the story. Equivariant gradings themselves can carry additional structure. An ordinary $RO(C_2)$-grading remembers only the class $[V]$ of a representation. 
+Angeltveit and Bohmann introduced the category $\mathcal{RO}(G)$, which refines this grading by retaining morphisms between representation degrees, and in particular the symmetries of a representation $V$ \cite{AngeltveitBohmann}. 
+The distinction can be pictured at the level of graded Mackey functors:
 
 
-In ongoing work with Noah W., we study how this additional grading symmetry
-should be incorporated into Mackey and Tambara functors. Our goal is to give
-an algebraic description in which equivariant operations are compatible with
-the monodromy carried by the grading. This provides a natural language for
-representation-graded coefficient systems arising in genuinely equivariant
-theories such as Real algebraic $K$-theory.
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+    every node/.style={font=\small},
+    >=stealth
+]
+
+% Titles
+\node[font=\bfseries] at (-3.4,1.45)
+    {$RO(C_2)$-grading};
+\node[font=\bfseries] at (3.4,1.45)
+    {$\mathcal{RO}(C_2)$-grading};
+
+% Left Lewis diagram
+\node (Lt) at (-3.4,0.35)
+    {$\underline{M}_{[V]}(C_2/C_2)$};
+\node (Lb) at (-3.4,-1.05)
+    {$\underline{M}_{[V]}(C_2/e)$};
+
+\draw[->]
+    ([xshift=-3pt]Lt.south)
+    --
+    node[left,font=\scriptsize] {$\mathrm{res}$}
+    ([xshift=-3pt]Lb.north);
+
+\draw[->]
+    ([xshift=3pt]Lb.north)
+    --
+    node[right,font=\scriptsize] {$\mathrm{tr}$}
+    ([xshift=3pt]Lt.south);
+
+% Right Lewis diagram
+\node (Rt) at (3.4,0.35)
+    {$\underline{M}_{V}(C_2/C_2)$};
+\node (Rb) at (3.4,-1.05)
+    {$\underline{M}_{V}(C_2/e)$};
+
+\draw[->]
+    ([xshift=-3pt]Rt.south)
+    --
+    node[left,font=\scriptsize] {$\mathrm{res}$}
+    ([xshift=-3pt]Rb.north);
+
+\draw[->]
+    ([xshift=3pt]Rb.north)
+    --
+    node[right,font=\scriptsize] {$\mathrm{tr}$}
+    ([xshift=3pt]Rt.south);
+
+% Action of Aut(V) on the whole graded Mackey functor
+\draw[->, semithick]
+    ([xshift=10pt]Rb.north east)
+    to[out=-10,in=10,looseness=3]
+    node[right=4pt,font=\small] {$\operatorname{Aut}(V)$}
+    ([xshift=5pt]Rt.south east);
+
+\end{tikzpicture}
+
+\captionsetup{font=footnotesize}
+\caption{
+$\mathcal{RO}(C_2)$-grading retains the symmetries of the representation
+degree $V$.
+}
+\label{fig:RO-grading}
+\end{figure}
+
+In ongoing work with Noah Wisdom, we make this additional structure explicit. We study how $\mathcal{RO}(C_2)$-graded Mackey functors can be described in terms of ordinary $RO(C_2)$-graded data together with the symmetries of the grading, and how this description extends to graded Tambara functors. The goal is to understand how these grading symmetries interact with equivariant operations, providing an algebraic framework for representation-graded coefficient systems arising in genuinely equivariant theories such as Real algebraic $K$-theory.
+
 
 Together, these projects study two basic features of genuine equivariant invariants: the operations they support and the structure carried by their gradings. Both appear naturally in Real algebraic $K$-theory and in my work on Real trace methods, where the relevant invariants are genuinely equivariant and representation-graded. My broader goal is to develop an algebraic language in which this structure is retained when passing to computations and, eventually, to equivariant forms of descent.
 
