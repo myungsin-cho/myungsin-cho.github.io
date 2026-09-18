@@ -157,6 +157,7 @@ The starting point is Tate--Poitou duality, a central cohomological duality for 
 
 Although algebraic \(K\)-theory is notoriously difficult to compute, its \(K(1)\)-localization provides a more tractable approximation that retains the arithmetic information relevant here.
 Through the Quillen--Lichtenbaum conjecture and the Thomason descent spectral sequence, this approximation is closely connected to étale cohomology \cite{Thomason,MR1697095,MR1803955}.
+%여기에 diagram
 This makes it natural to expect Tate-Poitou duality to lift to \(K(1)\)-local algebraic \(K\)-theory and my dissertation confirms this expectation at the prime \(2\).
 
 \begin{theorem}[\cite{Cho}]\label{mainthm1}
@@ -567,32 +568,223 @@ Equivariant setting에서 Anderson duality; Ricka의 result.
 \newpage
 
 \subsection{Homological Real trace methods.}
-While duality describes structural relationships in Real algebraic K-theory, explicit calculations usually require a different set of tools. 
-In joint work with Teena Gerhardt, Liam Keenan, Juan C. Moreno, and J.D. Quigley, I develop \emph{homological Real trace methods} for computing Real trace invariants \cite{CGKMQ}. 
-Real trace methods approach $KR$ through more computable invariants built from Real topological Hochschild homology $\operatorname{THR}$.
-The natural \(O(2)\)-action on $\operatorname{THR}$ gives rise to more refined trace invariants, including $\operatorname{TCR}$ and $\operatorname{TCR}^-$.
+My duality work studies structural relationships in Real algebraic $K$-theory; a complementary challenge is to develop tools for explicit computation.
+In joint work with Teena Gerhardt, Liam Keenan, Juan C. Moreno, and J.D. Quigley, I develop \emph{homological Real trace methods} toward this goal \cite{CGKMQ}.
+Trace methods replace difficult $K$-theoretic questions by more computable invariants, but in the Real setting the additional $C_2$-symmetry provides new structure that can itself be used in computation.
 
-Our main tool is a spectral sequence that uses the homology of \(\operatorname{THR}\) to compute the continuous homology of \(\operatorname{TCR}^-\), while retaining multiplicative structure and equivariant power operations.
-As first applications, we carry out these computations for Real bordism \(MU_{\mathbb R}\), Real Brown--Peterson theory \(BP_{\mathbb R}\), and several truncated variants of \(BP_{\mathbb R}\), which form a fundamental family of examples in equivariant chromatic homotopy theory.
+This extra symmetry already appears in Real topological Hochschild homology.
+While ordinary $\operatorname{THH}$ carries the familiar circle action, $\operatorname{THR}$ retains an additional reflection symmetry, as illustrated below.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  >=stealth
+]
+
+% Titles
+\node at (-2.5,1.15)
+    {\large $\operatorname{THH}(R)$};
+
+\node at (2.5,1.15)
+    {\large $\operatorname{THR}(R)$};
+
+% THH center
+\coordinate (thh) at (-2.25,0);
+
+% Tensor symbol
+\node[anchor=east] at ($(thh)+(-0.6,0)$) {$R\,\,\otimes$};
+
+% THH circle
+\draw[thick] (thh) circle (0.6);
+
+
+% ===== Rotation arrow settings =====
+\def\rotstart{-130}   % 시작 각도
+\def\rotend{120}    % 끝 각도
+\def\rotradius{0.48}
+
+% Rotation arrow
+\draw[->]
+    ([shift=(\rotstart:\rotradius)]thh)
+    arc[
+        start angle=\rotstart,
+        end angle=\rotend,
+        radius=\rotradius
+    ];
+
+
+% THR center
+\coordinate (thr) at (2.25,0);
+
+% Tensor symbol
+\node[anchor=east] at ($(thr)+(-0.6,0)$) {$R\,\,\otimes$};
+
+% THR circle
+\draw[thick] (thr) circle (0.6);
+
+
+% ===== Rotation arrow settings =====
+\def\rotstartthr{-130}   % 시작 각도
+\def\rotendthr{120}      % 끝 각도
+\def\rotradiusthr{0.48}
+
+% Rotation arrow
+\draw[->]
+    ([shift=(\rotstartthr:\rotradiusthr)]thr)
+    arc[
+        start angle=\rotstartthr,
+        end angle=\rotendthr,
+        radius=\rotradiusthr
+    ];
+
+
+% ===== Reflection =====
+
+% x-axis reflection axis
+\draw[gray, dashed]
+    ($(thr)+(-0.65,0)$) -- ($(thr)+(0.68,0)$);
+
+% small vertical reflection arrow
+\draw[<->]
+    ($(thr)+(0,-0.30)$) -- ($(thr)+(0,0.30)$);
+
+\end{tikzpicture}
+
+\caption{
+The familiar $\bT$-action on $\operatorname{THH}$ extends in
+$\operatorname{THR}$ to an $O(2)\simeq \bT\rtimes C_2$-action.
+}
+\end{figure}
+
+Our homological Real trace methods are designed to exploit this additional genuine equivariant structure rather than forget it.
+A key feature of our construction is its compatibility with equivariant multiplicative and power operations, which we use to determine differentials and extract information about the continuous homology of $\operatorname{TCR}^-$.
+Technically, this is realized by the following spectral sequence.
 \begin{theorem}[\cite{CGKMQ}]
-For a \(C_2\)-equivariant commutative ring spectrum \(A\), there is a
+For a $C_2$-equivariant commutative ring spectrum $A$, there is a
 natural multiplicative spectral sequence
 \[
-H_\star\bigl(\operatorname{THR}(A); \ul{\bF}_2\bigr)\langle \bar y\rangle \Longrightarrow H^c_\star\bigl(\operatorname{TCR}^-(A); \ul{\bF}_2\bigr),
+H_\star\bigl(\operatorname{THR}(A); \ul{\bF}_2\bigr)\langle \bar y\rangle
+\Longrightarrow
+H^c_\star\bigl(\operatorname{TCR}^-(A); \ul{\bF}_2\bigr),
 \]
 compatible with equivariant power operations.
-For \(MU_{\mathbb R}\), \(BP_{\mathbb R}\), and several truncated
-Brown--Peterson theories,  we determine the differentials and the \(E_\infty\)-page of the resulting spectral sequences.
+For $MU_{\mathbb R}$, $BP_{\mathbb R}$, and several truncated
+Brown--Peterson theories, we determine the differentials and the $E_\infty$-page of the resulting spectral sequences.
 \end{theorem}
 
-Our construction is a Real refinement of the homological trace methods developed by Bruner and Rognes \cite{MR2153113}. In the nonequivariant setting, their methods became an important tool in the study of Segal conjectures for topological Hochschild homology of $MU$ and $BP$. 
-Guided by this precedent, my long-term goal is to use homological Real trace methods to formulate and study a Real analogue of the Segal conjecture, beginning with the trace invariants of \(MU_{\mathbb R}\) and \(BP_{\mathbb R}\). 
-This would extend the present calculations toward a broader understanding of \(\operatorname{TCR}\) and Real algebraic K-theory.
+These examples provide a first test of the method on a fundamental family of spectra in equivariant chromatic homotopy theory.
+Our construction is a Real refinement of the homological trace methods of Bruner and Rognes \cite{MR2153113}, whose nonequivariant version became an important tool in the study of Segal conjectures for topological Hochschild homology of $MU$ and $BP$.
+Motivated by this precedent, my long-term goal is to study a Real analogue of the Segal conjecture, beginning with the trace invariants of $MU_{\mathbb R}$ and $BP_{\mathbb R}$.
+This would extend the present calculations toward a broader computational understanding of Real trace invariants and, ultimately, Real algebraic $K$-theory.
 
-Our computations use the multiplicative and power-operation structure carried by the homology of \(THR\).
-This makes the algebra of genuine equivariant operations an essential input to Real trace methods.
-It leads to the broader question of which collections of equivariant operations can occur together.
+A distinctive feature of these computations is that they depend essentially on genuine equivariant multiplicative and power-operation structure.
+This raises a broader algebraic question: which collections of equivariant operations can occur together, and how should they be organized?
 My work discussed next studies the algebraic and homotopical foundations of this question.
+
+
+
+
+
+
+
+
+
+\newpage
+
+\subsection{Equivariant algebra: operations and gradings.}
+
+Symmetry changes not only the objects of stable homotopy theory, but also the algebra needed to describe their invariants. Genuine equivariant invariants carry richer operations and richer gradings than their nonequivariant counterparts. My work studies these two complementary aspects of equivariant algebra: which equivariant operations can coexist, and how representation-graded information should be organized.
+
+\begin{figure}[h]
+\centering
+\begin{tikzcd}[column sep=4.5em]
+\begin{array}{c}
+\textbf{Equivariant operations}\\[-1mm]
+\text{\footnotesize Which operations can coexist?}
+\end{array}
+\arrow[d, "\text{\footnotesize encode}"']
+&&
+\begin{array}{c}
+\textbf{Representation gradings}\\[-1mm]
+\text{\footnotesize What symmetry remains in a degree?}
+\end{array}
+\arrow[d, "\text{\footnotesize retain}" ]
+\\
+\begin{array}{c}
+\text{transfer systems}\\
+\text{$N_\infty$-operads}
+\end{array}
+&&
+\begin{array}{c}
+(V,\operatorname{Aut}(V))
+\longrightarrow [V]\in RO(C_2)\\[-1mm]
+\text{\footnotesize forgetful passage}
+\end{array}
+\end{tikzcd}
+\captionsetup{font=footnotesize}
+\caption{
+Two complementary aspects of equivariant algebra
+}
+\label{fig:equivariant-algebra}
+\end{figure}
+
+
+One part of this problem is to understand which equivariant operations can coexist. Transfer systems \cite{MR4244201} provide a combinatorial model for these choices, while $N_\infty$-operads encode the corresponding homotopical structures. In collaboration with David Chan, David Mehrle, Pablo Sanchez Ocal, Ang\'elica Osorno, Ben Szczesny, and Paula Verdugo, we study whether compatibility at the combinatorial level is actually realized homotopically. Our main result establishes one direction in general and a converse in an important case:
+
+\[
+\begin{tikzcd}[column sep=8em]
+\begin{array}{c}
+\text{pairing of}\\[-1mm]
+N_\infty\text{-operads}
+\end{array}
+\arrow[r, Rightarrow, shift left=1.3ex, shorten <=2pt, shorten >=2pt]
+&
+\begin{array}{c}
+\text{compatible pair of}\\[-1mm]
+\text{transfer systems}
+\end{array}
+\arrow[l, dashed, gray, shift left=1ex,
+       shorten <=2pt, shorten >=2pt,
+       "\text{\footnotesize partially}"]
+\end{tikzcd}
+\]
+\begin{theorem}[\cite{CCM+}]
+A pairing of $N_\infty$-operads determines a compatible pair of
+transfer systems.  Conversely, if the additive transfer system is
+complete, then the compatible pair can be realized by a pairing of
+$N_\infty$-operads.
+\end{theorem}
+This gives a homotopical realization of a combinatorial compatibility condition.  
+We conjecture that the converse holds without this additional assumption and prove several further families of realizable pairs.
+
+Operations are only one part of the story. Equivariant gradings themselves
+carry structure that is invisible if one regards $RO(C_2)$ simply as a
+discrete set of degrees. Passing to an $RO(C_2)$-degree can forget
+symmetries of the underlying representation.
+
+\[
+\begin{tikzcd}[row sep=3.2em]
+M_V(C_2/C_2)
+\arrow[d, shift left=.7ex, "\mathrm{res}"]
+\arrow[loop left, "\text{\footnotesize grading}"']
+\\
+M_V(C_2/e)
+\arrow[u, shift left=.7ex, "\mathrm{tr}"]
+\arrow[loop left, "\text{\footnotesize grading}"']
+\arrow[loop right, "\text{\footnotesize Weyl}"]
+\end{tikzcd}
+\]
+
+
+In ongoing work with Noah W., we study how this additional grading symmetry
+should be incorporated into Mackey and Tambara functors. Our goal is to give
+an algebraic description in which equivariant operations are compatible with
+the monodromy carried by the grading. This provides a natural language for
+representation-graded coefficient systems arising in genuinely equivariant
+theories such as Real algebraic $K$-theory.
+
+Together, these projects study two basic features of genuine equivariant invariants: the operations they support and the structure carried by their gradings. Both appear naturally in Real algebraic $K$-theory and in my work on Real trace methods, where the relevant invariants are genuinely equivariant and representation-graded. My broader goal is to develop an algebraic language in which this structure is retained when passing to computations and, eventually, to equivariant forms of descent.
+
 
 
 
@@ -606,111 +798,6 @@ The following sections describe how these themes manifest in my recent and ongoi
 
 
 
-\subsection{Equivariant algebras and homotopical combinatorics.}
-My research in equivariant algebras investigates how combinatorial structures capture and control  operations arising in \emph{equivariant stable homotopy theory}.
-A central organizing idea is the notion of a {\it transfer system} \cite{MR4244201}, which encodes which “transfer” maps between subgroups are allowed, subject to natural coherence conditions such as compatibility with conjugation and restriction.
-For example, in the case of the cyclic group $C_{p^2}$, the possible transfer systems are shown in Figure~\ref{fig:transferCp2}.
-\begin{figure}[h]
-\centering
-\begin{tikzpicture}[scale=.8, every node/.style={font=\footnotesize}]
-  % Titles
-  \node at (0,2.8) {Subgroup lattice of $C_{p^2}$};
-  \node[align=center] at (7.5,2.8)
-    {Transfer systems of $C_{p^2}$\\ \footnotesize(vertical lines indicate transfers)};
-
-  % --- 구분선 ---
-  \draw[gray, thin] (-2,2.35) -- (12.2,2.35);
-
-  % === Left: subgroup lattice ===
-  \node (C1)  at (0,0)   {$C_{1}$};
-  \node (Cp)  at (0,1.0) {$C_{p}$};
-  \node (Cp2) at (0,2.0) {$C_{p^2}$};
-
-  \draw (C1) -- (Cp);
-  \draw (Cp) -- (Cp2);
-  \draw plot [smooth, tension=1.2] coordinates {(0.2,0.1) (0.45,1.0) (.2,1.8)};
-
-  % === Right: five transfer systems ===
-  % x: 5.0, 6.5, 8.0, 9.5, 11.0 / y: 0, 1, 2
-  % (각 기둥을 먼저 박스로 감싸기 위해 박스부터 그림)
-  \foreach \x in {5.0,6.5,8.0,9.5,11.0}{
-    \draw[gray!100, densely dotted, rounded corners=3pt]
-      (\x-0.45,-0.3) rectangle (\x+0.45,2.3);
-  }
-
-  % (1) isolated dots
-  \node at (5.0,0) {$\bullet$}; \node at (5.0,1) {$\bullet$}; \node at (5.0,2) {$\bullet$};
-
-  % (2) bottom–middle
-  \node at (6.5,0) {$\bullet$}; \node at (6.5,1) {$\bullet$}; \node at (6.5,2) {$\bullet$};
-  \draw (6.5,0.2) -- (6.5,0.8);
-
-  % (3) middle–top
-  \node at (8.0,0) {$\bullet$}; \node at (8.0,1) {$\bullet$}; \node at (8.0,2) {$\bullet$};
-  \draw (8.0,1.2) -- (8.0,1.8);
-
-  % (4) full chain
-  \node at (9.5,0) {$\bullet$}; \node at (9.5,1) {$\bullet$}; \node at (9.5,2) {$\bullet$};
-  \draw (9.5,0.2) -- (9.5,0.8);
-  \draw plot [smooth, tension=1.4] coordinates {(9.6,0.1) (9.9,1.0) (9.6,1.9)};
-
-  % (5) chain + curved bottom–top
-  \node at (11.0,0) {$\bullet$}; \node at (11.0,1) {$\bullet$}; \node at (11.0,2) {$\bullet$};
-  \draw (11.0,0.2) -- (11.0,0.8);
-  \draw (11.0,1.2) -- (11.0,1.8);
-  \draw plot [smooth, tension=1.4] coordinates {(11.1,0.1) (11.4,1.0) (11.1,1.9)};
-\end{tikzpicture}
-\captionsetup{font=footnotesize} % ← 캡션 크기 줄이기
-\caption{Subgroup lattice of the cyclic group $C_{p^2}$ of order $p^2$  (left) and its five distinct transfer systems (right). These five systems classify, up to homotopy, the $N_\infty$-operads for $C_{p^2}$.}
-\label{fig:transferCp2}
-\end{figure}
-
-Transfer systems provide a combinatorial model for the algebraic structure underlying genuine equivariant commutative ring spectra, encoded by {\it Tambara functors} \cite{MR1209937}.
-Their additive (transfer) and multiplicative (norm) operations are governed by a pair of transfer systems satisfying a compatibility condition, forming a {\it compatible pair}.
-In collaboration with David Chan, David Mehrle, Pablo Sanchez Ocal, Angelica Osorno, Ben Szczesny, and Paula Verdugo, we study the correspondence between such combinatorial data and the {\it pairings of $N_\infty$-operads} \cite{MR2544392} that model these operations.
-Constructing an operad pairing is subtle even non-equivariantly, and our results give the first systematic framework for realizing them in the genuine equivariant setting through explicit combinatorial data.
-
-\begin{theorem}[\cite{CCM+}]
-If two $N_\infty$-operads admit a pairing, then their associated transfer systems form a compatible pair.
-If a compatible pair of transfer systems has a complete additive component, then there exists a pairing of $N_\infty$-operads that realizes it.
-\end{theorem}
-
-Motivated by this result, we conjecture that the correspondence between compatible pairs and operadic pairings holds in full generality:
-\begin{conjecture}
- For every finite group $G$, every compatible pair of $G$-transfer systems should be realizable by some pairing of $N_\infty$-operads.
-\end{conjecture}
-
-Establishing this equivalence would complete the conceptual bridge between the combinatorial and homotopical descriptions of {incomplete Tambara functors} and provide a combinatorial classification of admissible equivariant multiplicative structures.
-
-
-Building on this framework, we have proved several further realizability results that support this conjecture.
-For instance, the transfer systems associated to the equivariant linear isometries and Steiner operads are realized by the corresponding pairing of operads, and $J$-local transfer systems $(\mathcal{T}_J,\mathcal{T}_J)$ are likewise realizable for any subgroup $J\le G$.
-Moreover, we introduce a general construction principle showing that whenever two {\it intersection monoids} $M$ and $N$ admit a pairing $\xi\colon M\times N\to N$, one obtains a corresponding pairing of operads $(\mathcal{O}^{\vee}(M),\mathcal{O}^{\vee}(N))$.
-
-Together, these results form the first systematic framework for classifying compatible transfer system pairs and understanding how combinatorial and homotopical perspectives on equivariant algebra align.
-They provide a computable foundation for studying incomplete Tambara functors and genuine equivariant ring spectra, and illustrate how ideas from combinatorics and operad theory drive new advances in equivariant homotopy theory.
-
-
-\subsection{Real algebraic K-theory and homological trace methods.}
-\emph{Real algebraic K-theory} offers a framework for studying algebraic structures equipped with involutive symmetries, combining topological and arithmetic ideas.
-Introduced by Hesselholt and Madsen \cite{HMreal}, it assigns genuine $C_2$-equivariant spectra to rings with an {\it anti-involution}.
-This theory refines and unifies classical algebraic K-theory, Hermitian K-theory, and $L$-theory by incorporating this additional symmetry.
-
-In collaboration with Teena Gerhardt, Liam Keenan, Juan Moreno, and J.D. Quigley, we are extending the {\it homological trace methods} developed by Bruner and Rognes \cite{MR2153113} to the $C_2$-equivariant setting, specifically targeting \emph{Real Topological Hochschild Homology} (THR).
-To manage the equivariant filtration, we define the notion of a \emph{slice complex}, which serves as a CW complex counterpart to the slice filtration. 
-Using this framework, we prove an analogue of the cellular approximation theorem for these complexes. 
-This foundation allows us to construct a new spectral sequence based on $RO(C_2)$-graded homology, providing computational access to invariants in Real algebraic K-theory.
-\begin{theorem}[Gerhardt--Cho--Keenan--Moreno--Quigley]
- For a $C_2$-equivariant $\ef$-ring spectrum $R$ with twisted $\bT$-action, there is a natural $\aA_\star^{C_2}$-comodule algebra spectral sequence of Mackey functors$\colon$
- \[E^2_{\ast,\star} = H^{-\ast}(B_{C_2}\bT; H \ul{\bF_2}_\star (R)) \Rightarrow H\ul{\bF_2}_\star^c (R^{h_{C_2}\bT})\]
-\end{theorem}
-The introduction of the slice complex does more than facilitate this spectral sequence. We expect this framework to yield other CW complex properties and provide a more intuitive geometric perspective on equivariant spaces and spectra.
-
-Our approach builds on recent advances in {\it Real trace methods}, which adapt topological Hochschild and cyclic homology to the $C_2$-equivariant context \cite{Dotto,Hogenhaven}.
-Extending the homological approach of Bruner and Rognes to this setting yields new computational methods for studying equivariant invariants and new approximations for important spectra such as the {\it Real bordism spectrum} $MU_\bR$.
-
-The long-term goal of this project is to apply these techniques to analyze the Real algebraic K-theory of fundamental spectra including $MU_\bR$ and the {\it Real Brown-Peterson spectrum} $BP_\bR$.
-In particular, we aim to establish a {\it Real analogue of the Segal conjecture} for these spectra, which would parallel one of the most powerful computational results in classical topology and provide new insights into how symmetry shapes algebraic K-theory at chromatic height 1 and beyond.
 \section{Future research direction}
 My future research builds directly on my current work, extending results on duality phenomena in algebraic K-theory and advancing the foundations of equivariant algebra. 
 A central aim is to further develop the connections between homotopical methods, arithmetic dualities, and symmetry in algebraic and geometric contexts.
@@ -719,24 +806,7 @@ In parallel, I plan to develop projects that emphasize concrete computations and
 These topics are well suited for undergraduate involvement and provide natural entry points into algebraic topology. 
 I view cultivating such accessible research directions as an essential part of advancing the field and training the next generation of mathematicians.
 
-\subsection*{Duality and Symmetry in Algebraic K-theory}
-The emerging framework of {\it K-theoretic duality} reveals deep structural parallels between arithmetic geometry and stable homotopy theory.
-Its development points naturally toward several new directions, including higher-dimensional analogues, chromatic refinements, and Real equivariant formulations that extend the reach of duality across algebraic and homotopical contexts.
-
-A natural first step is to understand how K-theoretic duality behaves in higher dimensions.
-While substantial progress has been made for odd primes \cite{Braunling}, the higher-dimensional case at the prime 2 remains unresolved.
-The techniques developed in my thesis for addressing the subtleties of the 2-adic setting provide the tools needed to approach this open case and to clarify how duality extends across arithmetic dimension.
-
-At the same time, these arithmetic phenomena suggest parallel structures in the {\it chromatic} layers of stable homotopy theory.
-Recent results \cite{HRW} indicate that the connective Adams summand~$l$ exhibits arithmetic-like behavior analogous to that of local rings in number theory.
-This analogy points toward a chromatic form of arithmetic duality, and I aim to formulate a corresponding K-theoretic duality at higher chromatic heights.
-
-A third direction arises in the {\it Real} or $C_2$-equivariant context, where algebraic K-theory interacts with symmetry in a genuinely equivariant way.
-An ultimate goal is the construction of a {\it Real Thomason spectral sequence}, serving as a computational bridge between equivariant cohomology and Real algebraic~$K$-theory.
-Achieving this requires developing an equivariant form of 'etale cohomology for commutative ring spectra and adapting descent methods to the $C_2$-equivariant setting.
-Such a framework would parallel Thomason’s classical spectral sequence while opening a systematic approach to the computation of Real algebraic~$K$-theory.
-
-
+ 
 \subsection*{Foundations for Equivariant Algebra}
 A key direction of my future work is to develop the basic algebraic framework underlying equivariant stable homotopy theory.
 While advanced constructions such as Tambara functors capture much of the structure, many of the elementary notions familiar from commutative algebra remain to be formulated in the equivariant setting.
@@ -766,12 +836,6 @@ These connections remain an active area of research, and concrete case studies i
 
 In this way, projects in combinatorics and data science serve not only as entry points for undergraduate participation but also as stepping stones toward more advanced problems aligned with my core research agenda.
 
-\section{Conclusion}
-At the heart of my research lies the perspective of \emph{stable homotopy theory}, a framework in which topology, algebra, and geometry meet on equal footing. Within this setting, ideas such as duality and equivariance reveal how seemingly distinct structures reflect the same underlying homotopical patterns. My work develops this viewpoint to clarify the shared logic that links arithmetic, combinatorics, and topology.
-
-Looking ahead, I aim to expand this program by using stable homotopy theory to understand duality and symmetry across mathematical contexts. A central goal is to build conceptual and computational tools in algebraic K-theory and equivariant homotopy theory that clarify how these structures behave and interact. I also consider it essential to keep this research program accessible by identifying problems suitable for undergraduate projects and fostering collaboration at various levels of expertise.
-
-Ultimately, my research advances both the technical reach of stable homotopy theory and its practical role as a common ground where diverse mathematical ideas can interact.
 
 \bibliography{RS_bib}
 \bibliographystyle{alphaurl}
