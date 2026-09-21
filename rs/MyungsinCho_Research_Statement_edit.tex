@@ -5,7 +5,10 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage[colorlinks=true, citecolor=MidnightBlue, linkcolor=MidnightBlue]{hyperref} % hyperlinks
 
+
 \usepackage{bookmark}
+
+
 
 \usepackage{newtxtext, kotex}
 \usepackage[all,cmtip]{xy}
@@ -23,7 +26,7 @@
 
 
 
-\usepackage[textwidth=1in,textsize=small,colorinlistoftodos]{todonotes} % todo 노트
+\usepackage[textwidth=.85in,textsize=scriptsize,colorinlistoftodos]{todonotes} % todo 노트
 
 \pagestyle{fancy}
 \lhead{Myungsin Cho}
@@ -58,6 +61,7 @@
 \usepackage{amsmath,amsfonts,amssymb,mathrsfs}
 \usepackage{amsthm,thmtools}
 \newtheorem{theorem}{Theorem}
+\newtheorem*{wip}{Work in progress}
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
@@ -66,6 +70,10 @@
 
 \let\overto\xrightarrow
 
+\newcommand{\KR}{\operatorname{KR}}
+\newcommand{\K}{\operatorname{K}}
+\newcommand{\THH}{\operatorname{THH}}
+\newcommand{\GW}{\operatorname{GW}}
 
 
 \author{Myungsin Cho}
@@ -74,31 +82,32 @@
 \begin{center}\LARGE{Research Statement}\end{center}\vspace{.5em}
 %\maketitle
 \section*{Introduction}
+My research lies at the intersection of stable homotopy theory and arithmetic, with a particular emphasis on equivariant phenomena.
+The central goal of my research program is to understand two related aspects of \emph{Real algebraic $K$-theory}, its duality phenomena and its descent behavior.
+Duality concerns structural relationships among its invariants, while descent asks how global information can be recovered from local or cohomological data while preserving equivariant structure.
 
-Duality allows two kinds of information that appear different to determine one another. 
-Just as a landscape shapes the trees that grow on it, the trees can also reveal the terrain beneath them. 
-My research studies this principle in stable homotopy theory and arithmetic. 
-The central goal of my research program is to understand duality in \emph{Real algebraic \(K\)-theory}, with descent serving as one method for recovering global information from local data while retaining symmetry.
+My dissertation established the \emph{2-adic \(K\)-theoretic Tate--Poitou duality} for number fields, providing the non-equivariant starting point in this program. 
+I am now extending this duality picture to Grothendieck--Witt theory, the fixed-point side of Real algebraic \(K\)-theory, toward a \(C_2\)-equivariant duality. 
+In parallel, my work on \emph{Real trace methods} develops computational tools for Real algebraic $\K$-theory.
 
-My \emph{\(K\)-theoretic duality theorem} for number fields provides the first step in this program. From this starting point, the program moves toward Real algebraic \(K\)-theory in two complementary directions by extending duality to \emph{Grothendieck--Witt theory} and developing \emph{Real trace methods} for computation.
+Developing such a descent theory leads to foundational questions in equivariant algebra.
+A genuine equivariant form of descent must have operations and representation-graded information that disappear after forgetting the group action. 
+My work on \emph{transfer systems} and $\mathcal{RO}(C_2)$-gradings studies these two kinds of structure algebraically.
+In the longer term, I aim to develop genuine equivariant forms of cohomology and descent and to understand the arithmetic duality they should carry.
 
 \section{Background}
-Topology often turns geometric questions about spaces into algebraic ones. 
-Homology studies geometric features of a space, such as connected components, loops, and higher-dimensional holes. 
-Cohomology begins from a different point of view. 
-It can be viewed as studying function-like algebraic data on a space and how these data fit together globally. 
-The \emph{Universal Coefficient Theorem} explains that these two kinds of information are closely related. For example, with coefficients in a field $k$, this relationship takes the particularly simple form
+A simple example of duality comes from homology, which studies subspaces, and cohomology, which studies functions on those subspaces.
+The relationship resembles that between land and trees, with the land determining what can grow and the trees in turn revealing the nature of the land beneath them.
+Mathematically, the \emph{Universal Coefficient Theorem} makes this relationship precise.
+For example, over a field $k$, it identifies
 \[
-H^n(X;k)\cong \operatorname{Hom}_k(H_n(X;k),k),
+H^n(X;k)\cong \operatorname{Hom}_k(H_n(X;k),k).
 \]
-Thus, cohomology is the linear dual of homology in this setting. 
-This illustrates how duality allows a problem expressed in one kind of information to be understood through another.
+A related principle is \emph{descent}, which reconstructs global information from compatible local or cohomological data.
 
-Topology also studies spaces and algebraic objects that carry symmetries. 
-This raises the complementary question of what information is lost when those symmetries are forgotten. 
-Figure~1 shows two different symmetries of a circle. 
-After the symmetries are forgotten, the two examples have the same underlying circle. 
-Equivariant topology retains this information by studying not only the object itself, but also how its symmetries act and what remains fixed.
+These principles become subtler when the objects under study carry symmetries.
+Two actions can have the same underlying object after the symmetry is forgotten while having very different equivariant information.
+For instance, reflection and rotation by a half-turn give two $C_2$-actions on a circle with different fixed-point sets, even though both have the same underlying circle.
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[
@@ -146,31 +155,26 @@ Equivariant topology retains this information by studying not only the object it
 \caption{Reflection fixes two red points, while rotation by half a turn fixes none.}
 \label{fig:circle-actions}
 \end{figure}
+My work asks how duality and descent can be formulated without discarding the symmetry.
 
-Questions about duality and symmetry can also be asked for richer topological invariants. 
-One such invariant is $K$-theory. 
-Topological $K$-theory studies vector bundles over spaces, while algebraic $K$-theory studies their algebraic counterparts, such as projective modules over rings. 
-When these objects carry symmetries, $K$-theory can be refined to retain them. 
-Atiyah introduced Real $K$-theory to study complex vector bundles together with symmetry modeled on complex conjugation. 
-Real algebraic $K$-theory brings this perspective to rings with involution. 
-It therefore provides a setting in which duality in algebraic $K$-theory can be studied while retaining symmetry.
+Real algebraic $K$-theory $(\KR)$ provides a natural setting for this question.
+Ordinary algebraic $K$-theory studies projective modules over rings, while $\KR$-theory incorporates an involution and records the resulting $C_2$-equivariant structure.
+Forgetting this symmetry recovers $\K$-theory, while taking fixed points leads to Grothendieck--Witt theory ($\GW$).
+Thus, a duality in $\KR$-theory should be visible both in $\K$-theory $\GW$-theory, together with compatibility between them.
 
+Arithmetic gives a concrete setting in which to study this interaction.
+In arithmetic, Tate--Poitou duality is expressed through étale cohomology, while descent connects this cohomological information to algebraic $K$-theory.
+Arithmetic duality should therefore also appear at the level of $K$-theory, and its Real refinement should preserve both the duality and the equivariant structure underlying descent.
 
 \section{Arithmetic Duality and Real Algebraic K-theory}
-
-Real algebraic $K$-theory can be approached through two complementary perspectives. 
-Forgetting its $C_2$-symmetry recovers ordinary algebraic $K$-theory, while taking fixed points recovers Grothendieck--Witt theory. 
-A duality retaining the full Real structure should therefore appear in both. 
-My dissertation establishes the nonequivariant side, and my current work develops the fixed-point side, with the long-term goal of unifying them in a single duality that retains the full $C_2$-equivariant structure.
+Real algebraic $K$-theory brings ordinary algebraic $K$-theory and Grothendieck--Witt theory into a single $C_2$-equivariant framework.
+My dissertation established an arithmetic duality on the non-equivariant side through $K$-theoretic Tate--Poitou duality at the prime $2$.
+My current work develops the corresponding fixed-point counterpart and shows that this duality extends across the hyperbolic sequence $\operatorname{U}\to\K\to\GW$.
+Together, these results suggest a larger equivariant duality in Real algebraic $K$-theory.
 
 \subsection{K-theoretic Tate--Poitou duality.}
-My dissertation asks whether a classical arithmetic duality has a spectrum-level form in algebraic \(K\)-theory.
-The starting point is Tate--Poitou duality, a central cohomological duality for number fields traditionally expressed through étale cohomology.
-
-Although algebraic \(K\)-theory is notoriously difficult to compute, its \(K(1)\)-localization provides a more tractable approximation that retains the arithmetic information relevant here.
-Through the Quillen--Lichtenbaum conjecture and the Thomason descent spectral sequence, this approximation is closely connected to étale cohomology \cite{Thomason,MR1697095,MR1803955}.
-
-This makes it natural to expect Tate--Poitou duality to lift to \(K(1)\)-local algebraic \(K\)-theory:
+Tate--Poitou duality is expressed through étale cohomology, while Thomason descent relates this cohomological information to $K(1)$-local algebraic $K$-theory.
+The corresponding $K$-theoretic problem is to realize Tate--Poitou duality at homotopical level.
 \begin{figure}[h]
 \centering
 \begin{tikzcd}[column sep=4em, row sep=2em]
@@ -191,7 +195,7 @@ This makes it natural to expect Tate--Poitou duality to lift to \(K(1)\)-local a
 {H^\ast_{\mathrm{\acute et}}\!
 \bigl(
     \calO_F[\tfrac1p];
-    \bZ/p^k(\ast)
+    \bZ_p(\ast)
 \bigr)}
 \arrow[d,Rightarrow]
 \arrow[
@@ -204,7 +208,7 @@ This makes it natural to expect Tate--Poitou duality to lift to \(K(1)\)-local a
 {H^\ast_{c}\!
 \bigl(
     \calO_F[\tfrac1p];
-    \bZ/p^k(\ast)
+    \bZ/p^\infty(\ast)
 \bigr)}
 \arrow[d,Rightarrow,dotted]
 \\[1ex]
@@ -212,7 +216,7 @@ This makes it natural to expect Tate--Poitou duality to lift to \(K(1)\)-local a
 \textbf{\footnotesize Homotopical level:}
 &
 |[font=\small]|
-{L_{K(1)}K\bigl(\calO_F[\tfrac1p]\bigr)}
+{L_{K(1)}\K\bigl(\calO_F[\tfrac1p]\bigr)}
 \arrow[
     rr,
     leftrightarrow,
@@ -243,11 +247,13 @@ Cohomological duality suggests a spectrum-level duality after Thomason descent.
 \label{fig:duality}
 \end{figure}
 
-My dissertation confirms this expectation at the prime \(2\).
+A homotopy-group-level form of this duality was conjectured by Calegari in \cite{MR2905536}, and Blumberg and Mandell established the corresponding spectrum-level duality at every odd prime in \cite{MR4121155}.
+The prime $2$ remained open becasue the presence of real embeddings introduces additional cohomological behavior.
+My dissertation resolves this remaining case. 
 \begin{theorem}[\cite{Cho}]\label{mainthm1}
-Let \(F\) be a number field. 
+Let \(F\) be a number field and $\calO_F[\tfrac{1}{2}]$ be its ring of 2-integers.
 The completion cofiber sequence of $K(1)$-local algebraic K-theory admits a canonical \(2\)-adic Anderson self-duality.
-The duality acts by reflection across the vertical axis, interchanging the end terms and identifying the middle term with its own dual.
+The duality acts by reflection, interchanging the end terms and identifying the middle term with its own dual.
 \begin{center}
 \begin{tikzpicture}[
   >=Latex,
@@ -285,7 +291,7 @@ The duality acts by reflection across the vertical axis, interchanging the end t
 ]
 
 \node[main] (global) at (-4.5,0)
-  {$L_{K(1)}K\bigl(\mathcal O_F[\tfrac12]\bigr)$};
+  {$L_{K(1)}\K\bigl(\mathcal O_F[\tfrac12]\bigr)$};
   
   % Vertical mirror axis
 \draw[
@@ -296,7 +302,7 @@ The duality acts by reflection across the vertical axis, interchanging the end t
 
 
 \node[local] (local) at (0,0)
-  {$\prod\limits_{\nu\mid2}L_{K(1)}K(F_\nu)$};
+  {$\prod\limits_{\nu\mid2}L_{K(1)}\K(F_\nu)$};
 
 \node[main] (fiber) at (4.5,0)
   {$\operatorname{Cof}(\kappa)$};
@@ -342,40 +348,28 @@ The duality acts by reflection across the vertical axis, interchanging the end t
  \end{tikzpicture}
 \end{center}
 \end{theorem}
-A homotopy-group-level form of this duality was conjectured by Calegari \cite{MR2905536}.
-Blumberg and Mandell later formulated a spectrum-level refinement in terms of \(p\)-adic Anderson duality \(I_{\mathbb Z_p}\), the spectrum-level analogue of Pontryagin duality.
-They proved the corresponding local and global duality theorems at every odd prime \cite{MR4121155}.
-The theorem above completes the spectrum-level picture at the remaining prime by accounting for the additional cohomological behavior arising from real embeddings.
 
-The case \(F=\bQ\) also yields an application to the algebraic
-\(K\)-theory of the sphere spectrum.
-Combining the duality theorem with known comparison results gives a
-canonical equivalence in nonnegative degrees
+The theorem has a concrete application to trace methods in the algebraic $K$-theory of the sphere.
+For $F=\mathbb Q$, combining the duality theorem with known comparison results gives the following identification.
+\begin{corollary}
+There is a canonical equivalence in nonnegative degrees
 \begin{equation*}
-\Sigma^{-1}I_{\bZ_2}L_{K(1)}K(\bZ)
-\mathrel{\underset{\scriptscriptstyle [0,\infty)}{\simeq}}
-\Fib\!\left(
-K(\bS)_2^\w
-\xrightarrow{\operatorname{trc}_{\bS}}
-TC(\bS)_2^\w
-\right).
+\Sigma^{-1}I_{\bZ_2}L_{K(1)}\K(\bZ) \mathrel{\underset{\scriptscriptstyle [0,\infty)}{\simeq}} \Fib\!\left( \K(\bS)_2^\w \xrightarrow{\operatorname{trc}_{\bS}} \operatorname{TC}(\bS)_2^\w \right).
 \end{equation*}
-Thus, arithmetic information contained in $K(\bZ)$ determines the difference in a fundamental approximation to $K(\bS)$.
+\end{corollary}
+Thus, arithmetic information in $K(\bZ)$ determines the fiber of the cyclotomic trace map for $K(\bS)$.
 
 
 \subsection{Grothendieck--Witt theory and  duality.}
-Just as algebraic \(K\)-theory is an algebraic analogue of complex vector bundles, Grothendieck--Witt theory plays the role of real vector bundles and records projective modules together with nondegenerate bilinear forms. 
-The analogue of forgetting a complex structure on a vector bundle is the hyperbolic map and its fiber defines \(U\)-theory.
-\[
-U := \Fib\big( K \xrightarrow{\operatorname{hyp}} GW \big)
-\]
-My current work with Lucy Yang shows that, over \(2\)-adic local fields, this entire sequence exhibits a striking duality symmetry.
+A fixed-point counterpart of the $\K$-theoretic duality naturally leads to Grothendieck--Witt theory, which records projective modules equipped with nondegenerate bilinear forms.
+The hyperbolic map $\K\to\GW$ relates algebraic $K$-theory to this additional form structure, whose homotopy fiber is known as $\operatorname{U}$-theory.
+The $2$-primary descent techniques from my dissertation provide the arithmetic input for the $\GW$-side.
+In current work with Lucy Yang, we show that over $2$-adic local fields the resulting sequence has a duality symmetry.
 
 \begin{theorem}[\cite{ChoYang}]
 Let \(k\) be a 2-adic local field. 
-The hyperbolic sequence of $K(1)$-local Grothendieck-Witt theory admits a canonical \(2\)-adic Anderson self-duality.
-The duality acts by reflection across the vertical axis, interchanging the end terms and identifying the middle term with its own dual.
-
+The hyperbolic sequence of $K(1)$-local $\GW$-theory admits a canonical \(2\)-adic Anderson self-duality.
+The duality acts by reflection, interchanging the end terms and identifying the middle term with its own dual.
 \begin{center}
 \begin{tikzpicture}[
   >=Latex,
@@ -413,7 +407,7 @@ The duality acts by reflection across the vertical axis, interchanging the end t
 ]
 
 \node[main] (global) at (-4.5,0)
-  {$L_{K(1)}U(k)$};
+  {$L_{K(1)}\operatorname{U}(k)$};
   
   % Vertical mirror axis
 \draw[
@@ -424,10 +418,10 @@ The duality acts by reflection across the vertical axis, interchanging the end t
 
 
 \node[local] (local) at (0,0)
-  {$L_{K(1)}K(k)$};
+  {$L_{K(1)}\K(k)$};
 
 \node[main] (fiber) at (4.5,0)
-  {$L_{K(1)}GW(k)$};
+  {$L_{K(1)}\GW(k)$};
 
 % Completion sequence
 \draw[seq]
@@ -471,14 +465,13 @@ node[above,font=\scriptsize] {$\operatorname{hyp}$}
 \end{center}
 \end{theorem}
  
-The local theorem is part of a broader arithmetic picture. In the global setting, the completion sequences for these three theories are expected to assemble into a single self-dual diagram.
+The significance of this theorem is that the duality is compatible across the hyperbolic sequence $\operatorname{U}\to\K\to\GW$ rather than appearing only in one theory at a time.
+It therefore suggests that the global duality should occur as one part of a larger self-dual arithmetic structure.
 
-\begin{theorem}[Work in progress]
-Let \(F\) be a number field.
-The completion cofiber sequences for \(U\)-theory, algebraic \(K\)-theory, and GW-theory assemble into a single diagram that is self-dual under \(2\)-adic Anderson duality.
-The duality acts by a half-turn, exchanging the \(U\)- and GW-theoretic rows and carrying the \(K\)-theoretic
-row to itself.
-The middle row recovers \(K\)-theoretic Tate--Poitou duality, while the middle column recovers local GW duality.
+Our ongoing work seeks to globalize this duality to number fields.
+\begin{wip}
+The completion sequences for $U$-theory, $K$-theory, and GW-theory fit into a ($3\times3$) diagram compatible with the hyperbolic maps and local completion maps.
+The duality acts by half-turn rotation.
 \begin{center}
 \begin{tikzpicture}[
   >=Latex,
@@ -501,25 +494,25 @@ The middle row recovers \(K\)-theoretic Tate--Poitou duality, while the middle c
 
 % U-row
 \node[term] (Ug) at (-4.7,1.9)
-  {$L_{K(1)}U\bigl(\calO_F[\tfrac12]\bigr)$};
+  {$L_{K(1)}\operatorname{U}\bigl(\calO_F[\tfrac12]\bigr)$};
 \node[term] (Ul) at (0,1.9)
-  {$\prod\limits_{\nu\mid2}L_{K(1)}U(F_\nu^\wedge)$};
+  {$\prod\limits_{\nu\mid2}L_{K(1)}\operatorname{U}(F_\nu^\wedge)$};
 \node[term] (Uc) at (4.7,1.9)
   {$\Cof(\kappa'')$};
 
 % K-row
 \node[term] (Kg) at (-4.7,0)
-  {$L_{K(1)}K\bigl(\calO_F[\tfrac12]\bigr)$};
+  {$L_{K(1)}\K\bigl(\calO_F[\tfrac12]\bigr)$};
 \node[term] (Kl) at (0,0)
-  {$\prod\limits_{\nu\mid2}L_{K(1)}K(F_\nu^\wedge)$};
+  {$\prod\limits_{\nu\mid2}L_{K(1)}\K(F_\nu^\wedge)$};
 \node[term] (Kc) at (4.7,0)
   {$\Cof(\kappa)$};
 
 % GW-row
 \node[term] (GWg) at (-4.7,-1.9)
-  {$L_{K(1)}GW\bigl(\calO_F[\tfrac12]\bigr)$};
+  {$L_{K(1)}\GW\bigl(\calO_F[\tfrac12]\bigr)$};
 \node[term] (GWl) at (0,-1.9)
-  {$\prod\limits_{\nu\mid2}L_{K(1)}GW(F_\nu^\wedge)$};
+  {$\prod\limits_{\nu\mid2}L_{K(1)}\GW(F_\nu^\wedge)$};
 \node[term] (GWc) at (4.7,-1.9)
   {$\Cof(\kappa')$};
 
@@ -613,18 +606,30 @@ The middle row recovers \(K\)-theoretic Tate--Poitou duality, while the middle c
   ($(whole.south)+(-4,-\dualitygap)$);
 \end{tikzpicture}
 \end{center}
-\end{theorem}
-Thus, the $K$-theoretic Tate--Poitou duality in \autoref{mainthm1} appears as one slice of a larger duality pattern linking $U$-theory, algebraic $K$-theory, and GW-theory.
+\end{wip}
+Proving the self-duality of the full diagram would establish a global duality theorem for Grothendieck--Witt theory and combine the two results above in a single arithmetic structure.
+The rotational symmetry also guides the following conjecture.
+\begin{conjecture}
+Let \(F\) be a number field with trivial involution, and let
+\[\textstyle
+\kappa_{\KR}^{[2]}\colon
+L_{K(1)}\KR^{[2]}\left(\mathcal{O}_F [\tfrac{1}{2}]\right) \to \prod\limits_{\nu\mid 2} L_{K(1)}\KR^{[2]} \left(F_\nu^\wedge\right)
+\]
+denote the completion map, where the superscript \([2]\) refers to the shift of the duality on perfect modules.
+There is a canonical equivalence of genuine $C_2$-spectra
+ \[I_{\bZ_2}^{C_2} L_{K(1)} \KR(\calO_F[\tfrac{1}{2}]) \simeq \Cof \big(\kappa_{\KR}^{[2]}\big)\]
+  where \(I_{\mathbb{Z}_2}^{C_2}\) denotes genuine \(C_2\)-equivariant \(2\)-adic Anderson duality.
+\end{conjecture}
 
+After forgetting the \(C_2\)-action, the shift of the duality disappears, and the conjecture recovers the \(K\)-theoretic Tate--Poitou duality of my dissertation.
 
+\section{Real trace methods}
+The duality results above reveal structural relations in Real algebraic $K$-theory, but they do not by themselves provide methods for computation.
+Trace methods have long provided such tools in ordinary algebraic $K$-theory by approximating $K$-theory with more computable invariants such as topological Hochschild homology $(\THH)$ and topological cyclic homology ($\operatorname{TC}$).
+In joint work with Teena Gerhardt, Liam Keenan, Juan C. Moreno, and J.D. Quigley, I develop \emph{homological Real trace methods} that incorporate the additional equivariant structure present in the Real setting \cite{CGKMQ}.
 
-\subsection{Homological Real trace methods.}
-My duality work studies structural relationships in Real algebraic $K$-theory; a complementary challenge is to develop tools for explicit computation.
-In joint work with Teena Gerhardt, Liam Keenan, Juan C. Moreno, and J.D. Quigley, I develop \emph{homological Real trace methods} toward this goal \cite{CGKMQ}.
-Trace methods replace $K$-theoretic questions by more computable invariants, but in the Real setting the additional $C_2$-symmetry provides new structure that can itself be used in computation.
-
-This extra symmetry already appears in Real topological Hochschild homology.
-While ordinary $\operatorname{THH}$ carries the familiar circle action, $\operatorname{THR}$ retains an additional reflection symmetry, as illustrated below.
+Ordinary $\operatorname{THH}$ carries a circle action, while Real topological Hochschild homology ($\operatorname{THR}$) extends this to an $O(2)$-action by incorporating a reflection symmetry.
+Trace methods in this setting must keep track of genuine equivariant operations, which we use to compute the continuous homology of $\operatorname{TCR}^-$.
 
 \begin{figure}[h]
 \centering
@@ -704,11 +709,10 @@ While ordinary $\operatorname{THH}$ carries the familiar circle action, $\operat
 \end{tikzpicture}
 \captionsetup{font=footnotesize}
 \caption{
-The familiar $\bT$-action on $\operatorname{THH}$ extends in
-$\operatorname{THR}$ to an $O(2)\simeq \bT\rtimes C_2$-action.
+The $\bT$-action on $\operatorname{THH}$ extends in $\operatorname{THR}$ to an $O(2)\simeq \bT\rtimes C_2$-action.
 }
 \end{figure}
-A key feature of our methods is its compatibility with equivariant multiplicative and power operations, which we use to determine differentials and extract information about the continuous homology of $\operatorname{TCR}^-$.
+A key feature of our method is its compatibility with equivariant multiplicative and power operations, and we use these to extract information about the continuous homology of $\operatorname{TCR}^-$.
 Technically, this is realized by the following spectral sequence.
 \begin{theorem}[\cite{CGKMQ}]
 For a $C_2$-equivariant commutative ring spectrum $A$, there is a
@@ -723,59 +727,38 @@ For $MU_{\mathbb R}$, $BP_{\mathbb R}$, and several truncated
 Brown--Peterson theories, we determine the differentials and the $E_\infty$-page of the resulting spectral sequences.
 \end{theorem}
 
-Our construction is a Real refinement of the homological trace methods of Bruner and Rognes \cite{MR2153113}, whose nonequivariant methods became important in the study of Segal conjectures for topological Hochschild homology of $MU$ and $BP$.
-Motivated by this work, my long-term goal is to study a Real analogue of the Segal conjecture of $MU_{\mathbb R}$ and $BP_{\mathbb R}$.
-This would extend the present calculations toward a broader computational understanding of Real trace invariants and, ultimately, Real algebraic $K$-theory.
+Our construction is a Real refinement of the homological trace methods of Bruner and Rognes \cite{MR2153113}, which played an important role in the study of Segal conjectures for the $\THH$ of bordism theories, $MU$ and $BP$.
+A natural next test for our methods is a Real analogue of this for $MU_{\mathbb R}$ and $BP_{\mathbb R}$.
+Proving a Real Segal conjecture in these cases would extend the present calculations toward a broader understanding of Real trace invariants and ultimately of Real algebraic $K$-theory of Real bordism theories.
 
-The role of genuine equivariant operations in these computations also raises a broader question: which collections of equivariant operations can arise, and how should they be organized?
-My work discussed next studies the algebraic and homotopical foundations of this question.
+The way equivariant operations enter these computations makes their algebraic structure a problem in its own right.
+Beyond individual calculations, one must understand how the additional algebraic structures of equivariance fit together. 
+The next section presents two projects concerned with different aspects of this structure.
 
+\section{Equivariant algebra: operations and gradings}
+A equivariant theory of descent must account for algebraic structure that disappears after forgetting the group action.
+Two features are particularly important: the equivariant operations carried by the coefficients and the representation gradings on which these operations act.
+My work investigates these two aspects of equivariant algebra through transfer systems and representation-graded Mackey and Tambara functors.
+These projects also clarify the kind of coefficient structure that a future equivariant descent theory should accommodate.
 
-\section{Equivariant algebra: operations and gradings.}
-Symmetry changes not only the objects of stable homotopy theory, but also the algebra needed to describe their invariants. 
-Genuine equivariant invariants carry richer operations and richer gradings than their nonequivariant counterparts. My work studies these two complementary aspects of equivariant algebra: which equivariant operations can coexist, and how representation-graded information should be organized.
+\subsection{Equivariant operations.}
+In equivariant stable homotopy theory, additive and multiplicative structures take forms that do not occur in ordinary algebra.
+Transfer maps play the role of equivariant addition, while norm maps play the role of equivariant multiplication. 
+Each of these operations is parametrized by an \(N_\infty\)-operad, and a pairing of the two operads encodes an equivariant distributive law. 
+Transfer systems describe \(N_\infty\)-operads combinatorially, and the distributive law becomes a compatibility condition between two such systems. 
+The realization problem asks whether every compatible pair of transfer systems arises from a pairing of \(N_\infty\)-operads.
 
-\begin{figure}[h]
-\centering
-\begin{tikzcd}[column sep=4.5em]
-\begin{array}{c}
-\textbf{Equivariant operations}
-\end{array}
-\arrow[d, "\text{\footnotesize encode}"']
-&&
-\begin{array}{c}
-\textbf{Representation gradings}
-\end{array}
-\arrow[d, "\text{\footnotesize retain}" ]
-\\
-\begin{array}{c}
-\text{transfer systems}\\
-\text{$N_\infty$-operads}
-\end{array}
-&&
-\begin{array}{c}
-(V,\operatorname{Aut}(V))
-\longrightarrow [V]\in RO(C_2)\\[-1mm]
-\text{\footnotesize forgetful passage}
-\end{array}
-\end{tikzcd}
-\captionsetup{font=footnotesize}
-\caption{
-Two complementary aspects of equivariant algebra
-}
-\label{fig:equivariant-algebra}
-\end{figure}
-One part of this problem is to understand which equivariant operations can coexist. Transfer systems \cite{MR4244201} provide a combinatorial model for these choices, while $N_\infty$-operads encode the corresponding homotopical structures. In collaboration with David Chan, David Mehrle, Pablo Sanchez Ocal, Ang\'elica Osorno, Ben Szczesny, and Paula Verdugo, we study whether compatibility at the combinatorial level is actually realized homotopically. Our main result establishes one direction in general and a converse in an important case:
+In joint work with David Chan, David Mehrle, Pablo Sanchez Ocal, Ang\'elica Osorno, Ben Szczesny, and Paula Verdugo, we study the realization problem relating these two descriptions.
 \[
 \begin{tikzcd}[column sep=8em]
 \begin{array}{c}
-\text{pairing of}\\[-1mm]
+\text{pairing of}\\
 N_\infty\text{-operads}
 \end{array}
 \arrow[r, Rightarrow, shift left=1.3ex, shorten <=2pt, shorten >=2pt]
 &
 \begin{array}{c}
-\text{compatible pair of}\\[-1mm]
+\text{compatible pair of}\\
 \text{transfer systems}
 \end{array}
 \arrow[l, dashed, shift left=1ex,
@@ -789,14 +772,12 @@ transfer systems.  Conversely, if the additive transfer system is
 complete, then the compatible pair can be realized by a pairing of
 $N_\infty$-operads.
 \end{theorem}
-We conjecture that the converse holds without this additional assumption and prove several further families of realizable pairs.
+Beyond the complete case, we establish several additional families of realizable pairs and conjecture that every compatible pair of transfer systems is realizable.
 
-Operations are only one part of the story. Equivariant gradings themselves can carry additional structure. 
-A basic example comes from equivariant stable homotopy groups, which naturally form Mackey functors.
-For a genuine $C_2$-spectrum $X$, its homotopy Mackey functors $\pi_\star X$ are naturally graded by representations of $C_2$. 
-While an ordinary $RO(C_2)$-grading records only the class $[V]$ of a representation, Angeltveit and Bohmann introduced the category $\mathcal{RO}(G)$, which refines this grading by retaining morphisms between representation degrees, and in particular the symmetries of a representation $V$ \cite{AngeltveitBohmann}. 
-The distinction can be pictured at the level of graded Mackey functors:
-
+\subsection{Representation gradings.}
+The next question concerns the grading of the objects on which these operations act.
+For a $C_2$-spectrum $X$, its homotopy groups $\pi_\star X$ form Mackey functors graded by representations of $C_2$.
+An ordinary \(RO(C_2)\)-grading records only the class of a representation and not its symmetries. In the category \(\mathcal{RO}(G)\) introduced by Angeltveit and Bohmann in \cite{AngeltveitBohmann}, morphisms between representation degrees also record the symmetries of individual representations.
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[
@@ -857,52 +838,39 @@ The distinction can be pictured at the level of graded Mackey functors:
 
 \captionsetup{font=footnotesize}
 \caption{
-$\mathcal{RO}(C_2)$-grading retains the symmetries of the representation
-degree $V$.
+$\mathcal{RO}(C_2)$-grading records the symmetries of the representation degree $V$.
 }
 \label{fig:RO-grading}
 \end{figure}
 
-In ongoing work with Noah Wisdom, we make this additional structure explicit. We study how $\mathcal{RO}(C_2)$-graded Mackey functors can be described in terms of ordinary $RO(C_2)$-graded data together with the symmetries of the grading, and how this description extends to graded Tambara functors. The goal is to understand how these grading symmetries interact with equivariant operations, providing an algebraic framework for representation-graded coefficient systems arising in genuinely equivariant theories such as Real algebraic $K$-theory.
+In ongoing work with Noah Wisdom, we isolate the algebraic grading properties satisfied by the homotopy groups of $C_2$-spectra.
+This defines a class of graded Mackey and Tambara functors that we call \emph{topological}.
+Our main result identifies the additional information carried by the refined grading.
+\begin{theorem}[\cite{ChoWisdom}]
+The category of topological $\mathcal{RO}(C_2)$-graded Mackey functors is equivalent to the category of topological $RO(C_2)$-graded Mackey functors equipped with compatible actions of the grading automorphism groups.
+The same equivalence holds for topological Tambara functors.
+\end{theorem}
+Thus, the additional information in a topological $\mathcal{RO}(C_2)$-grading is precisely the symmetry data attached to the ordinary $RO(C_2)$-graded homotopy groups.
 
-Together, these projects develop algebraic foundations for working with genuinely equivariant invariants, addressing both the operations they support and the structure carried by their representation gradings. 
-These questions also arise naturally in Real algebraic $K$-theory, where genuinely equivariant computational and descent methods require coefficient systems that retain representation-graded information. 
-Developing a workable algebraic language for such coefficients is therefore an important step toward understanding how classical descent techniques might extend to the Real setting.
+\section{Outlook}
+A main direction of my research is to understand duality and descent in Real algebraic \(K\)-theory.
+The conjecture above gives a concrete target for this direction.
+My dissertation derives \(K\)-theoretic Tate--Poitou duality from étale duality through Thomason descent.
+For \(\KR\), no corresponding representation-graded equivariant cohomology theory is yet available, so I approach the problem from the other direction.
+The conjecture specifies the duality that a Real descent theory should produce.
+Such a theory must recover ordinary Thomason descent after forgetting the \(C_2\)-action and be compatible with the expected global Grothendieck--Witt duality in the \(3\times3\) diagram.
+I aim to construct such a cohomology theory together with a descent spectral sequence converging to \(\KR\).
 
+My Real trace project studies \(\KR\) through explicit calculations of its trace invariants.
+Calculations of the the continuous homology of \(\operatorname{TCR}^{-}\) for \(MU_{\mathbb R}\), \(BP_{\mathbb R}\) are the starting point for a Real Segal conjecture for \(MU_{\mathbb R}\) and \(BP_{\mathbb R}\).
+Proving this conjecture would  provide computable approximations to \(\KR(MU_{\mathbb R})\) and \(\KR(BP_{\mathbb R})\).
 
+My work on transfer systems and representation gradings studies the algebra specific to genuine equivariance.
+These projects describe how operations coexist and how symmetries act across representation degrees.
+The same structures will occur in the coefficients of a future equivariant descent theory.
 
-
-
-\section{Future research direction}
- 
-\subsection*{Foundations for Equivariant Algebra}
-A key direction of my future work is to develop the basic algebraic framework underlying equivariant stable homotopy theory.
-While advanced constructions such as Tambara functors capture much of the structure, many of the elementary notions familiar from commutative algebra remain to be formulated in the equivariant setting.
-
-A natural entry point is the study of commutative $G$-rings, a simpler type of equivariant algebraic object that Tambara functors generalize.
-Even in this case, elementary concepts such as algebraic extensions and algebraic closures exhibit subtle equivariant pathologies.
-Investigating these questions offers an accessible entry point that also exposes conceptual obstructions in the more general theory of Tambara functors.
-Beginning with these manageable cases allows one to develop the algebraic intuition and categorical techniques needed to approach the full equivariant framework.
-
-My goal is to establish such foundational concepts and structures within the equivariant setting.
-This foundational program would provide the analogue of commutative algebra for equivariant algebraic geometry, bridging the gap between algebraic and homotopical formulations of equivariant descent.
-
-\subsection*{Undergraduate Research Directions}
-Several aspects of my work give rise to problems and projects that are accessible at an undergraduate level yet remain closely connected to broader research questions.
-Two areas in particular, combinatorial transfer systems and topological data analysis (TDA), offer tractable problems that both engage students and contribute to the development of my research programs.
-
-One direction of my work focuses on the study of {\it transfer systems} from a combinatorial and educational perspective.  
-Because transfer systems are defined directly in terms of subgroup lattices, they are easy to state and visualize, making them particularly suitable for undergraduate research projects.  
-At the same time, their enumeration already reveals rich combinatorial structure: for example, the number of transfer systems for cyclic groups coincides with the {\it Catalan numbers} \cite{MR4366744}, and many related patterns remain to be understood.
-Exploring these systems provides an accessible way to connect discrete mathematics with deeper questions in equivariant topology.  
-Counting and classifying finite posets associated with transfer systems not only offer combinatorial insight but also inform the structural classification of $N_\infty$-operads and Tambara functors, clarifying how discrete data govern admissible algebraic operations.  
-In this way, the topic serves both as an entry point for students and as a bridge between combinatorics and the homotopical study of equivariant algebra.
-
-Another area is {\it topological data analysis} (TDA), which applies algebraic topology to study the structure of high-dimensional data sets.
-Methods such as {\it persistent homology} can be introduced in a visual and computationally accessible way, yet they lead naturally into deeper questions about stability, functoriality, and the role of cohomology operations.
-These connections remain an active area of research, and concrete case studies in TDA provide a natural testing ground for exploring how homotopical invariants can yield new insights into the shape and geometry of data.
-
-In this way, projects in combinatorics and data science serve not only as entry points for undergraduate participation but also as stepping stones toward more advanced problems aligned with my core research agenda.
+The program therefore ranges from number rings to equivariant ring spectra.
+My broader aim is to develop structural and computational methods for Real algebraic \(K\)-theory of rings and ring spectra with involution.
 
 
 \bibliography{RS_bib}
