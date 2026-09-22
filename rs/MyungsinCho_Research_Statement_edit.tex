@@ -83,7 +83,7 @@
 %\maketitle
 \section*{Introduction}
 My research lies at the intersection of stable homotopy theory and arithmetic, with a particular emphasis on equivariant phenomena.
-The central goal of my research program is to understand two related aspects of \emph{Real algebraic $K$-theory}, its duality phenomena and its descent behavior.
+The central goal of my research program is to understand two related aspects of \emph{Real algebraic $K$-theory}, its \emph{duality} phenomena and its \emph{descent} behavior.
 Duality concerns structural relationships among its invariants, while descent asks how global information can be recovered from local or cohomological data while preserving equivariant structure.
 
 My dissertation established the \emph{2-adic \(K\)-theoretic Tate--Poitou duality} for number fields, providing the non-equivariant starting point in this program. 
@@ -221,7 +221,7 @@ The corresponding $K$-theoretic problem is to realize Tate--Poitou duality at ho
     rr,
     leftrightarrow,
     dotted,
-    "\text{\scriptsize spectrum-level duality?}"
+    "\text{\scriptsize homotopical duality?}"
 ]
 &&
 |[
@@ -242,12 +242,13 @@ K\text{-theoretic term}
 
 \captionsetup{font=footnotesize,skip=0em}
 \caption{
-Cohomological duality suggests a spectrum-level duality after Thomason descent.
+Cohomological duality suggests a homotopical duality after Thomason descent.
 }
 \label{fig:duality}
 \end{figure}
 
-A homotopy-group-level form of this duality was conjectured by Calegari in \cite{MR2905536}, and Blumberg and Mandell established the corresponding spectrum-level duality at every odd prime in \cite{MR4121155}.
+A homotopy-group-level form of this duality was conjectured by Calegari in \cite{MR2905536}.
+Blumberg and Mandell established the homotopical-level local duality at every prime and the global duality at odd primes, both formulated in terms of \(p\)-adic Anderson duality \cite{MR4121155}.
 The prime $2$ remained open becasue the presence of real embeddings introduces additional cohomological behavior.
 My dissertation resolves this remaining case. 
 \begin{theorem}[\cite{Cho}]\label{mainthm1}
@@ -354,7 +355,7 @@ For $F=\mathbb Q$, combining the duality theorem with known comparison results g
 \begin{corollary}
 There is a canonical equivalence in nonnegative degrees
 \begin{equation*}
-\Sigma^{-1}I_{\bZ_2}L_{K(1)}\K(\bZ) \mathrel{\underset{\scriptscriptstyle [0,\infty)}{\simeq}} \Fib\!\left( \K(\bS)_2^\w \xrightarrow{\operatorname{trc}_{\bS}} \operatorname{TC}(\bS)_2^\w \right).
+I_{\bZ_2}L_{K(1)}\K(\bZ) \mathrel{\underset{\scriptscriptstyle [0,\infty)}{\simeq}} \Sigma \Fib\!\left( \K(\bS)_2^\w \xrightarrow{\operatorname{trc}_{\bS}} \operatorname{TC}(\bS)_2^\w \right).
 \end{equation*}
 \end{corollary}
 Thus, arithmetic information in $K(\bZ)$ determines the fiber of the cyclotomic trace map for $K(\bS)$.
@@ -612,12 +613,12 @@ The rotational symmetry also guides the following conjecture.
 \begin{conjecture}
 Let \(F\) be a number field with trivial involution, and let
 \[\textstyle
-\kappa_{\KR}^{[2]}\colon
-L_{K(1)}\KR^{[2]}\left(\mathcal{O}_F [\tfrac{1}{2}]\right) \to \prod\limits_{\nu\mid 2} L_{K(1)}\KR^{[2]} \left(F_\nu^\wedge\right)
+\kappa_{\KR}^{[-1]}\colon
+L_{K(1)}\KR^{[-1]}\left(\mathcal{O}_F [\tfrac{1}{2}]\right) \to \prod\limits_{\nu\mid 2} L_{K(1)}\KR^{[-1]} \left(F_\nu^\wedge\right)
 \]
-denote the completion map, where the superscript \([2]\) refers to the shift of the duality on perfect modules.
+denote the completion map, where the superscript \([-1]\) refers to the shift of the duality on perfect modules.
 There is a canonical equivalence of genuine $C_2$-spectra
- \[I_{\bZ_2}^{C_2} L_{K(1)} \KR(\calO_F[\tfrac{1}{2}]) \simeq \Cof \big(\kappa_{\KR}^{[2]}\big)\]
+ \[I_{\bZ_2}^{C_2} L_{K(1)} \KR(\calO_F[\tfrac{1}{2}]) \simeq \Cof \big(\kappa_{\KR}^{[-1]}\big)\]
   where \(I_{\mathbb{Z}_2}^{C_2}\) denotes genuine \(C_2\)-equivariant \(2\)-adic Anderson duality.
 \end{conjecture}
 
@@ -715,7 +716,7 @@ The $\bT$-action on $\operatorname{THH}$ extends in $\operatorname{THR}$ to an $
 A key feature of our method is its compatibility with equivariant multiplicative and power operations, and we use these to extract information about the continuous homology of $\operatorname{TCR}^-$.
 Technically, this is realized by the following spectral sequence.
 \begin{theorem}[\cite{CGKMQ}]
-For a $C_2$-equivariant commutative ring spectrum $A$, there is a
+For a $C_2$-equivariant commutative ring $A$, there is a
 natural multiplicative spectral sequence
 \[
 H_\star\bigl(\operatorname{THR}(A); \ul{\bF}_2\bigr)\langle \bar y\rangle
@@ -777,7 +778,8 @@ Beyond the complete case, we establish several additional families of realizable
 \subsection{Representation gradings.}
 The next question concerns the grading of the objects on which these operations act.
 For a $C_2$-spectrum $X$, its homotopy groups $\pi_\star X$ form Mackey functors graded by representations of $C_2$.
-An ordinary \(RO(C_2)\)-grading records only the class of a representation and not its symmetries. In the category \(\mathcal{RO}(G)\) introduced by Angeltveit and Bohmann in \cite{AngeltveitBohmann}, morphisms between representation degrees also record the symmetries of individual representations.
+An ordinary \(RO(C_2)\)-grading records only the class of a representation and not its symmetries. 
+In the category \(\mathcal{RO}(G)\) introduced by Angeltveit and Bohmann in \cite{AngeltveitBohmann}, morphisms between representation degrees also record the symmetries of individual representations.
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[
