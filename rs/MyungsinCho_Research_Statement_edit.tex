@@ -12,6 +12,7 @@
 
 \usepackage{newtxtext, kotex}
 \usepackage[all,cmtip]{xy}
+
 \usepackage{tikz}
 \usepackage{tikz-cd}
 \usetikzlibrary{calc,positioning}
@@ -83,25 +84,27 @@
 %\maketitle
 \section*{Introduction}
 My research lies at the intersection of stable homotopy theory and arithmetic, with a particular emphasis on equivariant phenomena.
-The central goal of my research program is to understand two related aspects of \emph{Real algebraic $K$-theory}, its \emph{duality} phenomena and its \emph{descent} behavior.
-Duality concerns structural relationships among its invariants, while descent asks how global information can be recovered from local or cohomological data while preserving equivariant structure.
-
-My dissertation established the \emph{2-adic \(K\)-theoretic Tate--Poitou duality} for number fields, providing the non-equivariant starting point in this program. 
-I am now extending this duality picture to Grothendieck--Witt theory, the fixed-point side of Real algebraic \(K\)-theory, toward a \(C_2\)-equivariant duality. 
+The central goal of my research program is to understand \emph{Real algebraic $K$-theory} through its duality phenomena and descent behavior.
+Duality concerns structural relationships among its invariants, while descent asks how global information can be recovered from local data.
 In parallel, my work on \emph{Real trace methods} develops computational tools for Real algebraic $\K$-theory.
 
-Developing such a descent theory leads to foundational questions in equivariant algebra.
-A genuine equivariant form of descent must have operations and representation-graded information that disappear after forgetting the group action. 
-My work on \emph{transfer systems} and $\mathcal{RO}(C_2)$-gradings studies these two kinds of structure algebraically.
-In the longer term, I aim to develop genuine equivariant forms of cohomology and descent and to understand the arithmetic duality they should carry.
+My dissertation established the \emph{\(K\)-theoretic Tate--Poitou duality} for number fields at prime 2, providing the non-equivariant starting point in this program. 
+I am now extending this duality picture to Grothendieck--Witt theory, the fixed-point side of Real algebraic \(K\)-theory, toward a \(C_2\)-equivariant duality. 
+
+
+Another part of my research concerns the algebra intrinsic to genuine equivariance. 
+My work on \emph{transfer systems} and $\mathcal{RO}(C_2)$-gradings studies equivariant algebraic structure that disappear after forgetting the group action. 
+Understanding these structures is a foundations in equivariant algebra and they also arise in any genuine equivariant form of descent. 
+In the longer term, I aim to construct equivariant forms of cohomology and descent and to determine the arithmetic duality they carry.
+
+\todo{Comments from Sun: Add sth on trace method in intro + connect trace method to duality}
 
 \section{Background}
-A simple example of duality comes from homology, which studies subspaces, and cohomology, which studies functions on those subspaces.
-The relationship resembles that between land and trees, with the land determining what can grow and the trees in turn revealing the nature of the land beneath them.
-Mathematically, the \emph{Universal Coefficient Theorem} makes this relationship precise.
-For example, over a field $k$, it identifies
+A simple example of duality in topology comes from homology, which studies subspaces, and cohomology, which studies functions on those subspaces.
+%The relationship resembles that between land and trees, with the land determining what can grow and the trees in turn revealing the nature of the land beneath them.
+The \emph{Universal Coefficient Theorem} makes this relationship precise in case of field $k$ coefficient:
 \[
-H^n(X;k)\cong \operatorname{Hom}_k(H_n(X;k),k).
+H^n(X;k)\cong \operatorname{Hom}(H_n(X;k),k).
 \]
 A related principle is \emph{descent}, which reconstructs global information from compatible local or cohomological data.
 
@@ -167,7 +170,7 @@ In arithmetic, Tate--Poitou duality is expressed through étale cohomology, whil
 Arithmetic duality should therefore also appear at the level of $K$-theory, and its Real refinement should preserve both the duality and the equivariant structure underlying descent.
 
 \section{Arithmetic Duality and Real Algebraic K-theory}
-Real algebraic $K$-theory brings ordinary algebraic $K$-theory and Grothendieck--Witt theory into a single $C_2$-equivariant framework.
+Real algebraic $K$-theory brings ordinary algebraic $K$-theory and Grothendieck--Witt theory into a single $C_2$-equivariant framework \cite{HMreal}.
 My dissertation established an arithmetic duality on the non-equivariant side through $K$-theoretic Tate--Poitou duality at the prime $2$.
 My current work develops the corresponding fixed-point counterpart and shows that this duality extends across the hyperbolic sequence $\operatorname{U}\to\K\to\GW$.
 Together, these results suggest a larger equivariant duality in Real algebraic $K$-theory.
@@ -249,7 +252,7 @@ Cohomological duality suggests a homotopical duality after Thomason descent.
 
 A homotopy-group-level form of this duality was conjectured by Calegari in \cite{MR2905536}.
 Blumberg and Mandell established the homotopical-level local duality at every prime and the global duality at odd primes, both formulated in terms of \(p\)-adic Anderson duality \cite{MR4121155}.
-The prime $2$ remained open becasue the presence of real embeddings introduces additional cohomological behavior.
+The prime $2$ remained open because the presence of real embeddings introduces additional cohomological behavior.
 My dissertation resolves this remaining case. 
 \begin{theorem}[\cite{Cho}]\label{mainthm1}
 Let \(F\) be a number field and $\calO_F[\tfrac{1}{2}]$ be its ring of 2-integers.
@@ -626,7 +629,7 @@ After forgetting the \(C_2\)-action, the shift of the duality disappears, and th
 
 \section{Real trace methods}
 The duality results above reveal structural relations in Real algebraic $K$-theory, but they do not by themselves provide methods for computation.
-Trace methods have long provided such tools in ordinary algebraic $K$-theory by approximating $K$-theory with more computable invariants such as topological Hochschild homology $(\THH)$ and topological cyclic homology ($\operatorname{TC}$).
+Trace methods have long provided such tools in ordinary algebraic $K$-theory by approximating $K$-theory with more computable invariants such as topological Hochschild homology $(\THH)$ and topological cyclic homology ($\operatorname{TC}$), \cite{MR1202133}.
 In joint work with Teena Gerhardt, Liam Keenan, Juan C. Moreno, and J.D. Quigley, I develop \emph{homological Real trace methods} that incorporate the additional equivariant structure present in the Real setting \cite{CGKMQ}.
 
 Ordinary $\operatorname{THH}$ carries a circle action, while Real topological Hochschild homology ($\operatorname{THR}$) extends this to an $O(2)$-action by incorporating a reflection symmetry.
@@ -728,7 +731,7 @@ For $MU_{\mathbb R}$, $BP_{\mathbb R}$, and several truncated
 Brown--Peterson theories, we determine the differentials and the $E_\infty$-page of the resulting spectral sequences.
 \end{theorem}
 
-Our construction is a Real refinement of the homological trace methods of Bruner and Rognes \cite{MR2153113}, which played an important role in the study of Segal conjectures for the $\THH$ of bordism theories, $MU$ and $BP$.
+Our construction is a Real refinement of the homological trace methods of Bruner and Rognes \cite{MR2153113}, which played an important role in the study of Segal conjectures for the $\THH$ of bordism theories, $MU$ and $BP$ in \cite{MR2832570}.
 A natural next test for our methods is a Real analogue of this for $MU_{\mathbb R}$ and $BP_{\mathbb R}$.
 Proving a Real Segal conjecture in these cases would extend the present calculations toward a broader understanding of Real trace invariants and ultimately of Real algebraic $K$-theory of Real bordism theories.
 
@@ -737,7 +740,7 @@ Beyond individual calculations, one must understand how the additional algebraic
 The next section presents two projects concerned with different aspects of this structure.
 
 \section{Equivariant algebra: operations and gradings}
-A equivariant theory of descent must account for algebraic structure that disappears after forgetting the group action.
+An equivariant theory of descent must account for algebraic structure that disappears after forgetting the group action.
 Two features are particularly important: the equivariant operations carried by the coefficients and the representation gradings on which these operations act.
 My work investigates these two aspects of equivariant algebra through transfer systems and representation-graded Mackey and Tambara functors.
 These projects also clarify the kind of coefficient structure that a future equivariant descent theory should accommodate.
@@ -745,8 +748,8 @@ These projects also clarify the kind of coefficient structure that a future equi
 \subsection{Equivariant operations.}
 In equivariant stable homotopy theory, additive and multiplicative structures take forms that do not occur in ordinary algebra.
 Transfer maps play the role of equivariant addition, while norm maps play the role of equivariant multiplication. 
-Each of these operations is parametrized by an \(N_\infty\)-operad, and a pairing of the two operads encodes an equivariant distributive law. 
-Transfer systems describe \(N_\infty\)-operads combinatorially, and the distributive law becomes a compatibility condition between two such systems. 
+Each of these operations is parametrized by an \(N_\infty\)-operad, and a pairing of the two operads encodes an equivariant distributive law \cite{MR4327103}. 
+\emph{Transfer systems} describe \(N_\infty\)-operads combinatorially, and the distributive law becomes a compatibility condition between two such systems \cite{MR4244201}.
 The realization problem asks whether every compatible pair of transfer systems arises from a pairing of \(N_\infty\)-operads.
 
 In joint work with David Chan, David Mehrle, Pablo Sanchez Ocal, Ang\'elica Osorno, Ben Szczesny, and Paula Verdugo, we study the realization problem relating these two descriptions.
@@ -777,7 +780,7 @@ Beyond the complete case, we establish several additional families of realizable
 
 \subsection{Representation gradings.}
 The next question concerns the grading of the objects on which these operations act.
-For a $C_2$-spectrum $X$, its homotopy groups $\pi_\star X$ form Mackey functors graded by representations of $C_2$.
+For a $C_2$-space $X$, its stable homotopy groups $\pi_\star X$ form Mackey functors graded by representations of $C_2$.
 An ordinary \(RO(C_2)\)-grading records only the class of a representation and not its symmetries. 
 In the category \(\mathcal{RO}(G)\) introduced by Angeltveit and Bohmann in \cite{AngeltveitBohmann}, morphisms between representation degrees also record the symmetries of individual representations.
 \begin{figure}[h]
@@ -845,7 +848,7 @@ $\mathcal{RO}(C_2)$-grading records the symmetries of the representation degree 
 \label{fig:RO-grading}
 \end{figure}
 
-In ongoing work with Noah Wisdom, we isolate the algebraic grading properties satisfied by the homotopy groups of $C_2$-spectra.
+In ongoing work with Noah Wisdom, we isolate the algebraic grading properties satisfied by the stable homotopy groups of $C_2$-spaces.
 This defines a class of graded Mackey and Tambara functors that we call \emph{topological}.
 Our main result identifies the additional information carried by the refined grading.
 \begin{theorem}[\cite{ChoWisdom}]
@@ -872,7 +875,7 @@ These projects describe how operations coexist and how symmetries act across rep
 The same structures will occur in the coefficients of a future equivariant descent theory.
 
 The program therefore ranges from number rings to equivariant ring spectra.
-My broader aim is to develop structural and computational methods for Real algebraic \(K\)-theory of rings and ring spectra with involution.
+My broader aim is to develop structural and computational methods for Real algebraic \(K\)-theory of rings with involution.
 
 
 \bibliography{RS_bib}
