@@ -777,15 +777,13 @@ $N_\infty$-operads.
 Beyond the complete case, we establish several additional families of realizable pairs and conjecture that every compatible pair of transfer systems is realizable.
 
 \subsection{Representation gradings.}
-The coefficients arising in equivariant descent and slice spectral sequences carry representation-graded Mackey functor structures coming from genuine equivariant spectra.
-This leads to the realization problem of determining which algebraically defined graded Mackey functors arise from genuine equivariant spectra.
+Equivariant descent spectral sequences are built from layers whose homotopy groups carry representation-graded Mackey functor structures. 
+To use algebraically defined coefficients in such constructions, one must understand when they arise from equivariant spectra such as Eilenberg--Mac Lane or slice spectra.
+This leads to a realization problem for representation-graded Mackey functors.
 
 For a $C_2$-spectrum $X$, its stable homotopy groups $\underline{\pi}_\star X$ form Mackey functors graded by representations ring $RO(C_2)$.
-An ordinary $RO(C_2)$-grading records only the class of a representation and
-not its symmetries.
-The category $\mathcal{RO}(G)$ introduced by Angeltveit and Bohmann in
-\cite{AngeltveitBohmann} refines this grading by also recording automorphisms
-of individual representation degrees.
+An ordinary $RO(C_2)$-grading records only the class of a representation and not its symmetries.
+The category $\mathcal{RO}(C_2)$ introduced by Angeltveit and Bohmann in \cite{AngeltveitBohmann} refines this grading by also recording automorphisms of individual representation degrees.
 
 \begin{figure}[h]
 \centering
@@ -857,15 +855,16 @@ Motivated by the structure of stable homotopy groups, we call an $\mathcal{RO}(C
 For $C_2$, we show that the additional automorphisms recorded by a topological $\mathcal{RO}(C_2)$-grading are already encoded by the canonical Burnside action on a Mackey functor.
 Thus the refined grading introduces no additional realization condition at this level.
 
-This reduces the problem to the underlying realization question.
-Given a topological $RO(G)$-graded Mackey functor $M_\star$, when does there
-exist a genuine $G$-spectrum $X$ such that
+This separates the symmetry of the grading from the remaining realization problem.
+Given a topological $RO(C_2)$-graded Mackey functor $M_\star$, when does there exist a genuine $G$-spectrum $X$ such that
 \[
 M_\star \cong \underline{\pi}_\star X?
 \]
-Understanding this question provides an algebraic framework for identifying which $\mathcal{RO}(C_2)$-coefficients can occur in equivariant descent, with the eventual goal of applying it to descent constructions for Real algebraic $K$-theory.
+Understanding this realization problem is a step toward determining which $\mathcal{RO}(C_2)$-graded coefficients can occur in equivariant descent for Real algebraic $K$-theory.
 
-
+We also study concrete realized examples. 
+In particular, we investigate the graded Tambara structure on the homotopy groups of equivariant complex bordism $MU_G$.
+Since $MU_G$ is already a genuine $G$-spectrum, it provides a test case for understanding how representation gradings, transfers, and norm maps interact in realizable graded Tambara functors.
 
 \section{Outlook}
 A main direction of my research is to understand duality and descent in Real algebraic \(K\)-theory.
