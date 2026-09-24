@@ -631,7 +631,7 @@ Trace methods have long provided such tools in ordinary algebraic $K$-theory by 
 In joint work with Teena Gerhardt, Liam Keenan, Juan C. Moreno, and J.D. Quigley, I develop \emph{homological Real trace methods} that incorporate the additional equivariant structure present in the Real setting \cite{CGKMQ}.
 
 Ordinary $\operatorname{THH}$ carries a circle action, while Real topological Hochschild homology ($\operatorname{THR}$) extends this to an $O(2)$-action by incorporating a reflection symmetry.
-Trace methods in this setting must keep track of genuine equivariant operations, which we use to compute the continuous homology of $\operatorname{TCR}^-$.
+Trace methods in this setting must keep track of genuine equivariant operations, which we use to compute the continuous homology of $\operatorname{TCR}^-$ \cite{QS22}.
 
 \begin{figure}[h]
 \centering
@@ -777,10 +777,16 @@ $N_\infty$-operads.
 Beyond the complete case, we establish several additional families of realizable pairs and conjecture that every compatible pair of transfer systems is realizable.
 
 \subsection{Representation gradings.}
-The next question concerns the grading of the objects on which these operations act.
-For a $C_2$-space $X$, its stable homotopy groups $\pi_\star X$ form Mackey functors graded by representations of $C_2$.
-An ordinary \(RO(C_2)\)-grading records only the class of a representation and not its symmetries. 
-In the category \(\mathcal{RO}(G)\) introduced by Angeltveit and Bohmann in \cite{AngeltveitBohmann}, morphisms between representation degrees also record the symmetries of individual representations.
+The coefficients arising in equivariant descent and slice spectral sequences carry representation-graded Mackey functor structures coming from genuine equivariant spectra.
+This leads to the realization problem of determining which algebraically defined graded Mackey functors arise from genuine equivariant spectra.
+
+For a $C_2$-spectrum $X$, its stable homotopy groups $\underline{\pi}_\star X$ form Mackey functors graded by representations ring $RO(C_2)$.
+An ordinary $RO(C_2)$-grading records only the class of a representation and
+not its symmetries.
+The category $\mathcal{RO}(G)$ introduced by Angeltveit and Bohmann in
+\cite{AngeltveitBohmann} refines this grading by also recording automorphisms
+of individual representation degrees.
+
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[
@@ -796,9 +802,9 @@ In the category \(\mathcal{RO}(G)\) introduced by Angeltveit and Bohmann in \cit
 
 % Left Lewis diagram
 \node (Lt) at (-3.4,0.35)
-    {$\pi_{[V]}^{C_2}X$};
+    {$\underline{\pi}_{[V]}^{C_2}X$};
 \node (Lb) at (-3.4,-1.05)
-    {$\pi_{|[V]|}^e X$};
+    {$\underline{\pi}_{|[V]|}^e X$};
 
 \draw[->]
     ([xshift=-3pt]Lt.south)
@@ -814,9 +820,9 @@ In the category \(\mathcal{RO}(G)\) introduced by Angeltveit and Bohmann in \cit
 
 % Right Lewis diagram
 \node (Rt) at (3.4,0.35)
-    {$\pi_V^{C_2} X$};
+    {$\underline{\pi}_V^{C_2} X$};
 \node (Rb) at (3.4,-1.05)
-    {$\pi_{|V|}^{e}X$};
+    {$\underline{\pi}_{|V|}^{e}X$};
 
 \draw[->]
     ([xshift=-3pt]Rt.south)
@@ -846,14 +852,20 @@ $\mathcal{RO}(C_2)$-grading records the symmetries of the representation degree 
 \label{fig:RO-grading}
 \end{figure}
 
-In ongoing work with Noah Wisdom, we isolate the algebraic grading properties satisfied by the stable homotopy groups of $C_2$-spaces.
-This defines a class of graded Mackey and Tambara functors that we call \emph{topological}.
-Our main result identifies the additional information carried by the refined grading.
-\begin{theorem}[\cite{ChoWisdom}]
-The category of topological $\mathcal{RO}(C_2)$-graded Mackey functors is equivalent to the category of topological $RO(C_2)$-graded Mackey functors equipped with compatible actions of the grading automorphism groups.
-The same equivalence holds for topological Tambara functors.
-\end{theorem}
-Thus, the additional information in a topological $\mathcal{RO}(C_2)$-grading is precisely the symmetry data attached to the ordinary $RO(C_2)$-graded homotopy groups.
+In ongoing work with Noah Wisdom, we study the algebraic structure forced by these representation gradings.
+Motivated by the structure of stable homotopy groups, we call an $\mathcal{RO}(C_2)$-graded Mackey or Tambara functor \emph{topological} when its grading data factors through its groupoid completion.
+For $C_2$, we show that the additional automorphisms recorded by a topological $\mathcal{RO}(C_2)$-grading are already encoded by the canonical Burnside action on a Mackey functor.
+Thus the refined grading introduces no additional realization condition at this level.
+
+This reduces the problem to the underlying realization question.
+Given a topological $RO(G)$-graded Mackey functor $M_\star$, when does there
+exist a genuine $G$-spectrum $X$ such that
+\[
+M_\star \cong \underline{\pi}_\star X?
+\]
+Understanding this question provides an algebraic framework for identifying which $\mathcal{RO}(C_2)$-coefficients can occur in equivariant descent, with the eventual goal of applying it to descent constructions for Real algebraic $K$-theory.
+
+
 
 \section{Outlook}
 A main direction of my research is to understand duality and descent in Real algebraic \(K\)-theory.
