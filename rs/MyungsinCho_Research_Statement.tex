@@ -98,17 +98,17 @@ Understanding these structures is a foundations in equivariant algebra and they 
 In the longer term, I aim to construct equivariant forms of cohomology and descent and to determine the arithmetic duality they carry.
 
 \section{Background}
-A simple example of duality in topology comes from homology, which studies subspaces, and cohomology, which studies functions on those subspaces.
-%The relationship resembles that between land and trees, with the land determining what can grow and the trees in turn revealing the nature of the land beneath them.
-The \emph{Universal Coefficient Theorem} makes this relationship precise in case of field $k$ coefficient:
+A basic example of duality in topology is the relation between homology and cohomology. 
+he \emph{Universal Coefficient Theorem} makes this relationship precise by identifying each cohomology group with the linear dual of the corresponding homology group when the coefficients lie in a field $k$:
 \[
 H^n(X;k)\cong \operatorname{Hom}(H_n(X;k),k).
 \]
 A related principle is \emph{descent}, which reconstructs global information from compatible local or cohomological data.
 
-These principles become subtler when the objects under study carry symmetries.
+When a space carries a group action, some of its properties depend on the particular action. 
 Two actions can have the same underlying object after the symmetry is forgotten while having very different equivariant information.
 For instance, reflection and rotation by a half-turn give two $C_2$-actions on a circle with different fixed-point sets, even though both have the same underlying circle.
+
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[
@@ -156,7 +156,7 @@ For instance, reflection and rotation by a half-turn give two $C_2$-actions on a
 \caption{Reflection fixes two red points, while rotation by half a turn fixes none.}
 \label{fig:circle-actions}
 \end{figure}
-My work asks how duality and descent can be formulated without discarding the symmetry.
+\noindent My work asks how duality and descent can be formulated without discarding the symmetry.
 
 Real algebraic $K$-theory $(\KR)$ provides a natural setting for this question.
 Ordinary algebraic $K$-theory studies projective modules over rings, while $\KR$-theory incorporates an involution and records the resulting $C_2$-equivariant structure.
