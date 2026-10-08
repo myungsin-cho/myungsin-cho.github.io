@@ -84,13 +84,15 @@
 %\maketitle
 \section*{Introduction}
 My research lies at the intersection of stable homotopy theory and arithmetic, with a particular emphasis on equivariant phenomena.
-The central goal of my research program is to understand \emph{Real algebraic $K$-theory} through its duality phenomena and descent behavior.
+The central goal of my research program is to understand \emph{Real algebraic $\K$-theory} through its duality phenomena and descent behavior.
 Duality concerns structural relationships among its invariants, while descent asks how global information can be recovered from local data.
 In parallel, my work on \emph{Real trace methods} develops computational tools for Real algebraic $\K$-theory.
 
-My dissertation established the \emph{\(K\)-theoretic Tate--Poitou duality} for number fields at prime 2, providing the non-equivariant starting point in this program. 
-I am now extending this duality picture to Grothendieck--Witt theory, the fixed-point side of Real algebraic \(K\)-theory, toward a \(C_2\)-equivariant duality. 
-
+My dissertation established the \emph{$\K$-theoretic Tate--Poitou duality} for number fields at prime 2, providing the non-equivariant starting point in this program. 
+I am now extending this duality picture to Grothendieck--Witt theory, the fixed-point side of Real algebraic \(K\)-theory, toward a \(C_2\)-equivariant duality.
+In ordinary algebraic $\K$-theory, arithmetic duality descends to the homotopical level. 
+For Real algebraic $\K$-theory, a corresponding equivariant cohomology theory is not yet available. 
+I therefore approach the problem from the other direction, using the expected equivariant duality to guide the construction of a Real descent theory.
 
 Another part of my research concerns the algebra intrinsic to genuine equivariance. 
 My work on \emph{transfer systems} and $\mathcal{RO}(C_2)$-gradings studies equivariant algebraic structure that disappear after forgetting the group action. 
@@ -188,7 +190,7 @@ The corresponding $K$-theoretic problem is to realize Tate--Poitou duality at th
         amplitude=0.3mm,
         segment length=2.5mm
     },
-    "\text{\scriptsize Descent SS}" right
+    "\text{\scriptsize Thomason Descent}" right
 ]
 &
 |[font=\small]|
@@ -625,14 +627,21 @@ There is a canonical equivalence of genuine $C_2$-spectra
 
 After forgetting the \(C_2\)-action, the shift of the duality disappears, and the conjecture recovers the \(K\)-theoretic Tate--Poitou duality of my dissertation.
 
+The conjecture specifies the duality that a Real descent theory should produce. Such a theory should recover ordinary descent after forgetting the \(C_2\)-action and be compatible with the expected global Grothendieck–Witt duality in the \(3\times3\) diagram. These requirements guide my search for the equivariant cohomology theory underlying Real descent.
+
 \section{Real trace methods}
-The duality results above reveal structural relations in Real algebraic $K$-theory, but they do not by themselves provide methods for computation.
-Trace methods have long provided such tools in ordinary algebraic $K$-theory by approximating $K$-theory with more computable invariants such as topological Hochschild homology $(\THH)$ and topological cyclic homology ($\operatorname{TC}$), \cite{MR1202133}.
-In joint work with Teena Gerhardt, Liam Keenan, Juan C. Moreno, and J.D. Quigley, I develop \emph{homological Real trace methods} that incorporate the additional equivariant structure present in the Real setting \cite{CGKMQ}.
+Trace methods have long provided such tools in ordinary algebraic $K$-theory by approximating $K$-theory with more computable invariants such as topological Hochschild homology $(\THH)$ \cite{MR3013261}.
+These invariants also enter arithmetic duality.
+In \cite{Clausen17}, Clausen established a cofiber sequence
+\[\xymatrix{\operatorname{TC}(\mathbb Z_p)^\wedge_p \ar[r]& L_{K(1)}\K(\mathbb Q_p) \ar[r]^-\simeq &   I_{\mathbb Z_p}\bigl( L_{K(1)}\K(\mathbb Q_p) \bigr)  \ar[r] & I_{\mathbb Z_p}\bigl(\operatorname{TC}(\mathbb Z_p)^\wedge_p\bigr)},
+\]
+connecting topological cyclic homology $(\operatorname{TC})$ to the local duality appearing in \autoref{mainthm1}.
+
+A Real analogue of this sequence would connect Real topological cyclic homology $(\operatorname{TCR})$ to equivariant duality in $\KR$.
+This motivates developing Real trace methods to study both computations and duality in $\KR$.
+In joint work with Teena Gerhardt, Liam Keenan, Juan C. Moreno, and J.D. Quigley, I develop \emph{homological Real trace methods} that incorporate the additional equivariant structure present in the Real setting.
 
 Ordinary $\operatorname{THH}$ carries a circle action, while Real topological Hochschild homology ($\operatorname{THR}$) extends this to an $O(2)$-action by incorporating a reflection symmetry.
-Trace methods in this setting must keep track of genuine equivariant operations, which we use to compute the continuous homology of $\operatorname{TCR}^-$ \cite{QS22}.
-
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[
@@ -714,8 +723,8 @@ Trace methods in this setting must keep track of genuine equivariant operations,
 The $\bT$-action on $\operatorname{THH}$ extends in $\operatorname{THR}$ to an $O(2)\simeq \bT\rtimes C_2$-action.
 }
 \end{figure}
-A key feature of our method is its compatibility with equivariant multiplicative and power operations, and we use these to extract information about the continuous homology of $\operatorname{TCR}^-$.
-Technically, this is realized by the following spectral sequence.
+We use this equivariant structure to compute the continuous homology of $\operatorname{TCR}^-$ \cite{QS22}.
+Our method is based on a multiplicative spectral sequence compatible with equivariant power operations.
 \begin{theorem}[\cite{CGKMQ}]
 For a $C_2$-equivariant commutative ring $A$, there is a
 natural multiplicative spectral sequence
@@ -867,24 +876,9 @@ In particular, we investigate the graded Tambara structure on the homotopy group
 Since $MU_G$ is already a genuine $G$-spectrum, it provides a test case for understanding how representation gradings, transfers, and norm maps interact in realizable graded Tambara functors.
 
 \section{Outlook}
-A main direction of my research is to understand duality and descent in Real algebraic \(K\)-theory.
-The conjecture above gives a concrete target for this direction.
-My dissertation derives \(K\)-theoretic Tate--Poitou duality from étale duality through Thomason descent.
-For \(\KR\), no corresponding representation-graded equivariant cohomology theory is yet available, so I approach the problem from the other direction.
-The conjecture specifies the duality that a Real descent theory should produce.
-Such a theory must recover ordinary Thomason descent after forgetting the \(C_2\)-action and be compatible with the expected global Grothendieck--Witt duality in the \(3\times3\) diagram.
-I aim to construct such a cohomology theory together with a descent spectral sequence converging to \(\KR\).
-
-My Real trace project studies \(\KR\) through explicit calculations of its trace invariants.
-Calculations of the the continuous homology of \(\operatorname{TCR}^{-}\) for \(MU_{\mathbb R}\), \(BP_{\mathbb R}\) are the starting point for a Real Segal conjecture for \(MU_{\mathbb R}\) and \(BP_{\mathbb R}\).
-Proving this conjecture would  provide computable approximations to \(\KR(MU_{\mathbb R})\) and \(\KR(BP_{\mathbb R})\).
-
-My work on transfer systems and representation gradings studies the algebra specific to genuine equivariance.
-These projects describe how operations coexist and how symmetries act across representation degrees.
-The same structures will occur in the coefficients of a future equivariant descent theory.
-
-The program therefore ranges from number rings to equivariant ring spectra.
-My broader aim is to develop structural and computational methods for Real algebraic \(K\)-theory of rings with involution.
+My long-term goal is to understand how arithmetic duality extends to Real algebraic $K$-theory of rings with involution.
+The number-field results provide concrete models of duality, while Real trace methods offer a route toward investigating similar structures beyond the arithmetic setting.
+I seek an equivariant cohomological framework that explains these dualities and supports descent to $\KR$, with coefficients that incorporate representation gradings and genuine equivariant operations.
 
 
 \bibliography{RS_bib}
