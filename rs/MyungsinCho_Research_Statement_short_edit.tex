@@ -1,0 +1,182 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{mytex}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true, citecolor=MidnightBlue, linkcolor=MidnightBlue]{hyperref} % hyperlinks
+
+
+\usepackage{bookmark}
+
+
+
+\usepackage{newtxtext, kotex}
+\usepackage[all,cmtip]{xy}
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{calc,positioning}
+\usetikzlibrary{arrows.meta,calc,positioning,fit,backgrounds}
+
+\usepackage{pgfplots}
+\usepackage{caption}
+
+\usepackage{fancyhdr}
+%\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+
+
+
+\usepackage[textwidth=.85in,textsize=scriptsize,colorinlistoftodos]{todonotes} % todo 노트
+
+\pagestyle{fancy}
+\lhead{Myungsin Cho}
+\chead{}
+\rhead{}
+%\rfoot{\date}
+
+
+
+%Bibliography line spacing
+% ADD THE FOLLOWING COUPLE LINES INTO YOUR PREAMBLE
+\let\OLDthebibliography\thebibliography
+\renewcommand\thebibliography[1]{
+  \OLDthebibliography{#1}
+  \setlength{\parskip}{0pt}
+  \setlength{\itemsep}{0pt plus 0.3ex}
+}
+
+% section 폰트 바꿔주는거
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\center}{\thesection}{.5em}{}
+\titleformat{\subsection}[runin]{\normalfont\bfseries}{\thesubsection}{.5em}{}
+
+\newcommand{\yourname}{Myungsin Cho}
+
+\newcommand\quelle[1]{{%
+      \unskip\nobreak\hfil\penalty50
+      \hskip2em\hbox{}\nobreak\hfil #1%
+      \parfillskip=0pt \finalhyphendemerits=0 \par}}
+      
+
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs}
+\usepackage{amsthm,thmtools}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{wip}{Work in progress}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{goal}{Goal}
+\newtheorem*{conjecture}{Conjecture}
+
+\let\overto\xrightarrow
+
+\newcommand{\KR}{\operatorname{KR}}
+\newcommand{\K}{\operatorname{K}}
+\newcommand{\LK}{{L_{K(1)}}}
+\newcommand{\THH}{\operatorname{THH}}
+\newcommand{\GW}{\operatorname{GW}}
+\newcommand{\TC}{\operatorname{TC}}
+\newcommand{\U}{\operatorname{U}}
+
+
+\author{Myungsin Cho}
+\date{}
+\begin{document}
+\begin{center}\LARGE{Research Statement}\end{center}\vspace{.5em}
+My research lies at the intersection of stable homotopy theory and arithmetic, with an emphasis on equivariant phenomena.
+My central goal is to understand duality and descent in Real algebraic $K$-theory ($\KR$).
+This theory incorporates an involution into algebraic $K$-theory: forgetting its $C_2$-symmetry recovers ordinary $K$-theory, while taking fixed points gives Grothendieck--Witt theory ($\GW$), which studies modules equipped with nondegenerate bilinear forms.
+I pursue this goal through arithmetic duality, Real trace methods, and the algebraic structures intrinsic to genuine equivariance.
+
+\section*{Arithmetic duality and Real algebraic $K$-theory}
+Tate--Poitou duality relates global arithmetic information to local data through \emph{\'{e}tale cohomology}.
+Thomason descent connects this cohomology to $K(1)$-local algebraic $K$-theory, suggesting a corresponding duality at the homotopical level.
+Blumberg and Mandell established this global duality at odd primes.
+The prime $2$ remained open because real embeddings introduce additional cohomological behavior.
+My dissertation resolves this case.
+For a number field $F$, the completion cofiber sequence
+\[
+L_{K(1)}\K(\mathcal O_F[\tfrac12])
+\xrightarrow{\kappa}
+\prod_{\nu\mid2}\LK\K(F_\nu)
+\longrightarrow \Cof(\kappa)
+\]
+admits a canonical $2$-adic Anderson self-duality: the end terms are dual to one another, and the middle term is self-dual.
+This realizes arithmetic duality as a structural relationship among spectra, rather than only among their homotopy groups.
+
+The theorem also identifies the fiber of the cyclotomic trace for the sphere.
+For $F=\mathbb Q$, known comparison results give, in nonnegative degrees,
+\[
+I_{\mathbb Z_2}\LK\K(\mathbb Z)
+\simeq \Sigma\Fib\bigl(\K(\mathbb S)^\wedge_2
+\xrightarrow{\operatorname{trc}}\TC(\mathbb S)^\wedge_2\bigr).
+\]
+Thus arithmetic information in $K(\mathbb Z)$ determines the part of $K(\mathbb S)$ not detected by the cyclotomic trace.
+
+In current work with Lucy Yang, we establish the fixed-point counterpart over $2$-adic local fields: Anderson duality interchanges the end terms of the hyperbolic sequence $\LK\U\to\LK\K\to\LK\GW$ and preserves its middle term.
+Our ongoing work seeks to globalize this symmetry through the following diagram, whose rows are completion sequences and whose columns are hyperbolic sequences.
+The highlighted row and column record the global $K$-theoretic and local $\GW$ dualities already obtained.
+
+\begin{center}
+\begin{tikzpicture}[
+  >=Latex,
+  term/.style={font=\small,align=center,inner sep=5pt},
+  seq/.style={->,semithick,black!70}]
+\node[term] (Ug) at (-3.8,1.15) {$\LK\U(\mathcal O_F[\tfrac12])$};
+\node[term] (Ul) at (0,1.15) {$\prod_{\nu\mid2}\LK\U(F_\nu)$};
+\node[term] (Uc) at (3.8,1.15) {$\Cof(\kappa'')$};
+\node[term] (Kg) at (-3.8,0) {$\LK\K(\mathcal O_F[\tfrac12])$};
+\node[term] (Kl) at (0,0) {$\prod_{\nu\mid2}\LK\K(F_\nu)$};
+\node[term] (Kc) at (3.8,0) {$\Cof(\kappa)$};
+\node[term] (GWg) at (-3.8,-1.15) {$\LK\GW(\mathcal O_F[\tfrac12])$};
+\node[term] (GWl) at (0,-1.15) {$\prod_{\nu\mid2}\LK\GW(F_\nu)$};
+\node[term] (GWc) at (3.8,-1.15) {$\Cof(\kappa')$};
+\draw[seq] (Ug)--node[above,font=\scriptsize]{$\kappa''$}(Ul);
+\draw[seq] (Ul)--(Uc);
+\draw[seq] (Kg)--node[above,font=\scriptsize]{$\kappa$}(Kl);
+\draw[seq] (Kl)--(Kc);
+\draw[seq] (GWg)--node[above,font=\scriptsize]{$\kappa'$}(GWl);
+\draw[seq] (GWl)--(GWc);
+\draw[seq] (Ug)--(Kg); \draw[seq] (Kg)--(GWg);
+\draw[seq] (Ul)--(Kl); \draw[seq] (Kl)--(GWl);
+\draw[seq] (Uc)--(Kc); \draw[seq] (Kc)--(GWc);
+\begin{scope}[on background layer]
+\node[fit=(Ul)(Kl)(GWl),fill=blue!7,draw=blue!35,rounded corners=4pt,inner sep=5pt] {};
+\node[fit=(Kg)(Kl)(Kc),fill=red!7,fill opacity=.55,draw=red!35,rounded corners=4pt,inner sep=5pt] {};
+\end{scope}
+\node[font=\footnotesize] at (0,-1.78) {Expected Anderson duality: $180^\circ$ rotation of the full diagram};
+\end{tikzpicture}
+\end{center}
+
+\newpage
+\section*{Toward equivariant duality and descent}
+The expected rotational symmetry points toward a single duality in genuine $C_2$-spectra.
+For a number field with trivial involution, I conjecture
+\[
+I^{C_2}_{\mathbb Z_2}\LK\KR(\mathcal O_F[\tfrac12])
+\simeq \Cof\bigl(\kappa_{\KR}^{[-1]}\bigr),
+\]
+where $\kappa_{\KR}^{[-1]}$ is the completion map for $\KR$ with the duality on perfect modules shifted by $[-1]$.
+Forgetting the $C_2$-action recovers my dissertation theorem.
+In ordinary $K$-theory, arithmetic duality descends from cohomology to spectra.
+Since a corresponding equivariant cohomology theory for $\KR$ is not yet available, I use the expected duality to guide the construction of a Real descent theory.
+
+\section*{Real trace methods}
+Trace methods approximate algebraic $K$-theory by more computable invariants and also enter arithmetic duality.
+With Gerhardt, Keenan, Moreno, and Quigley, I develop homological Real trace methods refining the methods of Bruner and Rognes.
+We construct a multiplicative spectral sequence from Real topological Hochschild homology to the continuous homology of Real topological cyclic homology $\operatorname{TCR}^{-}$, compatible with equivariant power operations.
+We determine its differentials and $E_\infty$-pages for $MU_{\mathbb R}$, $BP_{\mathbb R}$, and several truncated Brown--Peterson theories.
+My next goal is a Real Segal conjecture for $MU_{\mathbb R}$ and $BP_{\mathbb R}$, providing further computational input for investigating duality beyond number fields.
+
+\section*{Equivariant algebra}
+Genuine equivariance introduces transfer and norm operations and representation gradings that a Real descent theory must accommodate.
+With Chan, Mehrle, Sanchez Ocal, Osorno, Szczesny, and Verdugo, I study the realization of compatible transfer systems by pairings of $N_\infty$-operads encoding equivariant distributive laws.
+We prove realization when the additive system is complete and for further families, and conjecture realization in general.
+In ongoing work with Noah Wisdom, I study representation-graded Mackey and Tambara functors.
+For $C_2$, we show that the additional automorphisms in a topological $\mathcal{RO}(C_2)$-grading of a Mackey functor are encoded by its canonical Burnside action, imposing no additional realization condition on grading symmetries.
+
+\bibliography{RS_bib}
+\bibliographystyle{alphaurl}
+
+\end{document}
