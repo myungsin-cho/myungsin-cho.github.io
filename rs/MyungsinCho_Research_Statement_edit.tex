@@ -101,7 +101,7 @@ In the longer term, I aim to construct equivariant forms of cohomology and desce
 
 \section{Background}
 A basic example of duality in topology is the relation between homology and cohomology. 
-The \emph{Universal Coefficient Theorem} makes this relationship precise by identifying each cohomology group with the linear dual of the corresponding homology group when the coefficients lie in a field $k$:
+The \emph{Universal Coefficient Theorem} makes this relationship precise by identifying each cohomology group with the linear dual of the corresponding homology group when the coefficients lie in a field $\K$:
 \[
 H^n(X;k)\cong \operatorname{Hom}(H_n(X;k),k).
 \]
@@ -159,24 +159,24 @@ For instance, reflection and rotation by a half-turn give two $C_2$-actions on a
 \end{figure}
 \noindent My work asks how duality and descent can be formulated without discarding the symmetry.
 
-Real algebraic $K$-theory $(\KR)$ provides a natural setting for this question.
-Ordinary algebraic $K$-theory studies projective modules over rings, while $\KR$-theory incorporates an involution and records the resulting $C_2$-equivariant structure.
+Real algebraic $\K$-theory $(\KR)$ provides a natural setting for this question.
+Ordinary algebraic $\K$-theory studies projective modules over rings, while $\KR$-theory incorporates an involution and records the resulting $C_2$-equivariant structure.
 Forgetting this symmetry recovers $\K$-theory, while taking fixed points leads to Grothendieck--Witt theory ($\GW$).
 Thus, a duality in $\KR$-theory should be visible both in $\K$-theory and $\GW$-theory, together with compatibility between them.
 
 Arithmetic gives a concrete setting in which to study this interaction.
-In arithmetic, Tate--Poitou duality is expressed through étale cohomology, while Thomason descent connects this cohomological information to algebraic $K$-theory.
-Arithmetic duality should therefore also appear at the level of $K$-theory, and its Real refinement should preserve both the duality and the equivariant structure underlying descent.
+In arithmetic, Tate--Poitou duality is expressed through étale cohomology, while Thomason descent connects this cohomological information to algebraic $\K$-theory.
+Arithmetic duality should therefore also appear at the level of $\K$-theory, and its Real refinement should preserve both the duality and the equivariant structure underlying descent.
 
 \section{Arithmetic Duality and Real Algebraic K-theory}
-Real algebraic $K$-theory brings ordinary algebraic $K$-theory and Grothendieck--Witt theory into a single $C_2$-equivariant framework in \cite{HMreal}.
-My dissertation established an arithmetic duality on the non-equivariant side through $K$-theoretic Tate--Poitou duality at the prime $2$.
+Real algebraic $\K$-theory brings ordinary algebraic $\K$-theory and Grothendieck--Witt theory into a single $C_2$-equivariant framework in \cite{HMreal}.
+My dissertation established an arithmetic duality on the non-equivariant side through $\K$-theoretic Tate--Poitou duality at the prime $2$.
 My current work develops the corresponding fixed-point counterpart and shows that this duality extends across the hyperbolic sequence $\operatorname{U}\to\K\to\GW$.
-Together, these results suggest a larger equivariant duality in Real algebraic $K$-theory.
+Together, these results suggest a larger equivariant duality in Real algebraic $\K$-theory.
 
 \subsection{K-theoretic Tate--Poitou duality.}
-Tate--Poitou duality is expressed through étale cohomology, while Thomason descent \cite{Thomason} relates this cohomological information to $K(1)$-local algebraic $K$-theory.
-The corresponding $K$-theoretic problem is to realize Tate--Poitou duality at the homotopical level.
+Tate--Poitou duality is expressed through étale cohomology, while Thomason descent \cite{Thomason} relates this cohomological information to $K(1)$-local algebraic $\K$-theory.
+The corresponding $\K$-theoretic problem is to realize Tate--Poitou duality at the homotopical level.
 \begin{figure}[h]
 \centering
 \begin{tikzcd}[column sep=4em, row sep=2em]
@@ -255,7 +255,7 @@ The prime $2$ remained open because the presence of real embeddings introduces a
 My dissertation resolves this remaining case. 
 \begin{theorem}[\cite{Cho}]\label{mainthm1}
 Let \(F\) be a number field and $\calO_F[\tfrac{1}{2}]$ be its ring of 2-integers.
-The completion cofiber sequence of $K(1)$-local algebraic K-theory admits a canonical \(2\)-adic Anderson self-duality.
+The completion cofiber sequence of $K(1)$-local algebraic $\K$-theory admits a canonical \(2\)-adic Anderson self-duality.
 The duality acts by reflection, interchanging the end terms and identifying the middle term with its own dual.
 \begin{center}
 \begin{tikzpicture}[
@@ -352,7 +352,7 @@ The duality acts by reflection, interchanging the end terms and identifying the 
 \end{center}
 \end{theorem}
 
-The theorem has a concrete application to trace methods in the algebraic $K$-theory of the sphere.
+The theorem has a concrete application to trace methods in the algebraic $\K$-theory of the sphere.
 For $F=\mathbb Q$, combining the duality theorem with known comparison results gives the following identification.
 \begin{corollary}
 There is a canonical equivalence in nonnegative degrees
@@ -365,7 +365,7 @@ Thus, arithmetic information in $K(\bZ)$ determines the fiber of the cyclotomic 
 
 \subsection{Grothendieck--Witt theory and  duality.}
 A fixed-point counterpart of the $\K$-theoretic duality naturally leads to Grothendieck--Witt theory, which records projective modules equipped with nondegenerate bilinear forms \cite{CDH}.
-The hyperbolic map $\K\to\GW$ relates algebraic $K$-theory to this additional form structure, whose homotopy fiber is known as $\operatorname{U}$-theory.
+The hyperbolic map $\K\to\GW$ relates algebraic $\K$-theory to this additional form structure, whose homotopy fiber is known as $\operatorname{U}$-theory.
 Their étale descent properties are well understood \cite{MR3341783,MR2811711}.
 The $2$-primary descent techniques from my dissertation provide the arithmetic input for the $\GW$-side.
 In current work with Lucy Yang, we show that over $2$-adic local fields the resulting sequence has a duality symmetry.
@@ -474,7 +474,7 @@ It therefore suggests that the global duality should occur as one part of a larg
 
 Our ongoing work seeks to globalize this duality to number fields.
 \begin{wip}
-The completion sequences for $U$-theory, $K$-theory, and GW-theory fit into a ($3\times3$) diagram compatible with the hyperbolic maps and local completion maps.
+The completion sequences for $\operatorname{U}$-theory, $\K$-theory, and $\GW$-theory fit into a ($3\times3$) diagram compatible with the hyperbolic maps and local completion maps.
 The duality acts by half-turn rotation.
 \begin{center}
 \begin{tikzpicture}[
@@ -612,7 +612,7 @@ The duality acts by half-turn rotation.
 \end{center}
 \end{wip}
 Proving the self-duality of the full diagram would establish a global duality theorem for Grothendieck--Witt theory and combine the two results above in a single arithmetic structure.
-The rotational symmetry of the diagram leads to the following conjecture on equivariant duality  in Real algebraic $K$-theory.
+The rotational symmetry of the diagram leads to the following conjecture on equivariant duality  in Real algebraic $\K$-theory.
 \begin{conjecture}
 Let \(F\) be a number field with trivial involution, and let
 \[\textstyle
@@ -630,7 +630,7 @@ After forgetting the \(C_2\)-action, the shift of the duality disappears, and th
 The conjecture specifies the duality that a Real descent theory should produce. Such a theory should recover ordinary descent after forgetting the \(C_2\)-action and be compatible with the expected global Grothendieck–Witt duality in the \(3\times3\) diagram. These requirements guide my search for the equivariant cohomology theory underlying Real descent.
 
 \section{Real trace methods}
-Trace methods have long provided such tools in ordinary algebraic $K$-theory by approximating $K$-theory with more computable invariants such as topological Hochschild homology $(\THH)$ \cite{MR3013261}.
+Trace methods have long provided such tools in ordinary algebraic $\K$-theory by approximating $\K$-theory with more computable invariants such as topological Hochschild homology $(\THH)$ \cite{MR3013261}.
 These invariants also enter arithmetic duality.
 In \cite{Clausen17}, Clausen established a cofiber sequence
 \[\xymatrix{\operatorname{TC}(\mathbb Z_p)^\wedge_p \ar[r]& L_{K(1)}\K(\mathbb Q_p) \ar[r]^-\simeq &   I_{\mathbb Z_p}\bigl( L_{K(1)}\K(\mathbb Q_p) \bigr)  \ar[r] & I_{\mathbb Z_p}\bigl(\operatorname{TC}(\mathbb Z_p)^\wedge_p\bigr)},
@@ -739,12 +739,11 @@ Brown--Peterson theories, we determine the differentials and the $E_\infty$-page
 \end{theorem}
 
 Our construction is a Real refinement of the homological trace methods of Bruner and Rognes \cite{MR2153113}, which played an important role in the study of Segal conjectures for the $\THH$ of bordism theories, $MU$ and $BP$ in \cite{MR2832570}.
-A natural next test for our methods is a Real analogue of this for $MU_{\mathbb R}$ and $BP_{\mathbb R}$.
-Proving a Real Segal conjecture in these cases would extend the present calculations toward a broader understanding of Real trace invariants and ultimately of Real algebraic $K$-theory of Real bordism theories.
+A natural next test for our methods is a Real Segal conjecture for $MU_{\mathbb R}$ and $BP_{\mathbb R}$.
+Proving this conjecture would advance computations of Real trace invariants for these theories and provide input for investigating a Real counterpart of the $\K$--$\operatorname{TC}$ duality described above.
 
-The way equivariant operations enter these computations makes their algebraic structure a problem in its own right.
-Beyond individual calculations, one must understand how the additional algebraic structures of equivariance fit together. 
-The next section presents two projects concerned with different aspects of this structure.
+These computations rely on representation gradings and genuine equivariant operations.
+Understanding how these structures fit together is also necessary for an equivariant theory of descent.
 
 \section{Equivariant algebra: operations and gradings}
 An equivariant theory of descent must account for algebraic structure that disappears after forgetting the group action.
@@ -869,14 +868,14 @@ Given a topological $RO(C_2)$-graded Mackey functor $M_\star$, when does there e
 \[
 M_\star \cong \underline{\pi}_\star X?
 \]
-Understanding this realization problem is a step toward determining which $\mathcal{RO}(C_2)$-graded coefficients can occur in equivariant descent for Real algebraic $K$-theory.
+Understanding this realization problem is a step toward determining which $\mathcal{RO}(C_2)$-graded coefficients can occur in equivariant descent for Real algebraic $\K$-theory.
 
 We also study concrete realized examples. 
 In particular, we investigate the graded Tambara structure on the homotopy groups of equivariant complex bordism $MU_G$.
 Since $MU_G$ is already a genuine $G$-spectrum, it provides a test case for understanding how representation gradings, transfers, and norm maps interact in realizable graded Tambara functors.
 
 \section{Outlook}
-My long-term goal is to understand how arithmetic duality extends to Real algebraic $K$-theory of rings with involution.
+My long-term goal is to understand how arithmetic duality extends to Real algebraic $\K$-theory of rings with involution.
 The number-field results provide concrete models of duality, while Real trace methods offer a route toward investigating similar structures beyond the arithmetic setting.
 I seek an equivariant cohomological framework that explains these dualities and supports descent to $\KR$, with coefficients that incorporate representation gradings and genuine equivariant operations.
 
