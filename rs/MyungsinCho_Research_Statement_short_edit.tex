@@ -84,32 +84,31 @@
 \date{}
 \begin{document}
 \begin{center}\LARGE{Research Statement}\end{center}\vspace{.5em}
-My research is in stable homotopy theory, with connections to arithmetic and equivariant algebra.
-I study how mathematical invariants are related by duality and how global information can be recovered from local data through descent.
-My central goal is to understand these phenomena in Real algebraic $K$-theory, where algebraic objects carry an order-two symmetry.
-My work develops this program through arithmetic duality, computational methods, and the algebra of objects with symmetry.
+My research is in stable homotopy theory, with connections to arithmetic and algebra.
+I study duality in algebraic $K$-theory and the algebraic structures arising in equivariant stable homotopy theory.
+These directions share an interest in how symmetry changes mathematical objects and their invariants.
+They also offer opportunities for undergraduate research beginning with familiar concepts in algebra and topology.
 
-\section*{Arithmetic duality and Real algebraic $K$-theory}
+\section*{Duality in algebraic $K$-theory}
 Algebraic $K$-theory studies rings through invariants built from their projective modules.
-For number fields, it connects topology to arithmetic by comparing global objects with their completions at individual primes.
-Classical Tate--Poitou duality describes such relationships through cohomology.
-Descent connects this cohomological information to a localized form of $K$-theory, raising the question of whether the arithmetic duality also holds for the underlying spectra.
+In number theory, classical dualities describe relationships among arithmetic cohomology groups.
+My research asks whether these relationships extend to algebraic $K$-theory itself.
+The goal is a duality of spectra, which captures both the individual groups and the homotopical structure connecting them.
 
 My dissertation establishes $K$-theoretic Tate--Poitou duality at the prime $2$, completing the global duality previously proved at odd primes by Blumberg and Mandell.
-The remaining case required accounting for the additional behavior of real embeddings.
-The theorem shows that the comparison between global and local $K$-theory has a duality symmetry: global $K$-theory is dual to the term measuring the difference between global and local data, while local $K$-theory is self-dual.
-Here the appropriate homotopical dual is the $2$-adic Anderson dual.
-The result establishes a duality of spectra, including the structure connecting their homotopy groups.
+The remaining case required accounting for the behavior of real embeddings.
+The theorem relates global $K$-theory to the term measuring the difference between global and local $K$-theory, while local $K$-theory is self-dual.
+The relevant notion of duality is Anderson duality, a homotopical analogue of taking the dual of an abelian group.
 
-This duality also has an application to the $K$-theory of the sphere spectrum, a fundamental object in stable homotopy theory.
-The cyclotomic trace approximates this difficult invariant by a more computable one.
+This result also applies to the $K$-theory of the sphere spectrum, a fundamental object in stable homotopy theory.
+The cyclotomic trace approximates this difficult invariant by one that is more accessible to computation.
 At the prime $2$ and in nonnegative degrees, my theorem identifies the information missed by this approximation in terms of the arithmetic $K$-theory of the integers.
 
-Real algebraic $K$-theory combines ordinary $K$-theory with Grothendieck--Witt theory ($\GW$), which studies modules equipped with nondegenerate bilinear forms.
-With Lucy Yang, I establish a compatible duality over $2$-adic local fields for the sequence connecting $\GW$, $K$-theory, and its comparison theory $\U$.
+Real algebraic $K$-theory incorporates an order-two symmetry.
+Forgetting this symmetry recovers ordinary $K$-theory, while taking fixed points leads to Grothendieck--Witt theory ($\GW$), which studies modules with nondegenerate bilinear forms.
+With Lucy Yang, I establish a compatible duality over $2$-adic local fields for the sequence $\U\to\K\to\GW$.
 Our ongoing work seeks a global duality encompassing all three theories.
-In the diagram below, each row compares global and local data, while each column connects the three theories.
-The red row and blue column show the dualities already obtained.
+In the diagram, the red row and blue column indicate the dualities already obtained.
 We expect the full diagram to be self-dual under a half-turn rotation.
 \begin{center}
 \begin{tikzpicture}[
@@ -245,30 +244,36 @@ We expect the full diagram to be self-dual under a half-turn rotation.
   ($(whole.south)+(-4,-\dualitygap)$);
 \end{tikzpicture}
 \end{center}
-
-\newpage
-\section*{Toward equivariant duality and descent}
-I conjecture that these arithmetic dualities arise from a single duality in Real algebraic $K$-theory.
-Forgetting the symmetry should recover my dissertation theorem, while the equivariant structure should explain the compatible dualities of the three theories in the diagram.
+My long-term goal is to understand duality and descent in Real algebraic $K$-theory of rings with involution.
+I conjecture that the arithmetic dualities above arise from a single Real duality.
 In ordinary $K$-theory, descent explains how arithmetic duality passes from cohomology to spectra.
 A corresponding equivariant cohomology theory for Real algebraic $K$-theory is not yet available.
-I therefore approach the problem from the other direction, using the expected duality to guide the construction of a Real descent theory.
+I approach this problem from the other direction, using the expected duality to guide the search for a Real descent theory.
 
-\section*{Real trace methods}
-Trace methods make algebraic $K$-theory more accessible by replacing it with invariants that are easier to compute.
-In joint work with Gerhardt, Keenan, Moreno, and Quigley, I develop Real versions of these methods that also account for symmetry.
-We construct a multiplicative spectral sequence, a tool that organizes a computation into successive stages, and carry out explicit calculations for Real bordism theories.
-The construction respects the additional algebraic operations arising from equivariance and extends the methods of Bruner and Rognes to the Real setting.
-My next goal is a Real Segal conjecture for Real complex bordism and Real Brown--Peterson theory.
-This would deepen our understanding of these computational approximations and provide input for studying Real algebraic $K$-theory beyond number fields.
+The sphere-spectrum application above connects arithmetic duality with the cyclotomic trace. This relationship motivates my study of Real trace methods as an approach to duality in Real algebraic $K$-theory. With Gerhardt, Keenan, Moreno, and Quigley, I develop homological methods for studying Real trace invariants together with their equivariant structure. We construct a multiplicative spectral sequence and carry out explicit calculations for Real bordism theories, extending the methods of Bruner and Rognes to the Real setting. A natural next step is a Real Segal conjecture for Real complex bordism and Real Brown--Peterson theory. This would advance our understanding of Real trace invariants and ultimately of Real algebraic $K$-theory of Real bordism theories.
 
-\section*{Equivariant algebra}
-Symmetry introduces additional forms of addition and multiplication, called transfers and norms.
-With Chan, Mehrle, Sanchez Ocal, Osorno, Szczesny, and Verdugo, I study when combinatorial descriptions of these operations can be realized by operads governing their interaction.
-We prove realization when all additive transfers are available, establish further cases, and conjecture realization for every compatible pair of transfer systems.
+\section*{Equivariant stable homotopy theory and algebra}
+Equivariant topology studies spaces together with group actions, such as rotations or reflections.
+Accounting for symmetry changes both the invariants of a space and the algebraic structures they carry.
+In equivariant stable homotopy theory, familiar operations such as addition and multiplication are accompanied by transfers and norms.
+Understanding which operations can coexist, and how they interact, is a central problem in equivariant algebra.
+
+With Chan, Mehrle, Sanchez Ocal, Osorno, Szczesny, and Verdugo, I study this problem through transfer systems, combinatorial objects describing which transfers and norms are allowed.
+We ask whether compatible choices of these operations can be realized by operads governing their interaction.
+We prove realization when all additive transfers are available and establish further cases.
+We conjecture that every compatible pair can be realized, seeking a general correspondence between combinatorial compatibility and realizable algebraic structure.
 
 With Noah Wisdom, I study how representation gradings organize the homotopy groups of equivariant spectra.
-For the order-two group, within the class of gradings modeled on stable homotopy groups, we show that the extra symmetries of representation degrees are already determined by the Mackey functor structure.
+For the order-two group, within the class of gradings modeled on stable homotopy groups, we show that the additional symmetries of representation degrees are already determined by the Mackey functor structure.
+
+\subsection*{Undergraduate research}
+I want students to learn to formulate their own mathematical questions.
+A starting point is a familiar definition: what changes if we weaken a condition, or combine two concepts usually studied separately?
+Equivariant rings offer an example, bringing together rings and symmetry to ask which definitions, examples, and properties are natural.
+The structures and invariants of manifolds with symmetry offer another direction.
+I would guide students in turning these broad questions into problems they can explore through concrete examples.
+As patterns emerge, we would refine their questions, formulate conjectures, and seek proofs or counterexamples.
+My aim is for students to experience how a question develops through investigation and to take increasing responsibility for the direction of their work.
 
 
 \bibliography{RS_bib}
