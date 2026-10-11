@@ -84,32 +84,25 @@
 \date{}
 \begin{document}
 \begin{center}\LARGE{Research Statement}\end{center}\vspace{.5em}
-My research is in stable homotopy theory, with connections to arithmetic and algebra.
-I study duality in algebraic $K$-theory and the algebraic structures arising in equivariant stable homotopy theory.
-These directions share an interest in how symmetry changes mathematical objects and their invariants.
-They also offer opportunities for undergraduate research beginning with familiar concepts in algebra and topology.
+My research is in stable homotopy theory, with connections to algebra and number theory.
+One direction studies duality in algebraic $K$-theory, with the long-term goal of understanding duality and descent in Real algebraic $K$-theory.
+A second direction concerns equivariant stable homotopy theory and equivariant algebra, where incorporating symmetry leads to new algebraic structures.
+These interests also provide starting points for undergraduate research.
 
 \section*{Duality in algebraic $K$-theory}
-Algebraic $K$-theory studies rings through invariants built from their projective modules.
-In number theory, classical dualities describe relationships among arithmetic cohomology groups.
-My research asks whether these relationships extend to algebraic $K$-theory itself.
-The goal is a duality of spectra, which captures both the individual groups and the homotopical structure connecting them.
+In linear algebra, a linear map can be studied through its action on vectors or through its action on linear functions. %무슨말인지 잘 모르겠음
+Passing to the dual reverses the direction of the map while preserving the information it carries.
+My research seeks similar phenomena in algebraic $K$-theory.
+This theory studies linear algebra over rings and packages information about modules into topological invariants. % 좀더 어렵게 포장가능; packages information about general linear group 같은말을 써도 될듯
+Although these invariants are difficult to compute, duality can reveal how apparently different pieces of information determine one another.
 
-My dissertation establishes $K$-theoretic Tate--Poitou duality at the prime $2$, completing the global duality previously proved at odd primes by Blumberg and Mandell.
-The remaining case required accounting for the behavior of real embeddings.
-The theorem relates global $K$-theory to the term measuring the difference between global and local $K$-theory, while local $K$-theory is self-dual.
-The relevant notion of duality is Anderson duality, a homotopical analogue of taking the dual of an abelian group.
+My dissertation studies such a relationship in arithmetic.
+Comparing global and local $K$-theory gives three related objects: $L_{K(1)}\K\bigl(\calO_F[\tfrac12]\bigr)$ the global theory , $\prod\limits_{\nu\mid2}L_{K(1)}\K(F_\nu^\wedge)$ the local theory, and $\Cof(\kappa)$ the information measuring their difference.
+Duality reverses this comparison.
+The global theory and the comparison term exchange roles, while the local theory is self-dual.
+I establish this symmetry at the prime $2$, completing the $K$-theoretic Tate--Poitou duality previously proved at odd primes by Blumberg and Mandell.
+The red row of the diagram below displays this relationship.
 
-This result also applies to the $K$-theory of the sphere spectrum, a fundamental object in stable homotopy theory.
-The cyclotomic trace approximates this difficult invariant by one that is more accessible to computation.
-At the prime $2$ and in nonnegative degrees, my theorem identifies the information missed by this approximation in terms of the arithmetic $K$-theory of the integers.
-
-Real algebraic $K$-theory incorporates an order-two symmetry.
-Forgetting this symmetry recovers ordinary $K$-theory, while taking fixed points leads to Grothendieck--Witt theory ($\GW$), which studies modules with nondegenerate bilinear forms.
-With Lucy Yang, I establish a compatible duality over $2$-adic local fields for the sequence $\U\to\K\to\GW$.
-Our ongoing work seeks a global duality encompassing all three theories.
-In the diagram, the red row and blue column indicate the dualities already obtained.
-We expect the full diagram to be self-dual under a half-turn rotation.
 \begin{center}
 \begin{tikzpicture}[
   >=Latex,
@@ -244,35 +237,61 @@ We expect the full diagram to be self-dual under a half-turn rotation.
   ($(whole.south)+(-4,-\dualitygap)$);
 \end{tikzpicture}
 \end{center}
-My long-term goal is to understand duality and descent in Real algebraic $K$-theory of rings with involution.
-I conjecture that the arithmetic dualities above arise from a single Real duality.
-In ordinary $K$-theory, descent explains how arithmetic duality passes from cohomology to spectra.
-A corresponding equivariant cohomology theory for Real algebraic $K$-theory is not yet available.
-I approach this problem from the other direction, using the expected duality to guide the search for a Real descent theory.
 
-The sphere-spectrum application above connects arithmetic duality with the cyclotomic trace. This relationship motivates my study of Real trace methods as an approach to duality in Real algebraic $K$-theory. With Gerhardt, Keenan, Moreno, and Quigley, I develop homological methods for studying Real trace invariants together with their equivariant structure. We construct a multiplicative spectral sequence and carry out explicit calculations for Real bordism theories, extending the methods of Bruner and Rognes to the Real setting. A natural next step is a Real Segal conjecture for Real complex bordism and Real Brown--Peterson theory. This would advance our understanding of Real trace invariants and ultimately of Real algebraic $K$-theory of Real bordism theories.
+Linear algebra provides another familiar starting point for extending this work.
+A vector space may carry a bilinear form, such as an inner product, which adds structure beyond the vector space itself.
+Grothendieck--Witt theory records this form structure, while Real algebraic $\K$-theory brings it together with ordinary $K$-theory through symmetry. %여기서 KR을 갑자기 꺼내지는 말고 KR는 나중에꺼내자.
+With Lucy Yang, I establish a local duality relating ordinary $\K$-theory, $\GW$-theory, and their comparison theory $\U$.
+This gives the symmetry shown in the blue column.
+Our ongoing global work asks whether these two reversals fit together into a half-turn symmetry of the full diagram.
+
+My long-term goal is to understand these dualities as parts of a single relationship in Real algebraic $K$-theory.
+I also seek an explanation of why this relationship exists.
+In ordinary $K$-theory, descent connects the theory to arithmetic cohomology, where classical duality is well understood.
+A corresponding explanation incorporating symmetry is not yet available.
+I use the known and expected dualities to guide the search for such a Real descent theory.
+
+%아래 두 문단을 하나로 합치거나 polish해야함
+The same duality has an application to the $K$-theory of the sphere spectrum, a basic building block of stable homotopy theory.
+The cyclotomic trace relates this difficult invariant to a more accessible one.
+My theorem shows that the information missed by this approximation is itself described by a duality with the arithmetic $K$-theory of the integers.
+Thus arithmetic duality also explains a relationship between two invariants arising in topology.
+
+The sphere-spectrum application also shows how trace methods enter this program.
+The trace relates two invariants, and duality describes the information between them.
+This connection motivates my study of Real trace invariants, which incorporate symmetry into these relationships.
+With Gerhardt, Keenan, Moreno, and Quigley, I develop Real homological trace methods that account for this symmetry and its additional algebraic operations.
+We obtain explicit results for Real bordism theories, extending the methods of Bruner and Rognes to the Real setting.
+A natural next step is a Real Segal conjecture for these theories, toward understanding Real trace invariants and ultimately Real algebraic $K$-theory beyond arithmetic examples.
+
 
 \section*{Equivariant stable homotopy theory and algebra}
-Equivariant topology studies spaces together with group actions, such as rotations or reflections.
-Accounting for symmetry changes both the invariants of a space and the algebraic structures they carry.
-In equivariant stable homotopy theory, familiar operations such as addition and multiplication are accompanied by transfers and norms.
-Understanding which operations can coexist, and how they interact, is a central problem in equivariant algebra.
 
-With Chan, Mehrle, Sanchez Ocal, Osorno, Szczesny, and Verdugo, I study this problem through transfer systems, combinatorial objects describing which transfers and norms are allowed.
-We ask whether compatible choices of these operations can be realized by operads governing their interaction.
-We prove realization when all additive transfers are available and establish further cases.
-We conjecture that every compatible pair can be realized, seeking a general correspondence between combinatorial compatibility and realizable algebraic structure.
+Symmetry also changes familiar constructions in algebra.
+For example, in a commutative ring, if a symmetry exchanges two elements, their sum and product are unchanged.
+These elementary constructions suggest additive and multiplicative ways of combining information while respecting symmetry.
+In equivariant algebra, they develop into operations called transfers and norms.
+There can be many such operations, corresponding to different kinds of symmetry.
+My research asks which of them can be used together and how they must interact.
 
-With Noah Wisdom, I study how representation gradings organize the homotopy groups of equivariant spectra.
-For the order-two group, within the class of gradings modeled on stable homotopy groups, we show that the additional symmetries of representation degrees are already determined by the Mackey functor structure.
+With Chan, Mehrle, Sanchez Ocal, Osorno, Szczesny, and Verdugo, I study this interaction through combinatorics.
+As with ordinary addition and multiplication, the operations must obey compatibility rules resembling a distributive law.
+We encode the allowed operations by transfer systems and ask whether compatible choices can be realized as coherent systems of operations, organized by operads.
+Our results realize several classes of compatible choices, and we conjecture that compatibility is sufficient in general.
+The goal is to understand when a combinatorial description of the desired operations can be turned into a mathematical structure carrying them.
+
+With Noah Wisdom, I study how symmetry changes the gradings that organize topological invariants.
+For order-two symmetry, we show that some apparently additional grading information is already determined by the underlying algebraic structure.
 
 \subsection*{Undergraduate research}
 I want students to learn to formulate their own mathematical questions.
-A starting point is a familiar definition: what changes if we weaken a condition, or combine two concepts usually studied separately?
-Equivariant rings offer an example, bringing together rings and symmetry to ask which definitions, examples, and properties are natural.
+Familiar concepts offer a starting point.
+What changes if we alter a condition in a definition?
+What happens if we bring together two concepts usually studied separately?
+Equivariant rings offer an example, combining rings and symmetry to explore natural definitions, examples, and properties.
 The structures and invariants of manifolds with symmetry offer another direction.
-I would guide students in turning these broad questions into problems they can explore through concrete examples.
-As patterns emerge, we would refine their questions, formulate conjectures, and seek proofs or counterexamples.
+I would guide students in turning their questions into problems they can investigate through concrete examples.
+As patterns emerge, we would refine the questions, formulate conjectures, and seek proofs or counterexamples.
 My aim is for students to experience how a question develops through investigation and to take increasing responsibility for the direction of their work.
 
 
