@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
 \usepackage[letterpaper,margin=1in]{geometry}
 \usepackage{mytex}
 
@@ -90,17 +90,16 @@ A second direction concerns equivariant stable homotopy theory and equivariant a
 These interests also provide starting points for undergraduate research.
 
 \section*{Duality in algebraic $K$-theory}
-In linear algebra, the dual space describes a vector space through linear functions on it.
-A finite-dimensional vector space is isomorphic to its dual, so these two descriptions carry the same linear information.
+In linear algebra, a vector space and its dual, the space of linear functions on it, are isomorphic under suitable finiteness conditions.
 My research seeks similar phenomena in algebraic $K$-theory.
 This theory studies linear algebra over rings $R$ and packages information about general linear groups $GL(R)$ into topological invariants. 
 Although these invariants are difficult to compute, duality can reveal how apparently different pieces of information determine one another.
 
-My dissertation studies such a relationship in arithmetic.
-Comparing global and local rings on $K$-theory gives three related objects: $L_{K(1)}\K\bigl(\calO_F[\tfrac12]\bigr)$ the global theory , $\prod_{\nu\mid2}L_{K(1)}\K(F_\nu^\wedge)$ the local theory, and $\Cof(\kappa)$ the information measuring their difference, \cite{Cho}.
+My dissertation studies this phenomenon by comparing arithmetic information for a number field $F$ as a whole with information obtained at individual primes.
+In $\K$-theory, this comparison involves three objects: the global theory $L_{K(1)}\K\bigl(\calO_F[\tfrac12]\bigr)$, the local theory $\prod_{\nu\mid2}L_{K(1)}\K(F_\nu^\wedge)$, and the comparison term $\Cof(\kappa)$, which measures their difference.
 Duality reverses this comparison.
 The global theory and the comparison term exchange roles, while the local theory is self-dual.
-I establish this symmetry at the prime $2$, completing the $K$-theoretic Tate--Poitou duality previously proved at odd primes by Blumberg and Mandell, \cite{MR4121155}.
+I establish this symmetry at the prime $2$ \cite{Cho}, completing the $K$-theoretic Tate--Poitou duality previously proved at odd primes by Blumberg and Mandell \cite{MR4121155}.
 The red row of the diagram below displays this relationship.
 
 \begin{center}
@@ -238,61 +237,79 @@ The red row of the diagram below displays this relationship.
 \end{tikzpicture}
 \end{center}
 
-Linear algebra provides another familiar starting point for extending this work.
-A vector space may carry a bilinear form, such as an inner product, which adds structure beyond the vector space itself.
-Grothendieck--Witt theory records this additional form structure, extending the linear algebra studied by ordinary $\K$-theory.
-With Lucy Yang, I establish a local duality relating $\K$-theory, $\GW$-theory, and their comparison theory $\U$, the homotopical kernel of the hyperbolic map $\K\to\GW$, \cite{ChoYang}.
+A bilinear form, such as an inner product, equips a vector space with additional structure.
+Grothendieck--Witt theory extends ordinary $\K$-theory by keeping track of these forms.
+With Lucy Yang, I establish a local duality relating $\K$-theory, $\GW$-theory, and the comparison theory $\U$ associated to the hyperbolic map $\K\to\GW$ \cite{ChoYang}.
 This duality gives the symmetry shown in the blue column above.
-Our ongoing global work asks whether these symmetry fit together into a half-turn symmetry of the full diagram.
+Our ongoing work on global fields asks whether this local symmetry and the duality from my dissertation combine into a half-turn symmetry of the full diagram.
 
-My long-term goal is to understand these dualities as parts of a single relationship in Real algebraic $K$-theory, \cite{HMreal}.
-Real algebraic $\K$-theory connects ordinary $\K$-theory and $\GW$-theory through symmetry, providing a setting in which these dualities may have a common source.
-I also seek an explanation of why this relationship exists.
-In ordinary $K$-theory, descent connects the theory to arithmetic cohomology, where classical duality is well understood.
+
+Real algebraic $\K$-theory incorporates symmetry to bring ordinary $\K$-theory and $\GW$-theory into a single theory \cite{HMreal}.
+My long-term goal is to understand the dualities above as manifestations of a single duality in this theory and to explain why it exists.
+In ordinary $\K$-theory, descent connects the theory to arithmetic cohomology, where classical duality provides such an explanation.
 A corresponding explanation incorporating symmetry is not yet available.
-I use the known and expected dualities to guide the search for such a Real descent theory.
+I use the known and expected dualities to guide the construction of a Real descent theory that could explain them.
 
 Trace methods connect this duality program to other invariants in topology.
-The cyclotomic trace relates algebraic $\K$-theory to topological cyclic homology, or $\operatorname{TC}$.
-For the sphere spectrum $\bS$, a basic building block of stable homotopy theory, my theorem identifies $\Fib(\ta_\bS)$ the information missed by this map with $I_{\bZ_2} L_{K(1)}K(\bZ)$ a dual of the arithmetic $\K$-theory of the integers.
-Clausen's work also relates $\operatorname{TC}$ directly to local arithmetic $\K$-theory and its dual, \cite{Clausen17}.
-Together, these results place trace methods within the duality picture, with $\operatorname{TC}$ participating in the relationships that my research seeks to understand.
+The cyclotomic trace relates algebraic $\K$-theory to topological cyclic homology,  $\operatorname{TC}$.
+For the sphere spectrum $\bS$, a basic building block of stable homotopy theory, my theorem describes the information missed by this map as a dual of the arithmetic $\K$-theory of the integers \cite{Cho}.
+Clausen's work places $\operatorname{TC}$ itself within local arithmetic duality, relating it directly to local $\K$-theory and its dual \cite{Clausen17}.
 
-This perspective motivates my study of Real trace methods, which incorporate symmetry into these relationships.
-With Gerhardt, Keenan, Moreno, and Quigley, I develop homological methods that respect this symmetry and its additional algebraic operations, \cite{CGKMQ}.
-We obtain explicit results for Real bordism theories, extending the methods of Bruner and Rognes to the Real setting.
+These connections motivate my study of Real trace methods, which incorporate symmetry into these relationships.
+With Gerhardt, Keenan, Moreno, and Quigley, I develop homological methods that account for both symmetry and its additional algebraic operations \cite{CGKMQ}.
+We obtain explicit results for Real bordism theories, including $MU_{\mathbb R}$ and $BP_{\mathbb R}$, extending the methods of Bruner and Rognes to the Real setting.
 Our next goal is to establish Real Segal conjectures for these theories.
-This work lays the groundwork for investigating how Real trace invariants participate in duality, extending the program beyond arithmetic examples.
-
+I aim to use these methods to investigate how Real topological cyclic homology, $\operatorname{TCR}$, fits into duality in Real algebraic $\K$-theory beyond arithmetic examples. 
 
 \section*{Equivariant stable homotopy theory and algebra}
-
 Symmetry also changes familiar constructions in algebra.
 For example, the sum and product of a complex number and its conjugate are both real, so they are fixed by complex conjugation.
 These constructions illustrate how addition and multiplication can combine elements related by symmetry to produce invariant quantities.
 In equivariant algebra, they develop into operations called transfers and norms.
-There can be many such operations, corresponding to different kinds of symmetry.
-My research asks which of them can be used together and how they must interact.
+For larger groups, there are operations associated with different subgroups.
+My research asks which transfers and norms can be used together and how they must interact.
 
-With Chan, Mehrle, Sanchez Ocal, Osorno, Szczesny, and Verdugo, I study this interaction through combinatorics, \cite{CCM+}.
-As with ordinary addition and multiplication, the operations must obey compatibility rules resembling a distributive law.
-We encode the allowed operations by transfer systems and ask whether compatible choices can be realized as coherent systems of operations, organized by operads.
+Transfer systems provide a combinatorial tool for studying these operations, \cite{MR4244201}.
+By recording allowed operations as relations between subgroups, they turn questions about equivariant algebra into combinatorial problems.
+With Chan, Mehrle, Sanchez Ocal, Osorno, Szczesny, and Verdugo, I use this description to study the compatibility of transfers and norms \cite{CCM+}.
+As with ordinary addition and multiplication, these operations must obey rules resembling a distributive law.
+We ask whether choices satisfying these rules can be realized by operads that organize coherent systems of operations.
+\[
+\begin{tikzcd}[column sep=8em]
+\begin{array}{c}
+\text{pairing of}\\
+N_\infty\text{-operads}
+\end{array}
+\arrow[r, Rightarrow, shift left=1.3ex, shorten <=2pt, shorten >=2pt]
+&
+\begin{array}{c}
+\text{compatible pair of}\\
+\text{transfer systems}
+\end{array}
+\arrow[l, dashed, shift left=1ex,
+       shorten <=2pt, shorten >=2pt,
+       "\text{\footnotesize partially}"]
+\end{tikzcd}
+\]
 Our results realize several classes of compatible choices, and we conjecture that compatibility is sufficient in general.
-The goal is to understand when a combinatorial description of the desired operations can be turned into a mathematical structure carrying them.
+This would give a combinatorial criterion for when prescribed transfers and norms can form a coherent system of operations.
 
-With Noah Wisdom, I study how symmetry changes the gradings that organize topological invariants.
-For $C_2$-equivariant case, we show that some apparently additional grading information is already determined by the underlying algebraic structure.
+With Noah Wisdom, I study the algebraic structures carried by invariants in equivariant topology.
+We ask what conditions allow algebraic data, equipped with representation gradings and equivariant operations, to be realized topologically.
+For the refined $C_2$-gradings we consider, we show that the additional grading symmetries are already determined by the existing algebraic operations.
+This reduces the data that must be specified independently when investigating topological realization.
 
 \subsection*{Undergraduate research}
-I want students to learn to formulate their own mathematical questions.
-Familiar concepts offer a starting point.
-What changes if we alter a condition in a definition?
-What happens if we bring together two concepts usually studied separately?
-Equivariant rings offer an example, combining rings and symmetry to explore natural definitions, examples, and properties.
-The structures and invariants of manifolds with symmetry offer another direction.
-I would guide students in turning their questions into problems they can investigate through concrete examples.
-As patterns emerge, we would refine the questions, formulate conjectures, and seek proofs or counterexamples.
-My aim is for students to experience how a question develops through investigation and to take increasing responsibility for the direction of their work.
+I view undergraduate research as a process in which students formulate questions from familiar mathematics and pursue the ideas needed to answer them.
+Students with a background in linear algebra can already ask meaningful questions by varying a definition, examining new examples, or combining familiar structures.
+Investigating their own questions gives them a reason to learn more advanced concepts and methods, allowing research to introduce them naturally to ideas from upper-level courses.
+
+My research offers several starting points for this process.
+Successful undergraduate collaborations on transfer systems illustrate how accessible combinatorial questions can lead to contributions in equivariant topology.
+Equivariant rings provide opportunities to combine familiar algebra with group action and investigate how ordinary ring-theoretic properties change.
+The structures and invariants of manifolds with symmetry offer related possibilities for students with geometric interests.
+These examples would support students in developing questions of their own.
+I would help them refine their observations into tractable problems and introduce further mathematical tools as their investigations call for them.
 
 
 \bibliography{RS_bib}
