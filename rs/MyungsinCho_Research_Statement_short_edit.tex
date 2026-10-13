@@ -100,7 +100,7 @@ In $\K$-theory, this comparison involves three objects: the global theory $L_{K(
 Duality reverses this comparison.
 The global theory and the comparison term exchange roles, while the local theory is self-dual.
 I establish this symmetry at the prime $2$ \cite{Cho}, completing the $K$-theoretic Tate--Poitou duality previously proved at odd primes by Blumberg and Mandell \cite{MR4121155}.
-The red row of the diagram below displays this relationship.
+The red row of the diagram below displays this relationship within a larger diagram connecting ordinary $\K$-theory with theories that incorporate bilinear forms.
 
 \begin{center}
 \begin{tikzpicture}[
@@ -232,7 +232,7 @@ The red row of the diagram below displays this relationship.
     inner xsep=0pt,
     font=\footnotesize,
     text=black!62
-  ] {Anderson duality: $180^\circ$ rotation}
+  ] {Goal: Anderson duality: $180^\circ$ rotation}
   ($(whole.south)+(-4,-\dualitygap)$);
 \end{tikzpicture}
 \end{center}
@@ -250,28 +250,26 @@ In ordinary $\K$-theory, descent connects the theory to arithmetic cohomology, w
 A corresponding explanation incorporating symmetry is not yet available.
 I use the known and expected dualities to guide the construction of a Real descent theory that could explain them.
 
-Trace methods connect this duality program to other invariants in topology.
-The cyclotomic trace relates algebraic $\K$-theory to topological cyclic homology,  $\operatorname{TC}$.
-For the sphere spectrum $\bS$, a basic building block of stable homotopy theory, my theorem describes the information missed by this map as a dual of the arithmetic $\K$-theory of the integers \cite{Cho}.
-Clausen's work places $\operatorname{TC}$ itself within local arithmetic duality, relating it directly to local $\K$-theory and its dual \cite{Clausen17}.
+My duality theorem also has an application to the cyclotomic trace, which relates algebraic $\K$-theory to topological cyclic homology, $\operatorname{TC}$.
+For the sphere spectrum $\bS$, a basic building block of stable homotopy theory, my theorem describes $\Fib(\K(\bS) \to \operatorname{TC}(\bS))$ the information missed by this cyclotomic trace map as $I_{\bZ_2} L_{K(1)}K(\bZ)$ a dual of the arithmetic $\K$-theory of the integers \cite{Cho}.
 
-These connections motivate my study of Real trace methods, which incorporate symmetry into these relationships.
-With Gerhardt, Keenan, Moreno, and Quigley, I develop homological methods that account for both symmetry and its additional algebraic operations \cite{CGKMQ}.
-We obtain explicit results for Real bordism theories, including $MU_{\mathbb R}$ and $BP_{\mathbb R}$, extending the methods of Bruner and Rognes to the Real setting.
-Our next goal is to establish Real Segal conjectures for these theories.
+Clausen's work places $\operatorname{TC}$ itself within local arithmetic duality, relating it directly to local $\K$-theory and its dual \cite{Clausen17}.
+This connection motivates my study of Real trace methods and their role in duality in Real algebraic $\K$-theory.
+With Gerhardt, Keenan, Moreno, and Quigley, I develop homological trace methods that incorporate $C_2$-actions and equivariant power operations \cite{CGKMQ}.
+We obtain explicit results for Real bordism theories, including $MU_{\mathbb R}$ and $BP_{\mathbb R}$, extending the methods of Bruner and Rognes to the Real setting \cite{MR2153113}.
 I aim to use these methods to investigate how Real topological cyclic homology, $\operatorname{TCR}$, fits into duality in Real algebraic $\K$-theory beyond arithmetic examples. 
 
 \section*{Equivariant stable homotopy theory and algebra}
 Symmetry also changes familiar constructions in algebra.
 For example, the sum and product of a complex number and its conjugate are both real, so they are fixed by complex conjugation.
 These constructions illustrate how addition and multiplication can combine elements related by symmetry to produce invariant quantities.
-In equivariant algebra, they develop into operations called transfers and norms.
+In equivariant algebra, they develop into operations called transfers and norms \cite{MR3773736}.
 For larger groups, there are operations associated with different subgroups.
 My research asks which transfers and norms can be used together and how they must interact.
 
 Transfer systems provide a combinatorial tool for studying these operations, \cite{MR4244201}.
 By recording allowed operations as relations between subgroups, they turn questions about equivariant algebra into combinatorial problems.
-With Chan, Mehrle, Sanchez Ocal, Osorno, Szczesny, and Verdugo, I use this description to study the compatibility of transfers and norms \cite{CCM+}.
+With Chan, Mehrle, Sanchez-Ocal, Osorno, Szczesny, and Verdugo, I use this description to study the compatibility of transfers and norms \cite{CCM+}.
 As with ordinary addition and multiplication, these operations must obey rules resembling a distributive law.
 We ask whether choices satisfying these rules can be realized by operads that organize coherent systems of operations.
 \[
