@@ -96,8 +96,17 @@ This theory studies linear algebra over rings $R$ and packages information about
 Although these invariants are difficult to compute, duality can reveal how apparently different pieces of information determine one another.
 
 My dissertation studies this phenomenon by comparing arithmetic information for a number field $F$ as a whole with information obtained at individual primes.
-In $\K$-theory, this comparison involves three objects: the global theory $L_{K(1)}\K\bigl(\calO_F[\tfrac12]\bigr)$, the local theory $\prod_{\nu\mid2}L_{K(1)}\K(F_\nu^\wedge)$, and the comparison term $\Cof(\kappa)$, which measures their difference.
-Duality reverses this comparison.
+In $\K$-theory, this comparison involves three objects: the global theory $L_{K(1)}\K\bigl(\calO_F[\tfrac12]\bigr)$, the local theory $L_{K(1)}\K(F_\nu^\wedge)$, and the comparison term $\Cof(\kappa)$, which measures their difference.
+Duality reverses this comparison:
+\[
+\begin{tikzcd}[column sep=7em]
+L_{K(1)}\K\bigl(\calO_F[\tfrac12]\bigr)
+\arrow[r, leftrightarrow, "\text{Anderson duality}"]
+&
+\Cof(\kappa).
+\end{tikzcd}
+\]
+%\[I_{\bZ_2} \Big( L_{K(1)}\K\bigl(\calO_F[\tfrac12]\bigr) \Big) \simeq \Cof(\kappa)\]
 The global theory and the comparison term exchange roles, while the local theory is self-dual.
 I establish this symmetry at the prime $2$ \cite{Cho}, completing the $K$-theoretic Tate--Poitou duality previously proved at odd primes by Blumberg and Mandell \cite{MR4121155}.
 The red row of the diagram below displays this relationship within a larger diagram connecting ordinary $\K$-theory with theories that incorporate bilinear forms.
@@ -240,7 +249,16 @@ The red row of the diagram below displays this relationship within a larger diag
 A bilinear form, such as an inner product, equips a vector space with additional structure.
 Grothendieck--Witt theory extends ordinary $\K$-theory by keeping track of these forms.
 With Lucy Yang, I establish a local duality relating $\K$-theory, $\GW$-theory, and the comparison theory $\U$ associated to the hyperbolic map $\K\to\GW$ \cite{ChoYang}.
-This duality gives the symmetry shown in the blue column above.
+This duality gives the symmetry:
+\[
+\begin{tikzcd}[column sep=7em]
+L_{K(1)}\operatorname{U}(F_\nu^\wedge) 
+\arrow[r, leftrightarrow, "\text{Anderson duality}"]
+&
+L_{K(1)}\GW(F_\nu^\wedge)
+\end{tikzcd}
+\]
+shown in the blue column above.
 Our ongoing work on global fields asks whether this local symmetry and the duality from my dissertation combine into a half-turn symmetry of the full diagram.
 
 
